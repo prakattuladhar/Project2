@@ -3,20 +3,25 @@
 GUI for refrigirator
  */
 
+import State.FreezerState;
+import State.FridgeState;
+import Threads.FridgeCompressor;
+
 import javax.swing.*;
-import javax.swing.text.NumberFormatter;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.text.NumberFormat;
-import java.util.Formatter;
 
-public class GUI extends JFrame{
+public class GUI extends JFrame {
 
+    private FridgeState fridgeState;
     private JLabel fridgeLightStatus=new JLabel("off");
     private JLabel freezerLightStatus=new JLabel("off");
     private JLabel fridgeStatus=new JLabel("idle");
     private JLabel freezerStatus=new JLabel("idle");
-    private JLabel fridgeTempStatus=new JLabel("70");
-    private JLabel freezerTempStatus=new JLabel("70");
+    private JLabel fridgeTempStatus=new JLabel(String.valueOf(FridgeState.getInstance().getTemparature()));
+    private JLabel freezerTempStatus=new JLabel(String.valueOf(FreezerState.getInstance().getTemparature()));
 
     private JFormattedTextField roomTempInput=new JFormattedTextField(NumberFormat.getIntegerInstance());
     private JFormattedTextField fridgeTempInput=new JFormattedTextField(NumberFormat.getIntegerInstance());
@@ -25,14 +30,14 @@ public class GUI extends JFrame{
     private JButton roomTempButton=new JButton("Set Room Temp");
     private JButton fridgeTempButton=new JButton("Set Fridge Temp");
     private JButton freezerTempButton=new JButton("Set Freezer Temp");
-
     private JButton openFridge=new JButton("Open Fridge Door");
     private JButton closeFridge=new JButton("Close Fridge Door");
     private JButton openFreezer=new JButton("Open Freezer Door");
     private JButton closeFreezer=new JButton("Close Freezer Door");
 
-    public GUI(){
+    public GUI(FridgeState fridgeState){
         super("Refrigirator");
+        this.fridgeState=fridgeState;
 
         JPanel statusArea=new JPanel(new GridLayout(3,2));
         JPanel buttonsAndShit=new JPanel(new GridLayout(2,2));
@@ -106,8 +111,32 @@ public class GUI extends JFrame{
         getContentPane().add(settingsArea);
         getContentPane().add(buttonsAndShit);
         getContentPane().add(statusArea);
-
+        addActionListeners();
         pack();
         setVisible(true);
+    }
+
+    private void addActionListeners() {
+        openFridge.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                openFridgeDoor();
+            }
+        });
+        closeFridge.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                closeFridgeDoor();
+            }
+        });
+    }
+
+    private void openFridgeDoor() {
+        fridgeLightStatus.setText("on");
+        fridgeState.setLight(true);
+    }
+    private void closeFridgeDoor(){
+        fridgeLightStatus.setText("off");
+        fridgeState.setLight(false);
+
     }
 }
