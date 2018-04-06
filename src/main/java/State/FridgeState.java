@@ -1,6 +1,6 @@
 package State;
 
-import io.reactivex.Observable;
+import io.reactivex.subjects.BehaviorSubject;
 
 public class FridgeState extends RefrigiratorState{
     private static FridgeState ourInstance = new FridgeState();
@@ -9,29 +9,34 @@ public class FridgeState extends RefrigiratorState{
         return ourInstance;
     }
 
+    private FridgeState(){
+        light=false;
+        subjectLight=BehaviorSubject.create();
+        subjectTemparature=BehaviorSubject.create();
 
-    private FridgeState() {
-            light=false;
-            temparature=RoomState.getInstance().getRoomTemp();
     }
 
     @Override
     public void setLight(boolean light) {
         this.light=light;
+        subjectLight.onNext(this.light);
     }
 
     @Override
-    public boolean getLight() {
-        return light;
+    public BehaviorSubject<Boolean> getSubjectLight(){
+        return subjectLight;
+    }
+
+    @Override
+    public BehaviorSubject<Integer> getSubjectTemparature(){
+        return subjectTemparature;
     }
 
     @Override
     public void setTemparature(int temp) {
         temparature=temp;
+        subjectTemparature.onNext(temp);
     }
 
-    @Override
-    public int getTemparature() {
-        return temparature;
-    }
+
 }

@@ -1,5 +1,7 @@
 package State;
 
+import io.reactivex.subjects.BehaviorSubject;
+
 public class FreezerState extends RefrigiratorState{
     private static FreezerState ourInstance = new FreezerState();
 
@@ -20,9 +22,10 @@ public class FreezerState extends RefrigiratorState{
     }
 
     @Override
-    public boolean getLight() {
-        return light;
+    public BehaviorSubject<Boolean> getSubjectLight() {
+        return null;
     }
+
 
     @Override
     public void setTemparature(int temp) {
@@ -30,7 +33,9 @@ public class FreezerState extends RefrigiratorState{
     }
 
     @Override
-    public int getTemparature() {
-        return temparature;
+    public BehaviorSubject<Integer> getSubjectTemparature() {
+        return null;
     }
+
+
 }

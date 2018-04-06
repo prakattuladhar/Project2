@@ -5,7 +5,14 @@ GUI for refrigirator
 
 import State.FreezerState;
 import State.FridgeState;
+import State.RoomState;
 import Threads.FridgeCompressor;
+import com.sun.org.apache.xpath.internal.operations.Bool;
+import io.reactivex.Observable;
+import io.reactivex.Observer;
+import io.reactivex.functions.Action;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
 
 import javax.swing.*;
 import java.awt.*;
@@ -20,8 +27,8 @@ public class GUI extends JFrame {
     private JLabel freezerLightStatus=new JLabel("off");
     private JLabel fridgeStatus=new JLabel("idle");
     private JLabel freezerStatus=new JLabel("idle");
-    private JLabel fridgeTempStatus=new JLabel(String.valueOf(FridgeState.getInstance().getTemparature()));
-    private JLabel freezerTempStatus=new JLabel(String.valueOf(FreezerState.getInstance().getTemparature()));
+    private JLabel fridgeTempStatus=new JLabel(String.valueOf(RoomState.getInstance().getRoomTemp()));
+    private JLabel freezerTempStatus=new JLabel(String.valueOf(RoomState.getInstance().getRoomTemp()));
 
     private JFormattedTextField roomTempInput=new JFormattedTextField(NumberFormat.getIntegerInstance());
     private JFormattedTextField fridgeTempInput=new JFormattedTextField(NumberFormat.getIntegerInstance());
@@ -86,23 +93,23 @@ public class GUI extends JFrame {
         statusArea.add(tempPanel);
 
         tempPanel=new JPanel(new FlowLayout());
-        tempPanel.add(new JLabel("Fridge Temp"));
+        tempPanel.add(new JLabel("Fridge Temp: "));
         tempPanel.add(fridgeTempStatus);
         statusArea.add(tempPanel);
 
         //freezer grid
         tempPanel=new JPanel(new FlowLayout());
-        tempPanel.add(new JLabel("Freezer Temp :"));
+        tempPanel.add(new JLabel("Freezer Temp:"));
         tempPanel.add(freezerTempStatus);
         statusArea.add(tempPanel);
 
         tempPanel=new JPanel(new FlowLayout());
-        tempPanel.add(new JLabel("Fridge Status :"));
+        tempPanel.add(new JLabel("Fridge Status:"));
         tempPanel.add(fridgeStatus);
         statusArea.add(tempPanel);
 
         tempPanel=new JPanel(new FlowLayout());
-        tempPanel.add(new JLabel("Freezer Status"));
+        tempPanel.add(new JLabel("Freezer Status:"));
         tempPanel.add(freezerStatus);
         statusArea.add(tempPanel);
 
@@ -111,11 +118,74 @@ public class GUI extends JFrame {
         getContentPane().add(settingsArea);
         getContentPane().add(buttonsAndShit);
         getContentPane().add(statusArea);
+        initObservers();
         addActionListeners();
         pack();
         setVisible(true);
     }
 
+
+    //creates observers to do stuff
+    private void initObservers() {
+        //observer for fridgeLight status
+        Observer<? super Boolean> observerFridgeLight = new Observer<Boolean>() {
+            @Override
+            public void onSubscribe(Disposable disposable) {
+
+            }
+
+            @Override
+            public void onNext(Boolean t) {
+                System.out.println("From observable"+t);
+                if(t)
+                    fridgeLightStatus.setText("on");//fires the gui
+                else
+                    fridgeLightStatus.setText("off");
+            }
+
+            @Override
+            public void onError(Throwable throwable) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        };
+
+        //observer for fridgeTemparature
+        Observer<? super Integer> observerFridgeTemparature = new Observer<Integer>() {
+            @Override
+            public void onSubscribe(Disposable disposable) {
+
+            }
+
+            @Override
+            public void onNext(Integer t) {
+                System.out.println("From observable temparature"+t);
+                fridgeTempStatus.setText(String.valueOf(t));//fires the GUI
+
+            }
+
+            @Override
+            public void onError(Throwable throwable) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        };
+
+        //subscribing to observables/subject in this case
+        fridgeState.getSubjectLight().subscribe(observerFridgeLight);
+        fridgeState.getSubjectTemparature().subscribe(observerFridgeTemparature);
+    }
+
+
+    //event listeners
     private void addActionListeners() {
         openFridge.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -128,15 +198,25 @@ public class GUI extends JFrame {
                 closeFridgeDoor();
             }
         });
+        fridgeTempButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setFridgeTemparature();
+            }
+        });
+
     }
 
+    //helper functions
     private void openFridgeDoor() {
-        fridgeLightStatus.setText("on");
         fridgeState.setLight(true);
     }
     private void closeFridgeDoor(){
-        fridgeLightStatus.setText("off");
         fridgeState.setLight(false);
-
     }
+    private void setFridgeTemparature(){
+            fridgeState.getSubjectTemparature().onNext(Integer.valueOf(fridgeTempInput.getText()));
+    }
+
+
 }
