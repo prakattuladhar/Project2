@@ -1,143 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <com.yattasolutions.uml.diagrams.classifier:ClassDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.yattasolutions.uml.diagrams.classifier="http://ns.yatta-solutions.com/umllab/diagrams/classifier/1.1.0" xmi:id="_AMhhID0gEeishMoqItAVIg">
   <modelElement href="Project2.uml#_AKL-0D0gEeishMoqItAVIg"/>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_DhbncD0gEeishMoqItAVIg" sourceAnchor="375.0,89.0" targetAnchor="188.0,178.0" target="_Dh1QED0gEeishMoqItAVIg" source="_Dh1QED0gEeishMoqItAVIg">
-    <modelElement href="Project2.uml#_BLPzMD0gEeishMoqItAVIg"/>
-    <bendpoints xmi:id="_EapucD0gEeishMoqItAVIg" sourceX="60" targetX="247" targetY="-89"/>
-    <bendpoints xmi:id="_EaqVgD0gEeishMoqItAVIg" sourceX="60" sourceY="195" targetX="247" targetY="106"/>
-    <bendpoints xmi:id="_Eaq8kD0gEeishMoqItAVIg" sourceX="-187" sourceY="195" targetY="106"/>
-    <stereotypes xmi:id="_DhtUQD0gEeishMoqItAVIg" name="Reference">
-      <modelElement href="Project2.uml#_BLRBUD0gEeishMoqItAVIg"/>
-    </stereotypes>
-    <nameVisual xmi:id="_DhqQ8D0gEeishMoqItAVIg" text="">
-      <visualProperties xmi:id="_EayRUD0gEeishMoqItAVIg" position="-23.0,-180.0"/>
-    </nameVisual>
-    <sourceRole xmi:id="_DhsGID0gEeishMoqItAVIg" aggregationKind="NONE" name="">
-      <modelElement href="Project2.uml#_BLPzMT0gEeishMoqItAVIg"/>
-      <visualProperties xmi:id="_EawcID0gEeishMoqItAVIg" position="5.5,-66.5"/>
-      <visibility xmi:id="_DhvJcD0gEeishMoqItAVIg" label="+"/>
-      <cardinality xmi:id="_DhuiYD0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-    </sourceRole>
-    <targetRole xmi:id="_DhstMD0gEeishMoqItAVIg" aggregationKind="NONE" name="ourInstance" navigable="true">
-      <modelElement href="Project2.uml#_BKBrMD0gEeishMoqItAVIg"/>
-      <visualProperties xmi:id="_Eay4YD0gEeishMoqItAVIg" position="6.0,5.0"/>
-      <visibility xmi:id="_DhvJcj0gEeishMoqItAVIg" label="-"/>
-      <cardinality xmi:id="_DhvJcT0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-    </targetRole>
-  </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_DlJCwD0gEeishMoqItAVIg" sourceAnchor="375.0,89.0" targetAnchor="188.0,178.0" target="_DmDowD0gEeishMoqItAVIg" source="_DmDowD0gEeishMoqItAVIg">
-    <modelElement href="Project2.uml#_BLRoYD0gEeishMoqItAVIg"/>
-    <bendpoints xmi:id="_EasKsT0gEeishMoqItAVIg" sourceX="60" targetX="247" targetY="-89"/>
-    <bendpoints xmi:id="_EasxwD0gEeishMoqItAVIg" sourceX="60" sourceY="195" targetX="247" targetY="106"/>
-    <bendpoints xmi:id="_EasxwT0gEeishMoqItAVIg" sourceX="-187" sourceY="195" targetY="106"/>
-    <stereotypes xmi:id="_DmBMgD0gEeishMoqItAVIg" name="Reference">
-      <modelElement href="Project2.uml#_BLSPcD0gEeishMoqItAVIg"/>
-    </stereotypes>
-    <nameVisual xmi:id="_DmAlcD0gEeishMoqItAVIg" text="">
-      <visualProperties xmi:id="_Ea1UoD0gEeishMoqItAVIg" position="-23.0,-180.0"/>
-    </nameVisual>
-    <sourceRole xmi:id="_DmAlcT0gEeishMoqItAVIg" aggregationKind="NONE" name="">
-      <modelElement href="Project2.uml#_BLRoYT0gEeishMoqItAVIg"/>
-      <visualProperties xmi:id="_Ea0GgD0gEeishMoqItAVIg" position="5.5,-66.5"/>
-      <visibility xmi:id="_DmBzkT0gEeishMoqItAVIg" label="+"/>
-      <cardinality xmi:id="_DmBzkD0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-    </sourceRole>
-    <targetRole xmi:id="_DmAlcj0gEeishMoqItAVIg" aggregationKind="NONE" name="ourInstance" navigable="true">
-      <modelElement href="Project2.uml#_BKDgYD0gEeishMoqItAVIg"/>
-      <visualProperties xmi:id="_Ea17sD0gEeishMoqItAVIg" position="6.0,5.0"/>
-      <visibility xmi:id="_DmCaoT0gEeishMoqItAVIg" label="-"/>
-      <cardinality xmi:id="_DmCaoD0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-    </targetRole>
-  </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_DnX3YD0gEeishMoqItAVIg" sourceAnchor="188.0,0.0" targetAnchor="182.0,230.0" superClass="_DostED0gEeishMoqItAVIg" subClass="_Dh1QED0gEeishMoqItAVIg">
-    <modelElement href="Project2.uml#_BItckD0gEeishMoqItAVIg"/>
-    <bendpoints xmi:id="_EarjoD0gEeishMoqItAVIg" sourceY="-15" targetX="221" targetY="28"/>
-    <bendpoints xmi:id="_EasKsD0gEeishMoqItAVIg" sourceX="-221" sourceY="-15" targetY="28"/>
-  </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_Dnz8QD0gEeishMoqItAVIg" sourceAnchor="188.0,0.0" targetAnchor="182.0,230.0" superClass="_DostED0gEeishMoqItAVIg" subClass="_DmDowD0gEeishMoqItAVIg">
-    <modelElement href="Project2.uml#_BIxuAD0gEeishMoqItAVIg"/>
-    <bendpoints xmi:id="_EatY0D0gEeishMoqItAVIg" sourceY="-223" targetX="-26" targetY="28"/>
-    <bendpoints xmi:id="_Eat_4D0gEeishMoqItAVIg" sourceX="26" sourceY="-223" targetY="28"/>
-  </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_DoFpED0gEeishMoqItAVIg" source="_DostED0gEeishMoqItAVIg">
-    <modelElement href="Project2.uml#_BLS2gD0gEeishMoqItAVIg"/>
-    <stereotypes xmi:id="_DonNgT0gEeishMoqItAVIg" name="Reference">
-      <modelElement href="Project2.uml#_BLayUD0gEeishMoqItAVIg"/>
-    </stereotypes>
-    <nameVisual xmi:id="_DommcD0gEeishMoqItAVIg" text=""/>
-    <sourceRole xmi:id="_DommcT0gEeishMoqItAVIg" aggregationKind="NONE" name="">
-      <modelElement href="Project2.uml#_BLS2gT0gEeishMoqItAVIg"/>
-      <visibility xmi:id="_DooboT0gEeishMoqItAVIg" label="+"/>
-      <cardinality xmi:id="_DooboD0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-    </sourceRole>
-    <targetRole xmi:id="_DonNgD0gEeishMoqItAVIg" aggregationKind="NONE" name="subjectLight" navigable="true">
-      <modelElement href="Project2.uml#_BKHKwD0gEeishMoqItAVIg"/>
-      <visibility xmi:id="_DopCsT0gEeishMoqItAVIg" label="#"/>
-      <cardinality xmi:id="_DopCsD0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-    </targetRole>
-  </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_DoIFUD0gEeishMoqItAVIg" source="_DostED0gEeishMoqItAVIg">
-    <modelElement href="Project2.uml#_BLayUT0gEeishMoqItAVIg"/>
-    <stereotypes xmi:id="_Don0kT0gEeishMoqItAVIg" name="Reference">
-      <modelElement href="Project2.uml#_BLcAcD0gEeishMoqItAVIg"/>
-    </stereotypes>
-    <nameVisual xmi:id="_DonNgj0gEeishMoqItAVIg" text=""/>
-    <sourceRole xmi:id="_DonNgz0gEeishMoqItAVIg" aggregationKind="NONE" name="">
-      <modelElement href="Project2.uml#_BLayUj0gEeishMoqItAVIg"/>
-      <visibility xmi:id="_DopCtT0gEeishMoqItAVIg" label="+"/>
-      <cardinality xmi:id="_DopCtD0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-    </sourceRole>
-    <targetRole xmi:id="_Don0kD0gEeishMoqItAVIg" aggregationKind="NONE" name="subjectTemparature" navigable="true">
-      <modelElement href="Project2.uml#_BKJnAD0gEeishMoqItAVIg"/>
-      <visibility xmi:id="_DoppwT0gEeishMoqItAVIg" label="#"/>
-      <cardinality xmi:id="_DoppwD0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-    </targetRole>
-  </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_Drp6cD0gEeishMoqItAVIg" sourceAnchor="118.0,0.0" targetAnchor="236.0,58.0" target="_Ds5QkD0gEeishMoqItAVIg" source="_Ds5QkD0gEeishMoqItAVIg">
-    <modelElement href="Project2.uml#_BLcAcT0gEeishMoqItAVIg"/>
-    <bendpoints xmi:id="_Eaum8D0gEeishMoqItAVIg" sourceY="-111" targetX="-118" targetY="-169"/>
-    <bendpoints xmi:id="_EavOAD0gEeishMoqItAVIg" sourceX="260" sourceY="-111" targetX="142" targetY="-169"/>
-    <bendpoints xmi:id="_Eav1ED0gEeishMoqItAVIg" sourceX="260" sourceY="58" targetX="142"/>
-    <stereotypes xmi:id="_Ds2NQD0gEeishMoqItAVIg" name="Reference">
-      <modelElement href="Project2.uml#_BLdOkD0gEeishMoqItAVIg"/>
-    </stereotypes>
-    <nameVisual xmi:id="_Ds0_ID0gEeishMoqItAVIg" text="">
-      <visualProperties xmi:id="_Ea60MD0gEeishMoqItAVIg" position="-244.0,-11.0"/>
-    </nameVisual>
-    <sourceRole xmi:id="_Ds1mMD0gEeishMoqItAVIg" aggregationKind="NONE" name="">
-      <modelElement href="Project2.uml#_BLcAcj0gEeishMoqItAVIg"/>
-      <visualProperties xmi:id="_Ea5mED0gEeishMoqItAVIg" position="-21.0,-60.0"/>
-      <visibility xmi:id="_Ds3bYD0gEeishMoqItAVIg" label="+"/>
-      <cardinality xmi:id="_Ds20UD0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-    </sourceRole>
-    <targetRole xmi:id="_Ds1mMT0gEeishMoqItAVIg" aggregationKind="NONE" name="ourInstance" navigable="true">
-      <modelElement href="Project2.uml#_BKMDQD0gEeishMoqItAVIg"/>
-      <visualProperties xmi:id="_Ea7bQD0gEeishMoqItAVIg" position="5.0,-66.5"/>
-      <visibility xmi:id="_Ds3bYj0gEeishMoqItAVIg" label="-"/>
-      <cardinality xmi:id="_Ds3bYT0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-    </targetRole>
-  </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_D1M4AD0gEeishMoqItAVIg" sourceAnchor="516.0,288.0" targetAnchor="0.0,89.0" target="_DmDowD0gEeishMoqItAVIg" source="_D62NAD0gEeishMoqItAVIg">
-    <modelElement href="Project2.uml#_BLdOkT0gEeishMoqItAVIg"/>
-    <stereotypes xmi:id="_D13mYD0gEeishMoqItAVIg" name="Reference">
-      <modelElement href="Project2.uml#_BLecsD0gEeishMoqItAVIg"/>
-    </stereotypes>
-    <nameVisual xmi:id="_D12_UD0gEeishMoqItAVIg" text="">
-      <visualProperties xmi:id="_Ea93gD0gEeishMoqItAVIg" position="-61.5,-11.0"/>
-    </nameVisual>
-    <sourceRole xmi:id="_D12_UT0gEeishMoqItAVIg" aggregationKind="NONE" name="">
-      <modelElement href="Project2.uml#_BLdOkj0gEeishMoqItAVIg"/>
-      <visualProperties xmi:id="_Ea8pYD0gEeishMoqItAVIg" position="5.5,-66.5"/>
-      <visibility xmi:id="_D19F8T0gEeishMoqItAVIg" label="+"/>
-      <cardinality xmi:id="_D19F8D0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-    </sourceRole>
-    <targetRole xmi:id="_D12_Uj0gEeishMoqItAVIg" aggregationKind="NONE" name="fridgeState" navigable="true">
-      <modelElement href="Project2.uml#_BKOfgD0gEeishMoqItAVIg"/>
-      <visualProperties xmi:id="_Ea_FoD0gEeishMoqItAVIg" position="-94.5,11.5"/>
-      <visibility xmi:id="_D19tAD0gEeishMoqItAVIg" label="-"/>
-      <cardinality xmi:id="_D19F8j0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-    </targetRole>
-  </edges>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_D1_iMD0gEeishMoqItAVIg" source="_D62NAD0gEeishMoqItAVIg">
     <modelElement href="Project2.uml#_BLecsT0gEeishMoqItAVIg"/>
     <stereotypes xmi:id="_D2AJQD0gEeishMoqItAVIg" name="Reference">
@@ -410,390 +273,6 @@
       <cardinality xmi:id="_D61l-D0gEeishMoqItAVIg" label="1" max="1" min="1"/>
     </targetRole>
   </edges>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_Dh1QED0gEeishMoqItAVIg" name="FreezerState" associationsIn="_DhbncD0gEeishMoqItAVIg" associationsOut="_DhbncD0gEeishMoqItAVIg" generalizations="_DnX3YD0gEeishMoqItAVIg">
-    <modelElement href="Project2.uml#_BDp9cD0gEeishMoqItAVIg"/>
-    <visualProperties xmi:id="_Dh1QET0gEeishMoqItAVIg" position="1017.0,304.0" size="-1.0,-1.0"/>
-    <visibility xmi:id="_Dh1QEj0gEeishMoqItAVIg" label="+"/>
-    <attributes xmi:id="_Dh1QEz0gEeishMoqItAVIg" defaultValue="new FreezerState()" name="ourInstance" staticAttribute="true">
-      <modelElement href="Project2.uml#_BKBrMD0gEeishMoqItAVIg"/>
-      <stereotypes xmi:id="_Dh1QFD0gEeishMoqItAVIg" name="LegacyStyledElement">
-        <modelElement href="Project2.uml#_BKC5UD0gEeishMoqItAVIg"/>
-      </stereotypes>
-      <visibility xmi:id="_Dh1QFT0gEeishMoqItAVIg" label="-"/>
-      <cardinality xmi:id="_Dh1QFj0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-      <type xmi:id="_Dh1QFz0gEeishMoqItAVIg" name="FreezerState">
-        <modelElement href="Project2.uml#_BDp9cD0gEeishMoqItAVIg"/>
-      </type>
-    </attributes>
-    <operations xmi:id="_Dh1QGD0gEeishMoqItAVIg" name="getInstance" staticOperation="true">
-      <modelElement href="Project2.uml#_BDryoD0gEeishMoqItAVIg"/>
-      <visibility xmi:id="_Dh1QGT0gEeishMoqItAVIg" label="+"/>
-      <cardinality xmi:id="_Dh1QGj0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-      <outParameters xmi:id="_Dh1QGz0gEeishMoqItAVIg">
-        <modelElement href="Project2.uml#_BIs1gD0gEeishMoqItAVIg"/>
-        <type xmi:id="_Dh1QHD0gEeishMoqItAVIg" name="FreezerState">
-          <modelElement href="Project2.uml#_BDp9cD0gEeishMoqItAVIg"/>
-        </type>
-      </outParameters>
-    </operations>
-    <operations xmi:id="_Dh1QHT0gEeishMoqItAVIg" name="FreezerState">
-      <modelElement href="Project2.uml#_BDtn0D0gEeishMoqItAVIg"/>
-      <keywords xmi:id="_Dh1QHj0gEeishMoqItAVIg" keyword="create"/>
-      <visibility xmi:id="_Dh1QHz0gEeishMoqItAVIg" label="-"/>
-      <cardinality xmi:id="_Dh1QID0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-      <outParameters xmi:id="_Dh1QIT0gEeishMoqItAVIg">
-        <modelElement href="Project2.uml#_BDuO4j0gEeishMoqItAVIg"/>
-        <type xmi:id="_Dh1QIj0gEeishMoqItAVIg" name="FreezerState">
-          <modelElement href="Project2.uml#_BDp9cD0gEeishMoqItAVIg"/>
-        </type>
-      </outParameters>
-    </operations>
-    <operations xmi:id="_Dh1QIz0gEeishMoqItAVIg" name="setLight">
-      <modelElement href="Project2.uml#_BDu18D0gEeishMoqItAVIg"/>
-      <stereotypes xmi:id="_Dh1QJD0gEeishMoqItAVIg" name="LegacyStyledElement">
-        <modelElement href="Project2.uml#_BDwEED0gEeishMoqItAVIg"/>
-      </stereotypes>
-      <stereotypes xmi:id="_Dh1QJT0gEeishMoqItAVIg" name="Annotations">
-        <modelElement href="Project2.uml#_BDygUD0gEeishMoqItAVIg"/>
-      </stereotypes>
-      <visibility xmi:id="_Dh1QJj0gEeishMoqItAVIg" label="+"/>
-      <cardinality xmi:id="_Dh1QJz0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-      <parameters xmi:id="_Dh1QKD0gEeishMoqItAVIg" name="light">
-        <modelElement href="Project2.uml#_BDvdAD0gEeishMoqItAVIg"/>
-        <cardinality xmi:id="_Dh1QKT0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-        <type xmi:id="_Dh1QKj0gEeishMoqItAVIg" name="boolean">
-          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
-        </type>
-      </parameters>
-    </operations>
-    <operations xmi:id="_Dh1QKz0gEeishMoqItAVIg" name="getSubjectLight">
-      <modelElement href="Project2.uml#_BD3Y0T0gEeishMoqItAVIg"/>
-      <stereotypes xmi:id="_Dh1QLD0gEeishMoqItAVIg" name="Generics">
-        <modelElement href="Project2.uml#_BD51ED0gEeishMoqItAVIg"/>
-      </stereotypes>
-      <stereotypes xmi:id="_Dh1QLT0gEeishMoqItAVIg" name="LegacyStyledElement">
-        <modelElement href="Project2.uml#_BD7DMD0gEeishMoqItAVIg"/>
-      </stereotypes>
-      <stereotypes xmi:id="_Dh1QLj0gEeishMoqItAVIg" name="Annotations">
-        <modelElement href="Project2.uml#_BD7qQD0gEeishMoqItAVIg"/>
-      </stereotypes>
-      <visibility xmi:id="_Dh1QLz0gEeishMoqItAVIg" label="+"/>
-      <cardinality xmi:id="_Dh1QMD0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-      <outParameters xmi:id="_Dh1QMT0gEeishMoqItAVIg">
-        <modelElement href="Project2.uml#_BJYyAD0gEeishMoqItAVIg"/>
-        <type xmi:id="_Dh1QMj0gEeishMoqItAVIg" name="BehaviorSubject">
-          <modelElement href="Project2.uml#_BIkSoD0gEeishMoqItAVIg"/>
-        </type>
-      </outParameters>
-    </operations>
-    <operations xmi:id="_Dh1QMz0gEeishMoqItAVIg" name="setTemparature">
-      <modelElement href="Project2.uml#_BD84YD0gEeishMoqItAVIg"/>
-      <stereotypes xmi:id="_Dh1QND0gEeishMoqItAVIg" name="LegacyStyledElement">
-        <modelElement href="Project2.uml#_BD9fcD0gEeishMoqItAVIg"/>
-      </stereotypes>
-      <stereotypes xmi:id="_Dh1QNT0gEeishMoqItAVIg" name="Annotations">
-        <modelElement href="Project2.uml#_BD-GgD0gEeishMoqItAVIg"/>
-      </stereotypes>
-      <visibility xmi:id="_Dh1QNj0gEeishMoqItAVIg" label="+"/>
-      <cardinality xmi:id="_Dh1QNz0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-      <parameters xmi:id="_Dh1QOD0gEeishMoqItAVIg" name="temp">
-        <modelElement href="Project2.uml#_BD84YT0gEeishMoqItAVIg"/>
-        <cardinality xmi:id="_Dh1QOT0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-        <type xmi:id="_Dh1QOj0gEeishMoqItAVIg" name="int">
-          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-        </type>
-      </parameters>
-    </operations>
-    <operations xmi:id="_Dh1QOz0gEeishMoqItAVIg" name="getSubjectTemparature">
-      <modelElement href="Project2.uml#_BD-tkT0gEeishMoqItAVIg"/>
-      <stereotypes xmi:id="_Dh1QPD0gEeishMoqItAVIg" name="Generics">
-        <modelElement href="Project2.uml#_BEBw4D0gEeishMoqItAVIg"/>
-      </stereotypes>
-      <stereotypes xmi:id="_Dh1QPT0gEeishMoqItAVIg" name="LegacyStyledElement">
-        <modelElement href="Project2.uml#_BECX8D0gEeishMoqItAVIg"/>
-      </stereotypes>
-      <stereotypes xmi:id="_Dh1QPj0gEeishMoqItAVIg" name="Annotations">
-        <modelElement href="Project2.uml#_BEC_AD0gEeishMoqItAVIg"/>
-      </stereotypes>
-      <visibility xmi:id="_Dh1QPz0gEeishMoqItAVIg" label="+"/>
-      <cardinality xmi:id="_Dh1QQD0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-      <outParameters xmi:id="_Dh1QQT0gEeishMoqItAVIg">
-        <modelElement href="Project2.uml#_BJZZED0gEeishMoqItAVIg"/>
-        <type xmi:id="_Dh1QQj0gEeishMoqItAVIg" name="BehaviorSubject">
-          <modelElement href="Project2.uml#_BIkSoD0gEeishMoqItAVIg"/>
-        </type>
-      </outParameters>
-    </operations>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_DmDowD0gEeishMoqItAVIg" name="FridgeState" associationsIn="_DlJCwD0gEeishMoqItAVIg _D1M4AD0gEeishMoqItAVIg" associationsOut="_DlJCwD0gEeishMoqItAVIg" generalizations="_Dnz8QD0gEeishMoqItAVIg">
-    <modelElement href="Project2.uml#_BEMI8D0gEeishMoqItAVIg"/>
-    <visualProperties xmi:id="_DmDowT0gEeishMoqItAVIg" position="770.0,512.0" size="-1.0,-1.0"/>
-    <visibility xmi:id="_DmDowj0gEeishMoqItAVIg" label="+"/>
-    <attributes xmi:id="_DmDowz0gEeishMoqItAVIg" defaultValue="new FridgeState()" name="ourInstance" staticAttribute="true">
-      <modelElement href="Project2.uml#_BKDgYD0gEeishMoqItAVIg"/>
-      <stereotypes xmi:id="_DmDoxD0gEeishMoqItAVIg" name="LegacyStyledElement">
-        <modelElement href="Project2.uml#_BKEHcD0gEeishMoqItAVIg"/>
-      </stereotypes>
-      <visibility xmi:id="_DmDoxT0gEeishMoqItAVIg" label="-"/>
-      <cardinality xmi:id="_DmDoxj0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-      <type xmi:id="_DmDoxz0gEeishMoqItAVIg" name="FridgeState">
-        <modelElement href="Project2.uml#_BEMI8D0gEeishMoqItAVIg"/>
-      </type>
-    </attributes>
-    <operations xmi:id="_DmDoyD0gEeishMoqItAVIg" name="getInstance" staticOperation="true">
-      <modelElement href="Project2.uml#_BEOlMD0gEeishMoqItAVIg"/>
-      <visibility xmi:id="_DmDoyT0gEeishMoqItAVIg" label="+"/>
-      <cardinality xmi:id="_DmDoyj0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-      <outParameters xmi:id="_DmDoyz0gEeishMoqItAVIg">
-        <modelElement href="Project2.uml#_BIxG8D0gEeishMoqItAVIg"/>
-        <type xmi:id="_DmDozD0gEeishMoqItAVIg" name="FridgeState">
-          <modelElement href="Project2.uml#_BEMI8D0gEeishMoqItAVIg"/>
-        </type>
-      </outParameters>
-    </operations>
-    <operations xmi:id="_DmDozT0gEeishMoqItAVIg" name="FridgeState">
-      <modelElement href="Project2.uml#_BERogD0gEeishMoqItAVIg"/>
-      <keywords xmi:id="_DmDozj0gEeishMoqItAVIg" keyword="create"/>
-      <visibility xmi:id="_DmDozz0gEeishMoqItAVIg" label="-"/>
-      <cardinality xmi:id="_DmDo0D0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-      <outParameters xmi:id="_DmDo0T0gEeishMoqItAVIg">
-        <modelElement href="Project2.uml#_BEUr0T0gEeishMoqItAVIg"/>
-        <type xmi:id="_DmDo0j0gEeishMoqItAVIg" name="FridgeState">
-          <modelElement href="Project2.uml#_BEMI8D0gEeishMoqItAVIg"/>
-        </type>
-      </outParameters>
-    </operations>
-    <operations xmi:id="_DmDo0z0gEeishMoqItAVIg" name="setLight">
-      <modelElement href="Project2.uml#_BEVS4D0gEeishMoqItAVIg"/>
-      <stereotypes xmi:id="_DmDo1D0gEeishMoqItAVIg" name="LegacyStyledElement">
-        <modelElement href="Project2.uml#_BEV58D0gEeishMoqItAVIg"/>
-      </stereotypes>
-      <stereotypes xmi:id="_DmDo1T0gEeishMoqItAVIg" name="Annotations">
-        <modelElement href="Project2.uml#_BEWhAD0gEeishMoqItAVIg"/>
-      </stereotypes>
-      <visibility xmi:id="_DmDo1j0gEeishMoqItAVIg" label="+"/>
-      <cardinality xmi:id="_DmDo1z0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-      <parameters xmi:id="_DmDo2D0gEeishMoqItAVIg" name="light">
-        <modelElement href="Project2.uml#_BEVS4T0gEeishMoqItAVIg"/>
-        <cardinality xmi:id="_DmDo2T0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-        <type xmi:id="_DmDo2j0gEeishMoqItAVIg" name="boolean">
-          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
-        </type>
-      </parameters>
-    </operations>
-    <operations xmi:id="_DmDo2z0gEeishMoqItAVIg" name="getSubjectLight">
-      <modelElement href="Project2.uml#_BEWhAj0gEeishMoqItAVIg"/>
-      <stereotypes xmi:id="_DmDo3D0gEeishMoqItAVIg" name="Generics">
-        <modelElement href="Project2.uml#_BEYWMD0gEeishMoqItAVIg"/>
-      </stereotypes>
-      <stereotypes xmi:id="_DmDo3T0gEeishMoqItAVIg" name="LegacyStyledElement">
-        <modelElement href="Project2.uml#_BEY9QD0gEeishMoqItAVIg"/>
-      </stereotypes>
-      <stereotypes xmi:id="_DmDo3j0gEeishMoqItAVIg" name="Annotations">
-        <modelElement href="Project2.uml#_BEaLYD0gEeishMoqItAVIg"/>
-      </stereotypes>
-      <visibility xmi:id="_DmDo3z0gEeishMoqItAVIg" label="+"/>
-      <cardinality xmi:id="_DmDo4D0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-      <outParameters xmi:id="_DmDo4T0gEeishMoqItAVIg">
-        <modelElement href="Project2.uml#_BJanMD0gEeishMoqItAVIg"/>
-        <type xmi:id="_DmDo4j0gEeishMoqItAVIg" name="BehaviorSubject">
-          <modelElement href="Project2.uml#_BIkSoD0gEeishMoqItAVIg"/>
-        </type>
-      </outParameters>
-    </operations>
-    <operations xmi:id="_DmDo4z0gEeishMoqItAVIg" name="getSubjectTemparature">
-      <modelElement href="Project2.uml#_BEaLYj0gEeishMoqItAVIg"/>
-      <stereotypes xmi:id="_DmDo5D0gEeishMoqItAVIg" name="Generics">
-        <modelElement href="Project2.uml#_BEcAkD0gEeishMoqItAVIg"/>
-      </stereotypes>
-      <stereotypes xmi:id="_DmDo5T0gEeishMoqItAVIg" name="LegacyStyledElement">
-        <modelElement href="Project2.uml#_BEcnoD0gEeishMoqItAVIg"/>
-      </stereotypes>
-      <stereotypes xmi:id="_DmDo5j0gEeishMoqItAVIg" name="Annotations">
-        <modelElement href="Project2.uml#_BEdOsD0gEeishMoqItAVIg"/>
-      </stereotypes>
-      <visibility xmi:id="_DmDo5z0gEeishMoqItAVIg" label="+"/>
-      <cardinality xmi:id="_DmDo6D0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-      <outParameters xmi:id="_DmDo6T0gEeishMoqItAVIg">
-        <modelElement href="Project2.uml#_BJbOQD0gEeishMoqItAVIg"/>
-        <type xmi:id="_DmDo6j0gEeishMoqItAVIg" name="BehaviorSubject">
-          <modelElement href="Project2.uml#_BIkSoD0gEeishMoqItAVIg"/>
-        </type>
-      </outParameters>
-    </operations>
-    <operations xmi:id="_DmDo6z0gEeishMoqItAVIg" name="setTemparature">
-      <modelElement href="Project2.uml#_BEd1wD0gEeishMoqItAVIg"/>
-      <stereotypes xmi:id="_DmDo7D0gEeishMoqItAVIg" name="LegacyStyledElement">
-        <modelElement href="Project2.uml#_BEfD4D0gEeishMoqItAVIg"/>
-      </stereotypes>
-      <stereotypes xmi:id="_DmDo7T0gEeishMoqItAVIg" name="Annotations">
-        <modelElement href="Project2.uml#_BEfq8D0gEeishMoqItAVIg"/>
-      </stereotypes>
-      <visibility xmi:id="_DmDo7j0gEeishMoqItAVIg" label="+"/>
-      <cardinality xmi:id="_DmDo7z0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-      <parameters xmi:id="_DmEP0D0gEeishMoqItAVIg" name="temp">
-        <modelElement href="Project2.uml#_BEec0D0gEeishMoqItAVIg"/>
-        <cardinality xmi:id="_DmEP0T0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-        <type xmi:id="_DmEP0j0gEeishMoqItAVIg" name="int">
-          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-        </type>
-      </parameters>
-    </operations>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_DostED0gEeishMoqItAVIg" name="RefrigiratorState" abstractClass="true" associationsOut="_DoFpED0gEeishMoqItAVIg _DoIFUD0gEeishMoqItAVIg" subclassedBy="_DnX3YD0gEeishMoqItAVIg _Dnz8QD0gEeishMoqItAVIg">
-    <modelElement href="Project2.uml#_BElKgD0gEeishMoqItAVIg"/>
-    <visualProperties xmi:id="_DostET0gEeishMoqItAVIg" position="802.0,31.0" size="-1.0,-1.0"/>
-    <visibility xmi:id="_DostEj0gEeishMoqItAVIg" label="+"/>
-    <attributes xmi:id="_DostEz0gEeishMoqItAVIg" name="temparature">
-      <modelElement href="Project2.uml#_BKFVkD0gEeishMoqItAVIg"/>
-      <stereotypes xmi:id="_DostFD0gEeishMoqItAVIg" name="LegacyStyledElement">
-        <modelElement href="Project2.uml#_BKF8oD0gEeishMoqItAVIg"/>
-      </stereotypes>
-      <visibility xmi:id="_DotUID0gEeishMoqItAVIg" label="#"/>
-      <cardinality xmi:id="_DotUIT0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-      <type xmi:id="_DotUIj0gEeishMoqItAVIg" name="int">
-        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_DotUIz0gEeishMoqItAVIg" name="light">
-      <modelElement href="Project2.uml#_BKF8oT0gEeishMoqItAVIg"/>
-      <stereotypes xmi:id="_DotUJD0gEeishMoqItAVIg" name="LegacyStyledElement">
-        <modelElement href="Project2.uml#_BKGjsD0gEeishMoqItAVIg"/>
-      </stereotypes>
-      <visibility xmi:id="_DotUJT0gEeishMoqItAVIg" label="#"/>
-      <cardinality xmi:id="_DotUJj0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-      <type xmi:id="_DotUJz0gEeishMoqItAVIg" name="boolean">
-        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_DotUKD0gEeishMoqItAVIg" name="subjectLight">
-      <modelElement href="Project2.uml#_BKHKwD0gEeishMoqItAVIg"/>
-      <stereotypes xmi:id="_DotUKT0gEeishMoqItAVIg" name="Generics">
-        <modelElement href="Project2.uml#_BKIY4D0gEeishMoqItAVIg"/>
-      </stereotypes>
-      <stereotypes xmi:id="_DotUKj0gEeishMoqItAVIg" name="LegacyStyledElement">
-        <modelElement href="Project2.uml#_BKI_8D0gEeishMoqItAVIg"/>
-      </stereotypes>
-      <visibility xmi:id="_DotUKz0gEeishMoqItAVIg" label="#"/>
-      <cardinality xmi:id="_DotULD0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-      <type xmi:id="_DotULT0gEeishMoqItAVIg" name="BehaviorSubject">
-        <modelElement href="Project2.uml#_BIkSoD0gEeishMoqItAVIg"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_DotULj0gEeishMoqItAVIg" name="subjectTemparature">
-      <modelElement href="Project2.uml#_BKJnAD0gEeishMoqItAVIg"/>
-      <stereotypes xmi:id="_DotULz0gEeishMoqItAVIg" name="Generics">
-        <modelElement href="Project2.uml#_BKK1ID0gEeishMoqItAVIg"/>
-      </stereotypes>
-      <stereotypes xmi:id="_DotUMD0gEeishMoqItAVIg" name="LegacyStyledElement">
-        <modelElement href="Project2.uml#_BKLcMD0gEeishMoqItAVIg"/>
-      </stereotypes>
-      <visibility xmi:id="_DotUMT0gEeishMoqItAVIg" label="#"/>
-      <cardinality xmi:id="_DotUMj0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-      <type xmi:id="_DotUMz0gEeishMoqItAVIg" name="BehaviorSubject">
-        <modelElement href="Project2.uml#_BIkSoD0gEeishMoqItAVIg"/>
-      </type>
-    </attributes>
-    <operations xmi:id="_DotUND0gEeishMoqItAVIg" abstractOperation="true" name="setLight">
-      <modelElement href="Project2.uml#_BEoN0D0gEeishMoqItAVIg"/>
-      <visibility xmi:id="_DotUNT0gEeishMoqItAVIg" label="+"/>
-      <cardinality xmi:id="_DotUNj0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-      <parameters xmi:id="_DotUNz0gEeishMoqItAVIg" name="light">
-        <modelElement href="Project2.uml#_BEo04D0gEeishMoqItAVIg"/>
-        <cardinality xmi:id="_DotUOD0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-        <type xmi:id="_DotUOT0gEeishMoqItAVIg" name="boolean">
-          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
-        </type>
-      </parameters>
-    </operations>
-    <operations xmi:id="_DotUOj0gEeishMoqItAVIg" abstractOperation="true" name="getSubjectLight">
-      <modelElement href="Project2.uml#_BEo04T0gEeishMoqItAVIg"/>
-      <stereotypes xmi:id="_DotUOz0gEeishMoqItAVIg" name="Generics">
-        <modelElement href="Project2.uml#_BEqqED0gEeishMoqItAVIg"/>
-      </stereotypes>
-      <visibility xmi:id="_DotUPD0gEeishMoqItAVIg" label="+"/>
-      <cardinality xmi:id="_DotUPT0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-      <outParameters xmi:id="_DotUPj0gEeishMoqItAVIg">
-        <modelElement href="Project2.uml#_BJdDcD0gEeishMoqItAVIg"/>
-        <type xmi:id="_DotUPz0gEeishMoqItAVIg" name="BehaviorSubject">
-          <modelElement href="Project2.uml#_BIkSoD0gEeishMoqItAVIg"/>
-        </type>
-      </outParameters>
-    </operations>
-    <operations xmi:id="_DotUQD0gEeishMoqItAVIg" abstractOperation="true" name="setTemparature">
-      <modelElement href="Project2.uml#_BEr4MD0gEeishMoqItAVIg"/>
-      <visibility xmi:id="_DotUQT0gEeishMoqItAVIg" label="+"/>
-      <cardinality xmi:id="_DotUQj0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-      <parameters xmi:id="_DotUQz0gEeishMoqItAVIg" name="temp">
-        <modelElement href="Project2.uml#_BEr4MT0gEeishMoqItAVIg"/>
-        <cardinality xmi:id="_DotURD0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-        <type xmi:id="_DotURT0gEeishMoqItAVIg" name="int">
-          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-        </type>
-      </parameters>
-    </operations>
-    <operations xmi:id="_DotURj0gEeishMoqItAVIg" abstractOperation="true" name="getSubjectTemparature">
-      <modelElement href="Project2.uml#_BEsfQD0gEeishMoqItAVIg"/>
-      <stereotypes xmi:id="_DotURz0gEeishMoqItAVIg" name="Generics">
-        <modelElement href="Project2.uml#_BEuUcD0gEeishMoqItAVIg"/>
-      </stereotypes>
-      <visibility xmi:id="_DotUSD0gEeishMoqItAVIg" label="+"/>
-      <cardinality xmi:id="_DotUST0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-      <outParameters xmi:id="_DotUSj0gEeishMoqItAVIg">
-        <modelElement href="Project2.uml#_BJdqgD0gEeishMoqItAVIg"/>
-        <type xmi:id="_DotUSz0gEeishMoqItAVIg" name="BehaviorSubject">
-          <modelElement href="Project2.uml#_BIkSoD0gEeishMoqItAVIg"/>
-        </type>
-      </outParameters>
-    </operations>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_Ds5QkD0gEeishMoqItAVIg" name="RoomState" associationsIn="_Drp6cD0gEeishMoqItAVIg" associationsOut="_Drp6cD0gEeishMoqItAVIg">
-    <modelElement href="Project2.uml#_BFHWAD0gEeishMoqItAVIg"/>
-    <visualProperties xmi:id="_Ds5QkT0gEeishMoqItAVIg" position="21.0,1089.0" size="-1.0,-1.0"/>
-    <visibility xmi:id="_Ds5Qkj0gEeishMoqItAVIg" label="+"/>
-    <attributes xmi:id="_Ds5Qkz0gEeishMoqItAVIg" defaultValue="new RoomState()" name="ourInstance" staticAttribute="true">
-      <modelElement href="Project2.uml#_BKMDQD0gEeishMoqItAVIg"/>
-      <stereotypes xmi:id="_Ds5QlD0gEeishMoqItAVIg" name="LegacyStyledElement">
-        <modelElement href="Project2.uml#_BKNRYD0gEeishMoqItAVIg"/>
-      </stereotypes>
-      <visibility xmi:id="_Ds5QlT0gEeishMoqItAVIg" label="-"/>
-      <cardinality xmi:id="_Ds5Qlj0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-      <type xmi:id="_Ds5Qlz0gEeishMoqItAVIg" name="RoomState">
-        <modelElement href="Project2.uml#_BFHWAD0gEeishMoqItAVIg"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_Ds5QmD0gEeishMoqItAVIg" name="roomTemp">
-      <modelElement href="Project2.uml#_BKNRYT0gEeishMoqItAVIg"/>
-      <visibility xmi:id="_Ds5QmT0gEeishMoqItAVIg" label="+"/>
-      <cardinality xmi:id="_Ds5Qmj0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-      <type xmi:id="_Ds5Qmz0gEeishMoqItAVIg" name="int">
-        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-      </type>
-    </attributes>
-    <operations xmi:id="_Ds5QnD0gEeishMoqItAVIg" name="getInstance" staticOperation="true">
-      <modelElement href="Project2.uml#_BFJLMD0gEeishMoqItAVIg"/>
-      <visibility xmi:id="_Ds5QnT0gEeishMoqItAVIg" label="+"/>
-      <cardinality xmi:id="_Ds5Qnj0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-      <outParameters xmi:id="_Ds5Qnz0gEeishMoqItAVIg">
-        <modelElement href="Project2.uml#_BI30oD0gEeishMoqItAVIg"/>
-        <type xmi:id="_Ds5QoD0gEeishMoqItAVIg" name="RoomState">
-          <modelElement href="Project2.uml#_BFHWAD0gEeishMoqItAVIg"/>
-        </type>
-      </outParameters>
-    </operations>
-    <operations xmi:id="_Ds5QoT0gEeishMoqItAVIg" name="RoomState">
-      <modelElement href="Project2.uml#_BFP44D0gEeishMoqItAVIg"/>
-      <keywords xmi:id="_Ds5Qoj0gEeishMoqItAVIg" keyword="create"/>
-      <visibility xmi:id="_Ds5Qoz0gEeishMoqItAVIg" label="-"/>
-      <cardinality xmi:id="_Ds5QpD0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-      <outParameters xmi:id="_Ds5QpT0gEeishMoqItAVIg">
-        <modelElement href="Project2.uml#_BFQf8j0gEeishMoqItAVIg"/>
-        <type xmi:id="_Ds5Qpj0gEeishMoqItAVIg" name="RoomState">
-          <modelElement href="Project2.uml#_BFHWAD0gEeishMoqItAVIg"/>
-        </type>
-      </outParameters>
-    </operations>
-  </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_DuuckD0gEeishMoqItAVIg" name="FreezerCompressor">
     <modelElement href="Project2.uml#_BFV_gD0gEeishMoqItAVIg"/>
     <visualProperties xmi:id="_DuuckT0gEeishMoqItAVIg" position="949.0,962.0" size="-1.0,-1.0"/>
@@ -832,7 +311,7 @@
       </parameters>
     </operations>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_D62NAD0gEeishMoqItAVIg" name="GUI" associationsOut="_D1M4AD0gEeishMoqItAVIg _D1_iMD0gEeishMoqItAVIg _D5x2AD0gEeishMoqItAVIg _D6g10D0gEeishMoqItAVIg _D6irAD0gEeishMoqItAVIg _D6j5ID0gEeishMoqItAVIg _D6lHQD0gEeishMoqItAVIg _D6mVYD0gEeishMoqItAVIg _D6njgD0gEeishMoqItAVIg _D6oxoD0gEeishMoqItAVIg _D6qm0D0gEeishMoqItAVIg _D6r08D0gEeishMoqItAVIg _D6tqID0gEeishMoqItAVIg _D6u4QD0gEeishMoqItAVIg _D6wtcD0gEeishMoqItAVIg _D6zJsD0gEeishMoqItAVIg _D61l8D0gEeishMoqItAVIg">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_D62NAD0gEeishMoqItAVIg" name="GUI" associationsOut="_D1_iMD0gEeishMoqItAVIg _D5x2AD0gEeishMoqItAVIg _D6g10D0gEeishMoqItAVIg _D6irAD0gEeishMoqItAVIg _D6j5ID0gEeishMoqItAVIg _D6lHQD0gEeishMoqItAVIg _D6mVYD0gEeishMoqItAVIg _D6njgD0gEeishMoqItAVIg _D6oxoD0gEeishMoqItAVIg _D6qm0D0gEeishMoqItAVIg _D6r08D0gEeishMoqItAVIg _D6tqID0gEeishMoqItAVIg _D6u4QD0gEeishMoqItAVIg _D6wtcD0gEeishMoqItAVIg _D6zJsD0gEeishMoqItAVIg _D61l8D0gEeishMoqItAVIg">
     <modelElement href="Project2.uml#_BFiMwD0gEeishMoqItAVIg"/>
     <visualProperties xmi:id="_D62NAT0gEeishMoqItAVIg" position="11.0,313.0" size="-1.0,-1.0"/>
     <stereotypes xmi:id="_D62NAj0gEeishMoqItAVIg" name="LegacyStyledElement">
@@ -842,12 +321,12 @@
       <modelElement href="Project2.uml#_BFrWsD0gEeishMoqItAVIg"/>
     </stereotypes>
     <visibility xmi:id="_D62NBD0gEeishMoqItAVIg" label="+"/>
-    <attributes xmi:id="_D62NBT0gEeishMoqItAVIg" name="fridgeState">
+    <attributes xmi:id="_D62NBT0gEeishMoqItAVIg" name="fridgeContext">
       <modelElement href="Project2.uml#_BKOfgD0gEeishMoqItAVIg"/>
       <visibility xmi:id="_D62NBj0gEeishMoqItAVIg" label="-"/>
       <cardinality xmi:id="_D62NBz0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-      <type xmi:id="_D62NCD0gEeishMoqItAVIg" name="FridgeState">
-        <modelElement href="Project2.uml#_BEMI8D0gEeishMoqItAVIg"/>
+      <type xmi:id="_FuuvAD0sEeishMoqItAVIg" name="FridgeContext">
+        <modelElement href="Project2.uml#_FYVoQD0sEeishMoqItAVIg"/>
       </type>
     </attributes>
     <attributes xmi:id="_D62NCT0gEeishMoqItAVIg" defaultValue="new JLabel(&quot;off&quot;)" name="fridgeLightStatus">
@@ -882,7 +361,7 @@
         <modelElement href="Project2.uml#_BJzowD0gEeishMoqItAVIg"/>
       </type>
     </attributes>
-    <attributes xmi:id="_D620FD0gEeishMoqItAVIg" defaultValue="new JLabel(String.valueOf(RoomState.getInstance().getRoomTemp()))" name="fridgeTempStatus">
+    <attributes xmi:id="_D620FD0gEeishMoqItAVIg" defaultValue="new JLabel(String.valueOf(RoomContext.getInstance().getRoomTemp()))" name="fridgeTempStatus">
       <modelElement href="Project2.uml#_BKTYAD0gEeishMoqItAVIg"/>
       <visibility xmi:id="_D620FT0gEeishMoqItAVIg" label="-"/>
       <cardinality xmi:id="_D620Fj0gEeishMoqItAVIg" label="1" max="1" min="1"/>
@@ -890,7 +369,7 @@
         <modelElement href="Project2.uml#_BJzowD0gEeishMoqItAVIg"/>
       </type>
     </attributes>
-    <attributes xmi:id="_D620GD0gEeishMoqItAVIg" defaultValue="new JLabel(String.valueOf(RoomState.getInstance().getRoomTemp()))" name="freezerTempStatus">
+    <attributes xmi:id="_D620GD0gEeishMoqItAVIg" defaultValue="new JLabel(String.valueOf(RoomContext.getInstance().getRoomTemp()))" name="freezerTempStatus">
       <modelElement href="Project2.uml#_BKUmID0gEeishMoqItAVIg"/>
       <visibility xmi:id="_D620GT0gEeishMoqItAVIg" label="-"/>
       <cardinality xmi:id="_D620Gj0gEeishMoqItAVIg" label="1" max="1" min="1"/>
@@ -1032,11 +511,11 @@
           <modelElement href="Project2.uml#_BFiMwD0gEeishMoqItAVIg"/>
         </type>
       </outParameters>
-      <parameters xmi:id="_D63bMz0gEeishMoqItAVIg" name="fridgeState">
+      <parameters xmi:id="_D63bMz0gEeishMoqItAVIg" name="fridgeContext">
         <modelElement href="Project2.uml#_BJJhcD0gEeishMoqItAVIg"/>
         <cardinality xmi:id="_D63bND0gEeishMoqItAVIg" label="1" max="1" min="1"/>
-        <type xmi:id="_D63bNT0gEeishMoqItAVIg" name="FridgeState">
-          <modelElement href="Project2.uml#_BEMI8D0gEeishMoqItAVIg"/>
+        <type xmi:id="_FupPcD0sEeishMoqItAVIg" name="FridgeContext">
+          <modelElement href="Project2.uml#_FYVoQD0sEeishMoqItAVIg"/>
         </type>
       </parameters>
     </operations>

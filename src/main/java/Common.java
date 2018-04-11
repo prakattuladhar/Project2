@@ -1,57 +1,56 @@
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
 public final class Common {
-	private int[] info;
-	public Common() throws IOException {
+	private static int[] info = {0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+	public static void initialize() throws IOException {
 		fileImport();
 	}
-	public int getFridgeLow(){
+	public static int getFridgeLow(){
 		return info[0];
 	}
-	public int getFridgeHigh() {
+	public static int getFridgeHigh() {
 		return info[1];
 	}
-	public int getFreezerLow() {
+	public static int getFreezerLow() {
 		return info[2];
 	}
-	public int getFreezerHigh() {
+	public static int getFreezerHigh() {
 		return info[3];
 	}
-	public int getRoomLow() {
+	public static int getRoomLow() {
 		return info[4];
 	}
-	public int getRoomHigh() {
+	public static int getRoomHigh() {
 		return info[5];
 	}
-	public int getFridgeRateLossDoorClosed() {
+	public static int getFridgeRateLossDoorClosed() {
 		return info[6];
 	}
-	public int getFridgeRateLossDoorOpen() {
+	public static int getFridgeRateLossDoorOpen() {
 		return info[7];
 	}
-	public int getFreezerRateLossDoorClosed() {
+	public static int getFreezerRateLossDoorClosed() {
 		return info[8];
 	}
-	public int getFreezerRateLossDoorOpen() {
+	public static int getFreezerRateLossDoorOpen() {
 		return info[9];
 	}
-	public int getFridgeCompressorStartDiff() {
+	public static int getFridgeCompressorStartDiff() {
 		return info[10];
 	}
-	public int getFreezerCompressorStartDiff() {
+	public static int getFreezerCompressorStartDiff() {
 		return info[11];
 	}
-	public int getFridgeCoolRate() {
+	public static int getFridgeCoolRate() {
 		return info[12];
 	}
-	public int getFreezerCoolRate() {
+	public static int getFreezerCoolRate() {
 		return info[13];
 	}
-	private void fileImport() throws IOException {
+	private static void fileImport() throws IOException {
 		int input[] = new int[14];
 		String line;
 		try {
@@ -77,7 +76,7 @@ public final class Common {
 			System.out.println("IOException");
 		}
 	}
-	private int whatInput(String test) {
+	private static int whatInput(String test) {
 		int end;
 		switch(test) {
 		case "FridgeLow":

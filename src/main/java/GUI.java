@@ -13,6 +13,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.text.NumberFormat;
 
 @SuppressWarnings("restriction")
@@ -38,9 +39,10 @@ public class GUI extends JFrame {
     private JButton openFreezer=new JButton("Open Freezer Door");
     private JButton closeFreezer=new JButton("Close Freezer Door");
 
-    public GUI(FridgeContext fridgeContext){
+    public GUI(FridgeContext fridgeContext) throws IOException{
         super("Refrigirator");
         this.fridgeContext = fridgeContext;
+        Common.initialize();
 
         JPanel statusArea=new JPanel(new GridLayout(3,2));
         JPanel buttonsAndShit=new JPanel(new GridLayout(2,2));

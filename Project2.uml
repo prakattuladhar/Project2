@@ -4,7 +4,7 @@
     <eAnnotations xmi:id="_AkeuID0gEeishMoqItAVIg" source="http://ns.yatta.de/umllab">
       <contents xmi:type="ecore:EAnnotation" xmi:id="_AkeuIT0gEeishMoqItAVIg" source="codegen">
         <details xmi:id="_AkeuIj0gEeishMoqItAVIg" key="codegenDirectory" value="/Project2/src/main/java"/>
-        <details xmi:id="_BoH8cD0gEeishMoqItAVIg" key="AssociatedSourceCode" value="/Project2/src/main/java/main.java;2034128153/1;/Project2/src/main/java/State/FreezerState.java;2296355180/1;/Project2/src/main/java/State/FridgeState.java;848709324/1;/Project2/src/main/java/State/RefrigiratorState.java;5373798/1;/Project2/src/main/java/State/RoomState.java;2814788092/1;/Project2/src/main/java/Threads/FreezerCompressor.java;1673816009/1;/Project2/src/main/java/Threads/FridgeCompressor.java;1718415209/1;/Project2/src/main/java/GUI.java;3176644304/1;"/>
+        <details xmi:id="_BoH8cD0gEeishMoqItAVIg" key="AssociatedSourceCode" value="/Project2/src/main/java/main.java;1757593638/1;/Project2/src/main/java/Threads/FreezerCompressor.java;1673816009/1;/Project2/src/main/java/Threads/FridgeCompressor.java;1718415209/1;/Project2/src/main/java/GUI.java;2378017403/1;"/>
       </contents>
     </eAnnotations>
     <elementImport xmi:id="_BBNtcD0gEeishMoqItAVIg">
@@ -34,227 +34,7 @@
     <elementImport xmi:id="_BBRX0D0gEeishMoqItAVIg">
       <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </elementImport>
-    <packagedElement xmi:type="uml:Package" xmi:id="_BBFKkD0gEeishMoqItAVIg" name="State">
-      <packagedElement xmi:type="uml:Class" xmi:id="_BDp9cD0gEeishMoqItAVIg" name="FreezerState">
-        <generalization xmi:id="_BItckD0gEeishMoqItAVIg" general="_BElKgD0gEeishMoqItAVIg"/>
-        <ownedAttribute xmi:id="_BKBrMD0gEeishMoqItAVIg" name="ourInstance" visibility="private" isStatic="true" type="_BDp9cD0gEeishMoqItAVIg" association="_BLPzMD0gEeishMoqItAVIg">
-          <defaultValue xmi:type="uml:LiteralString" xmi:id="_BKBrMT0gEeishMoqItAVIg" value="new FreezerState()"/>
-        </ownedAttribute>
-        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_BK7qID0gEeishMoqItAVIg" name="getInstance" specification="_BDryoD0gEeishMoqItAVIg">
-          <ownedParameter xmi:id="_BK7qIT0gEeishMoqItAVIg" type="_BDp9cD0gEeishMoqItAVIg" direction="return"/>
-          <language>java</language>
-          <body>return ourInstance;&#xD;
- </body>
-        </ownedBehavior>
-        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_BK8RMD0gEeishMoqItAVIg" name="FreezerState" specification="_BDtn0D0gEeishMoqItAVIg">
-          <ownedParameter xmi:id="_BK8RMT0gEeishMoqItAVIg" type="_BDp9cD0gEeishMoqItAVIg" direction="return"/>
-          <language>java</language>
-          <body>light=false;&#xD;
-     temparature=RoomState.getInstance().getRoomTemp();&#xD;
-&#xD;
- </body>
-        </ownedBehavior>
-        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_BK8RMj0gEeishMoqItAVIg" name="setLight" specification="_BDu18D0gEeishMoqItAVIg">
-          <ownedParameter xmi:id="_BK8RMz0gEeishMoqItAVIg" name="light">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
-          </ownedParameter>
-          <language>java</language>
-          <body>this.light=light;&#xD;
- </body>
-        </ownedBehavior>
-        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_BK84QD0gEeishMoqItAVIg" name="getSubjectLight" specification="_BD3Y0T0gEeishMoqItAVIg">
-          <ownedParameter xmi:id="_BK84QT0gEeishMoqItAVIg" type="_BIkSoD0gEeishMoqItAVIg" direction="return"/>
-          <language>java</language>
-          <body>return null;&#xD;
- </body>
-        </ownedBehavior>
-        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_BK9fUD0gEeishMoqItAVIg" name="setTemparature" specification="_BD84YD0gEeishMoqItAVIg">
-          <ownedParameter xmi:id="_BK9fUT0gEeishMoqItAVIg" name="temp">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-          </ownedParameter>
-          <language>java</language>
-          <body>temparature=temp;&#xD;
- </body>
-        </ownedBehavior>
-        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_BK9fUj0gEeishMoqItAVIg" name="getSubjectTemparature" specification="_BD-tkT0gEeishMoqItAVIg">
-          <ownedParameter xmi:id="_BK9fUz0gEeishMoqItAVIg" type="_BIkSoD0gEeishMoqItAVIg" direction="return"/>
-          <language>java</language>
-          <body>return null;&#xD;
- </body>
-        </ownedBehavior>
-        <ownedOperation xmi:id="_BDryoD0gEeishMoqItAVIg" name="getInstance" isStatic="true" method="_BK7qID0gEeishMoqItAVIg">
-          <ownedParameter xmi:id="_BIs1gD0gEeishMoqItAVIg" type="_BDp9cD0gEeishMoqItAVIg" direction="return"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_BDtn0D0gEeishMoqItAVIg" name="FreezerState" visibility="private" method="_BK8RMD0gEeishMoqItAVIg">
-          <eAnnotations xmi:id="_BDuO4D0gEeishMoqItAVIg" source="http://www.eclipse.org/uml2/2.0.0/UML">
-            <details xmi:id="_BDuO4T0gEeishMoqItAVIg" key="create"/>
-          </eAnnotations>
-          <ownedParameter xmi:id="_BDuO4j0gEeishMoqItAVIg" type="_BDp9cD0gEeishMoqItAVIg" direction="return"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_BDu18D0gEeishMoqItAVIg" name="setLight" method="_BK8RMj0gEeishMoqItAVIg">
-          <ownedParameter xmi:id="_BDvdAD0gEeishMoqItAVIg" name="light">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
-          </ownedParameter>
-        </ownedOperation>
-        <ownedOperation xmi:id="_BD3Y0T0gEeishMoqItAVIg" name="getSubjectLight" method="_BK84QD0gEeishMoqItAVIg">
-          <ownedParameter xmi:id="_BJYyAD0gEeishMoqItAVIg" type="_BIkSoD0gEeishMoqItAVIg" direction="return"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_BD84YD0gEeishMoqItAVIg" name="setTemparature" method="_BK9fUD0gEeishMoqItAVIg">
-          <ownedParameter xmi:id="_BD84YT0gEeishMoqItAVIg" name="temp">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-          </ownedParameter>
-        </ownedOperation>
-        <ownedOperation xmi:id="_BD-tkT0gEeishMoqItAVIg" name="getSubjectTemparature" method="_BK9fUj0gEeishMoqItAVIg">
-          <ownedParameter xmi:id="_BJZZED0gEeishMoqItAVIg" type="_BIkSoD0gEeishMoqItAVIg" direction="return"/>
-        </ownedOperation>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_BEMI8D0gEeishMoqItAVIg" name="FridgeState">
-        <generalization xmi:id="_BIxuAD0gEeishMoqItAVIg" general="_BElKgD0gEeishMoqItAVIg"/>
-        <ownedAttribute xmi:id="_BKDgYD0gEeishMoqItAVIg" name="ourInstance" visibility="private" isStatic="true" type="_BEMI8D0gEeishMoqItAVIg" association="_BLRoYD0gEeishMoqItAVIg">
-          <defaultValue xmi:type="uml:LiteralString" xmi:id="_BKDgYT0gEeishMoqItAVIg" value="new FridgeState()"/>
-        </ownedAttribute>
-        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_BK-GYD0gEeishMoqItAVIg" name="getInstance" specification="_BEOlMD0gEeishMoqItAVIg">
-          <ownedParameter xmi:id="_BK-GYT0gEeishMoqItAVIg" type="_BEMI8D0gEeishMoqItAVIg" direction="return"/>
-          <language>java</language>
-          <body>return ourInstance;&#xD;
- </body>
-        </ownedBehavior>
-        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_BK-tcD0gEeishMoqItAVIg" name="FridgeState" specification="_BERogD0gEeishMoqItAVIg">
-          <ownedParameter xmi:id="_BK-tcT0gEeishMoqItAVIg" type="_BEMI8D0gEeishMoqItAVIg" direction="return"/>
-          <language>java</language>
-          <body>light=false;&#xD;
-     subjectLight=BehaviorSubject.create();&#xD;
-     subjectTemparature=BehaviorSubject.create();&#xD;
-&#xD;
- </body>
-        </ownedBehavior>
-        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_BK-tcj0gEeishMoqItAVIg" name="setLight" specification="_BEVS4D0gEeishMoqItAVIg">
-          <ownedParameter xmi:id="_BK-tcz0gEeishMoqItAVIg" name="light">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
-          </ownedParameter>
-          <language>java</language>
-          <body>this.light=light;&#xD;
-     subjectLight.onNext(this.light);&#xD;
- </body>
-        </ownedBehavior>
-        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_BK_UgD0gEeishMoqItAVIg" name="getSubjectLight" specification="_BEWhAj0gEeishMoqItAVIg">
-          <ownedParameter xmi:id="_BK_UgT0gEeishMoqItAVIg" type="_BIkSoD0gEeishMoqItAVIg" direction="return"/>
-          <language>java</language>
-          <body>return subjectLight;&#xD;
- </body>
-        </ownedBehavior>
-        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_BK_Ugj0gEeishMoqItAVIg" name="getSubjectTemparature" specification="_BEaLYj0gEeishMoqItAVIg">
-          <ownedParameter xmi:id="_BK_Ugz0gEeishMoqItAVIg" type="_BIkSoD0gEeishMoqItAVIg" direction="return"/>
-          <language>java</language>
-          <body>return subjectTemparature;&#xD;
- </body>
-        </ownedBehavior>
-        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_BK_7kD0gEeishMoqItAVIg" name="setTemparature" specification="_BEd1wD0gEeishMoqItAVIg">
-          <ownedParameter xmi:id="_BK_7kT0gEeishMoqItAVIg" name="temp">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-          </ownedParameter>
-          <language>java</language>
-          <body>temparature=temp;&#xD;
-     subjectTemparature.onNext(temp);&#xD;
- </body>
-        </ownedBehavior>
-        <ownedOperation xmi:id="_BEOlMD0gEeishMoqItAVIg" name="getInstance" isStatic="true" method="_BK-GYD0gEeishMoqItAVIg">
-          <ownedParameter xmi:id="_BIxG8D0gEeishMoqItAVIg" type="_BEMI8D0gEeishMoqItAVIg" direction="return"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_BERogD0gEeishMoqItAVIg" name="FridgeState" visibility="private" method="_BK-tcD0gEeishMoqItAVIg">
-          <eAnnotations xmi:id="_BEUEwD0gEeishMoqItAVIg" source="http://www.eclipse.org/uml2/2.0.0/UML">
-            <details xmi:id="_BEUr0D0gEeishMoqItAVIg" key="create"/>
-          </eAnnotations>
-          <ownedParameter xmi:id="_BEUr0T0gEeishMoqItAVIg" type="_BEMI8D0gEeishMoqItAVIg" direction="return"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_BEVS4D0gEeishMoqItAVIg" name="setLight" method="_BK-tcj0gEeishMoqItAVIg">
-          <ownedParameter xmi:id="_BEVS4T0gEeishMoqItAVIg" name="light">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
-          </ownedParameter>
-        </ownedOperation>
-        <ownedOperation xmi:id="_BEWhAj0gEeishMoqItAVIg" name="getSubjectLight" method="_BK_UgD0gEeishMoqItAVIg">
-          <ownedParameter xmi:id="_BJanMD0gEeishMoqItAVIg" type="_BIkSoD0gEeishMoqItAVIg" direction="return"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_BEaLYj0gEeishMoqItAVIg" name="getSubjectTemparature" method="_BK_Ugj0gEeishMoqItAVIg">
-          <ownedParameter xmi:id="_BJbOQD0gEeishMoqItAVIg" type="_BIkSoD0gEeishMoqItAVIg" direction="return"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_BEd1wD0gEeishMoqItAVIg" name="setTemparature" method="_BK_7kD0gEeishMoqItAVIg">
-          <ownedParameter xmi:id="_BEec0D0gEeishMoqItAVIg" name="temp">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-          </ownedParameter>
-        </ownedOperation>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_BElKgD0gEeishMoqItAVIg" name="RefrigiratorState" isAbstract="true">
-        <ownedAttribute xmi:id="_BKFVkD0gEeishMoqItAVIg" name="temparature" visibility="protected">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:id="_BKF8oT0gEeishMoqItAVIg" name="light" visibility="protected">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:id="_BKHKwD0gEeishMoqItAVIg" name="subjectLight" visibility="protected" type="_BIkSoD0gEeishMoqItAVIg" association="_BLS2gD0gEeishMoqItAVIg"/>
-        <ownedAttribute xmi:id="_BKJnAD0gEeishMoqItAVIg" name="subjectTemparature" visibility="protected" type="_BIkSoD0gEeishMoqItAVIg" association="_BLayUT0gEeishMoqItAVIg"/>
-        <ownedOperation xmi:id="_BEoN0D0gEeishMoqItAVIg" name="setLight" isAbstract="true">
-          <ownedParameter xmi:id="_BEo04D0gEeishMoqItAVIg" name="light">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
-          </ownedParameter>
-        </ownedOperation>
-        <ownedOperation xmi:id="_BEo04T0gEeishMoqItAVIg" name="getSubjectLight" isAbstract="true">
-          <ownedParameter xmi:id="_BJdDcD0gEeishMoqItAVIg" type="_BIkSoD0gEeishMoqItAVIg" direction="return"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_BEr4MD0gEeishMoqItAVIg" name="setTemparature" isAbstract="true">
-          <ownedParameter xmi:id="_BEr4MT0gEeishMoqItAVIg" name="temp">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-          </ownedParameter>
-        </ownedOperation>
-        <ownedOperation xmi:id="_BEsfQD0gEeishMoqItAVIg" name="getSubjectTemparature" isAbstract="true">
-          <ownedParameter xmi:id="_BJdqgD0gEeishMoqItAVIg" type="_BIkSoD0gEeishMoqItAVIg" direction="return"/>
-        </ownedOperation>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="_BFHWAD0gEeishMoqItAVIg" name="RoomState">
-        <ownedAttribute xmi:id="_BKMDQD0gEeishMoqItAVIg" name="ourInstance" visibility="private" isStatic="true" type="_BFHWAD0gEeishMoqItAVIg" association="_BLcAcT0gEeishMoqItAVIg">
-          <defaultValue xmi:type="uml:LiteralString" xmi:id="_BKMqUD0gEeishMoqItAVIg" value="new RoomState()"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:id="_BKNRYT0gEeishMoqItAVIg" name="roomTemp">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-        </ownedAttribute>
-        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_BLAioD0gEeishMoqItAVIg" name="getInstance" specification="_BFJLMD0gEeishMoqItAVIg">
-          <ownedParameter xmi:id="_BLAioT0gEeishMoqItAVIg" type="_BFHWAD0gEeishMoqItAVIg" direction="return"/>
-          <language>java</language>
-          <body>return ourInstance;&#xD;
- </body>
-        </ownedBehavior>
-        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_BLBJsD0gEeishMoqItAVIg" name="RoomState" specification="_BFP44D0gEeishMoqItAVIg">
-          <ownedParameter xmi:id="_BLBJsT0gEeishMoqItAVIg" type="_BFHWAD0gEeishMoqItAVIg" direction="return"/>
-          <language>java</language>
-          <body>roomTemp=65;&#xD;
- </body>
-        </ownedBehavior>
-        <ownedOperation xmi:id="_BFJLMD0gEeishMoqItAVIg" name="getInstance" isStatic="true" method="_BLAioD0gEeishMoqItAVIg">
-          <ownedParameter xmi:id="_BI30oD0gEeishMoqItAVIg" type="_BFHWAD0gEeishMoqItAVIg" direction="return"/>
-        </ownedOperation>
-        <ownedOperation xmi:id="_BFP44D0gEeishMoqItAVIg" name="RoomState" visibility="private" method="_BLBJsD0gEeishMoqItAVIg">
-          <eAnnotations xmi:id="_BFQf8D0gEeishMoqItAVIg" source="http://www.eclipse.org/uml2/2.0.0/UML">
-            <details xmi:id="_BFQf8T0gEeishMoqItAVIg" key="create"/>
-          </eAnnotations>
-          <ownedParameter xmi:id="_BFQf8j0gEeishMoqItAVIg" type="_BFHWAD0gEeishMoqItAVIg" direction="return"/>
-        </ownedOperation>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Association" xmi:id="_BLPzMD0gEeishMoqItAVIg" name="" memberEnd="_BLPzMT0gEeishMoqItAVIg _BKBrMD0gEeishMoqItAVIg">
-        <ownedEnd xmi:id="_BLPzMT0gEeishMoqItAVIg" name="" type="_BDp9cD0gEeishMoqItAVIg" association="_BLPzMD0gEeishMoqItAVIg"/>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Association" xmi:id="_BLRoYD0gEeishMoqItAVIg" name="" memberEnd="_BLRoYT0gEeishMoqItAVIg _BKDgYD0gEeishMoqItAVIg">
-        <ownedEnd xmi:id="_BLRoYT0gEeishMoqItAVIg" name="" type="_BEMI8D0gEeishMoqItAVIg" association="_BLRoYD0gEeishMoqItAVIg"/>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Association" xmi:id="_BLS2gD0gEeishMoqItAVIg" name="" memberEnd="_BLS2gT0gEeishMoqItAVIg _BKHKwD0gEeishMoqItAVIg">
-        <ownedEnd xmi:id="_BLS2gT0gEeishMoqItAVIg" name="" type="_BElKgD0gEeishMoqItAVIg" association="_BLS2gD0gEeishMoqItAVIg"/>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Association" xmi:id="_BLayUT0gEeishMoqItAVIg" name="" memberEnd="_BLayUj0gEeishMoqItAVIg _BKJnAD0gEeishMoqItAVIg">
-        <ownedEnd xmi:id="_BLayUj0gEeishMoqItAVIg" name="" type="_BElKgD0gEeishMoqItAVIg" association="_BLayUT0gEeishMoqItAVIg"/>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Association" xmi:id="_BLcAcT0gEeishMoqItAVIg" name="" memberEnd="_BLcAcj0gEeishMoqItAVIg _BKMDQD0gEeishMoqItAVIg">
-        <ownedEnd xmi:id="_BLcAcj0gEeishMoqItAVIg" name="" type="_BFHWAD0gEeishMoqItAVIg" association="_BLcAcT0gEeishMoqItAVIg"/>
-      </packagedElement>
-    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_BBFKkD0gEeishMoqItAVIg" name="State"/>
     <packagedElement xmi:type="uml:Package" xmi:id="_BBSl8D0gEeishMoqItAVIg" name="io">
       <packagedElement xmi:type="uml:Package" xmi:id="_BBTNAD0gEeishMoqItAVIg" name="reactivex">
         <packagedElement xmi:type="uml:Package" xmi:id="_BBTNAT0gEeishMoqItAVIg" name="subjects">
@@ -338,7 +118,7 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BK3YsT0gEeishMoqItAVIg" value="*"/>
         </ownedParameter>
         <language>java</language>
-        <body>GUI gui=new GUI(FridgeState.getInstance());&#xD;
+        <body>GUI gui=new GUI(FridgeContext.getInstance());&#xD;
 &#xD;
  </body>
       </ownedBehavior>
@@ -351,7 +131,7 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_BFiMwD0gEeishMoqItAVIg" name="GUI">
       <generalization xmi:id="_BJ7kkD0gEeishMoqItAVIg" general="_BJxMgD0gEeishMoqItAVIg"/>
-      <ownedAttribute xmi:id="_BKOfgD0gEeishMoqItAVIg" name="fridgeState" visibility="private" type="_BEMI8D0gEeishMoqItAVIg" association="_BLdOkT0gEeishMoqItAVIg"/>
+      <ownedAttribute xmi:id="_BKOfgD0gEeishMoqItAVIg" name="fridgeContext" visibility="private" type="_FYVoQD0sEeishMoqItAVIg" association="_FYickD0sEeishMoqItAVIg"/>
       <ownedAttribute xmi:id="_BKPtoD0gEeishMoqItAVIg" name="fridgeLightStatus" visibility="private" type="_BJzowD0gEeishMoqItAVIg" association="_BLecsT0gEeishMoqItAVIg">
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_BKPtoT0gEeishMoqItAVIg" value="new JLabel(&quot;off&quot;)"/>
       </ownedAttribute>
@@ -365,10 +145,10 @@
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_BKSw8T0gEeishMoqItAVIg" value="new JLabel(&quot;idle&quot;)"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_BKTYAD0gEeishMoqItAVIg" name="fridgeTempStatus" visibility="private" type="_BJzowD0gEeishMoqItAVIg" association="_BLjVMT0gEeishMoqItAVIg">
-        <defaultValue xmi:type="uml:LiteralString" xmi:id="_BKT_ED0gEeishMoqItAVIg" value="new JLabel(String.valueOf(RoomState.getInstance().getRoomTemp()))"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_BKT_ED0gEeishMoqItAVIg" value="new JLabel(String.valueOf(RoomContext.getInstance().getRoomTemp()))"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_BKUmID0gEeishMoqItAVIg" name="freezerTempStatus" visibility="private" type="_BJzowD0gEeishMoqItAVIg" association="_BLkjUT0gEeishMoqItAVIg">
-        <defaultValue xmi:type="uml:LiteralString" xmi:id="_BKUmIT0gEeishMoqItAVIg" value="new JLabel(String.valueOf(RoomState.getInstance().getRoomTemp()))"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_BKUmIT0gEeishMoqItAVIg" value="new JLabel(String.valueOf(RoomContext.getInstance().getRoomTemp()))"/>
       </ownedAttribute>
       <ownedAttribute xmi:id="_BKVNMD0gEeishMoqItAVIg" name="roomTempInput" visibility="private" type="_BJ2FAD0gEeishMoqItAVIg" association="_BLlxcD0gEeishMoqItAVIg">
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_BKVNMT0gEeishMoqItAVIg" value="new JFormattedTextField(NumberFormat.getIntegerInstance())"/>
@@ -401,11 +181,11 @@
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_BKch8T0gEeishMoqItAVIg" value="new JButton(&quot;Close Freezer Door&quot;)"/>
       </ownedAttribute>
       <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_BLCX0D0gEeishMoqItAVIg" name="GUI" specification="_BJI6YD0gEeishMoqItAVIg">
-        <ownedParameter xmi:id="_BLCX0T0gEeishMoqItAVIg" name="fridgeState" type="_BEMI8D0gEeishMoqItAVIg"/>
-        <ownedParameter xmi:id="_BLCX0j0gEeishMoqItAVIg" type="_BFiMwD0gEeishMoqItAVIg" direction="return"/>
+        <ownedParameter xmi:id="_FYeLID0sEeishMoqItAVIg" name="fridgeContext" type="_FYVoQD0sEeishMoqItAVIg"/>
+        <ownedParameter xmi:id="_FYeLIT0sEeishMoqItAVIg" type="_BFiMwD0gEeishMoqItAVIg" direction="return"/>
         <language>java</language>
         <body>super(&quot;Refrigirator&quot;);&#xD;
-     this.fridgeState=fridgeState;&#xD;
+     this.fridgeContext = fridgeContext;&#xD;
 &#xD;
      JPanel statusArea=new JPanel(new GridLayout(3,2));&#xD;
      JPanel buttonsAndShit=new JPanel(new GridLayout(2,2));&#xD;
@@ -516,6 +296,7 @@
 &#xD;
      //observer for fridgeTemparature&#xD;
      Observer&lt;? super Integer> observerFridgeTemparature = new Observer&lt;Integer>() {&#xD;
+&#xD;
          @Override&#xD;
          public void onSubscribe(Disposable disposable){&#xD;
 &#xD;
@@ -540,8 +321,8 @@
      };&#xD;
 &#xD;
      //subscribing to observables/subject in this case&#xD;
-     fridgeState.getSubjectLight().subscribe(observerFridgeLight);&#xD;
-     fridgeState.getSubjectTemparature().subscribe(observerFridgeTemparature);&#xD;
+     fridgeContext.getSubjectLight().subscribe(observerFridgeLight);&#xD;
+     fridgeContext.getSubjectTemparature().subscribe(observerFridgeTemparature);&#xD;
  </body>
       </ownedBehavior>
       <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_BLC-4D0gEeishMoqItAVIg" name="addActionListeners" specification="_BFnsUT0gEeishMoqItAVIg">
@@ -568,17 +349,17 @@
       </ownedBehavior>
       <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_BLC-4T0gEeishMoqItAVIg" name="openFridgeDoor" specification="_BFoTYT0gEeishMoqItAVIg">
         <language>java</language>
-        <body>fridgeState.setLight(true);&#xD;
+        <body>fridgeContext.setLight(true);&#xD;
  </body>
       </ownedBehavior>
       <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_BLDl8D0gEeishMoqItAVIg" name="closeFridgeDoor" specification="_BFo6cT0gEeishMoqItAVIg">
         <language>java</language>
-        <body>fridgeState.setLight(false);&#xD;
+        <body>fridgeContext.setLight(false);&#xD;
  </body>
       </ownedBehavior>
       <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_BLDl8T0gEeishMoqItAVIg" name="setFridgeTemparature" specification="_BFphgT0gEeishMoqItAVIg">
         <language>java</language>
-        <body>fridgeState.getSubjectTemparature().onNext(Integer.valueOf(fridgeTempInput.getText()));&#xD;
+        <body>fridgeContext.getSubjectTemparature().onNext(Integer.valueOf(fridgeTempInput.getText()));&#xD;
  </body>
       </ownedBehavior>
       <ownedOperation xmi:id="_BFnFQD0gEeishMoqItAVIg" name="initObservers" visibility="private" method="_BLCX0z0gEeishMoqItAVIg"/>
@@ -587,15 +368,12 @@
       <ownedOperation xmi:id="_BFo6cT0gEeishMoqItAVIg" name="closeFridgeDoor" visibility="private" method="_BLDl8D0gEeishMoqItAVIg"/>
       <ownedOperation xmi:id="_BFphgT0gEeishMoqItAVIg" name="setFridgeTemparature" visibility="private" method="_BLDl8T0gEeishMoqItAVIg"/>
       <ownedOperation xmi:id="_BJI6YD0gEeishMoqItAVIg" name="GUI" method="_BLCX0D0gEeishMoqItAVIg">
-        <eAnnotations xmi:id="_BJJhcT0gEeishMoqItAVIg" source="http://www.eclipse.org/uml2/2.0.0/UML">
-          <details xmi:id="_BJJhcj0gEeishMoqItAVIg" key="create"/>
+        <eAnnotations xmi:id="_FW3ooD0sEeishMoqItAVIg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_FW42wD0sEeishMoqItAVIg" key="create"/>
         </eAnnotations>
-        <ownedParameter xmi:id="_BJJhcD0gEeishMoqItAVIg" name="fridgeState" type="_BEMI8D0gEeishMoqItAVIg"/>
+        <ownedParameter xmi:id="_BJJhcD0gEeishMoqItAVIg" name="fridgeContext" type="_FYVoQD0sEeishMoqItAVIg"/>
         <ownedParameter xmi:id="_BJJhcz0gEeishMoqItAVIg" type="_BFiMwD0gEeishMoqItAVIg" direction="return"/>
       </ownedOperation>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_BLdOkT0gEeishMoqItAVIg" name="" memberEnd="_BLdOkj0gEeishMoqItAVIg _BKOfgD0gEeishMoqItAVIg">
-      <ownedEnd xmi:id="_BLdOkj0gEeishMoqItAVIg" name="" type="_BFiMwD0gEeishMoqItAVIg" association="_BLdOkT0gEeishMoqItAVIg"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_BLecsT0gEeishMoqItAVIg" name="" memberEnd="_BLecsj0gEeishMoqItAVIg _BKPtoD0gEeishMoqItAVIg">
       <ownedEnd xmi:id="_BLecsj0gEeishMoqItAVIg" name="" type="_BFiMwD0gEeishMoqItAVIg" association="_BLecsT0gEeishMoqItAVIg"/>
@@ -645,6 +423,13 @@
     <packagedElement xmi:type="uml:Association" xmi:id="_BLvicT0gEeishMoqItAVIg" name="" memberEnd="_BLvicj0gEeishMoqItAVIg _BKch8D0gEeishMoqItAVIg">
       <ownedEnd xmi:id="_BLvicj0gEeishMoqItAVIg" name="" type="_BFiMwD0gEeishMoqItAVIg" association="_BLvicT0gEeishMoqItAVIg"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_FV28AD0sEeishMoqItAVIg" name="Context">
+      <packagedElement xmi:type="uml:Class" xmi:id="_FYVoQD0sEeishMoqItAVIg" name="FridgeContext"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_FYYEgD0sEeishMoqItAVIg" name="RoomContext"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_FYickD0sEeishMoqItAVIg" name="" memberEnd="_FYickT0sEeishMoqItAVIg _BKOfgD0gEeishMoqItAVIg">
+      <ownedEnd xmi:id="_FYickT0sEeishMoqItAVIg" name="" type="_BFiMwD0gEeishMoqItAVIg" association="_FYickD0sEeishMoqItAVIg"/>
+    </packagedElement>
     <profileApplication xmi:id="_AkhxcD0gEeishMoqItAVIg">
       <eAnnotations xmi:id="_AkmC4D0gEeishMoqItAVIg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile"/>
@@ -655,44 +440,6 @@
   <UMLLabProfile:TargetLanguage xmi:id="_AkswkD0gEeishMoqItAVIg" base_Package="_AKL-0D0gEeishMoqItAVIg">
     <languageName>java</languageName>
   </UMLLabProfile:TargetLanguage>
-  <UMLLabProfile:LegacyStyledElement xmi:id="_BDwEED0gEeishMoqItAVIg" base_Element="_BDu18D0gEeishMoqItAVIg"/>
-  <UMLLabProfile:Annotations xmi:id="_BDygUD0gEeishMoqItAVIg" base_Element="_BDu18D0gEeishMoqItAVIg">
-    <annotations xmi:id="_BD3Y0D0gEeishMoqItAVIg" name="Override"/>
-  </UMLLabProfile:Annotations>
-  <UMLLabProfile:Generics xmi:id="_BD51ED0gEeishMoqItAVIg" genericsValue="Boolean" base_Element="_BD3Y0T0gEeishMoqItAVIg"/>
-  <UMLLabProfile:LegacyStyledElement xmi:id="_BD7DMD0gEeishMoqItAVIg" base_Element="_BD3Y0T0gEeishMoqItAVIg"/>
-  <UMLLabProfile:Annotations xmi:id="_BD7qQD0gEeishMoqItAVIg" base_Element="_BD3Y0T0gEeishMoqItAVIg">
-    <annotations xmi:id="_BD8RUD0gEeishMoqItAVIg" name="Override"/>
-  </UMLLabProfile:Annotations>
-  <UMLLabProfile:LegacyStyledElement xmi:id="_BD9fcD0gEeishMoqItAVIg" base_Element="_BD84YD0gEeishMoqItAVIg"/>
-  <UMLLabProfile:Annotations xmi:id="_BD-GgD0gEeishMoqItAVIg" base_Element="_BD84YD0gEeishMoqItAVIg">
-    <annotations xmi:id="_BD-tkD0gEeishMoqItAVIg" name="Override"/>
-  </UMLLabProfile:Annotations>
-  <UMLLabProfile:Generics xmi:id="_BEBw4D0gEeishMoqItAVIg" genericsValue="Integer" base_Element="_BD-tkT0gEeishMoqItAVIg"/>
-  <UMLLabProfile:LegacyStyledElement xmi:id="_BECX8D0gEeishMoqItAVIg" base_Element="_BD-tkT0gEeishMoqItAVIg"/>
-  <UMLLabProfile:Annotations xmi:id="_BEC_AD0gEeishMoqItAVIg" base_Element="_BD-tkT0gEeishMoqItAVIg">
-    <annotations xmi:id="_BEC_AT0gEeishMoqItAVIg" name="Override"/>
-  </UMLLabProfile:Annotations>
-  <UMLLabProfile:LegacyStyledElement xmi:id="_BEV58D0gEeishMoqItAVIg" base_Element="_BEVS4D0gEeishMoqItAVIg"/>
-  <UMLLabProfile:Annotations xmi:id="_BEWhAD0gEeishMoqItAVIg" base_Element="_BEVS4D0gEeishMoqItAVIg">
-    <annotations xmi:id="_BEWhAT0gEeishMoqItAVIg" name="Override"/>
-  </UMLLabProfile:Annotations>
-  <UMLLabProfile:Generics xmi:id="_BEYWMD0gEeishMoqItAVIg" genericsValue="Boolean" base_Element="_BEWhAj0gEeishMoqItAVIg"/>
-  <UMLLabProfile:LegacyStyledElement xmi:id="_BEY9QD0gEeishMoqItAVIg" base_Element="_BEWhAj0gEeishMoqItAVIg"/>
-  <UMLLabProfile:Annotations xmi:id="_BEaLYD0gEeishMoqItAVIg" base_Element="_BEWhAj0gEeishMoqItAVIg">
-    <annotations xmi:id="_BEaLYT0gEeishMoqItAVIg" name="Override"/>
-  </UMLLabProfile:Annotations>
-  <UMLLabProfile:Generics xmi:id="_BEcAkD0gEeishMoqItAVIg" genericsValue="Integer" base_Element="_BEaLYj0gEeishMoqItAVIg"/>
-  <UMLLabProfile:LegacyStyledElement xmi:id="_BEcnoD0gEeishMoqItAVIg" base_Element="_BEaLYj0gEeishMoqItAVIg"/>
-  <UMLLabProfile:Annotations xmi:id="_BEdOsD0gEeishMoqItAVIg" base_Element="_BEaLYj0gEeishMoqItAVIg">
-    <annotations xmi:id="_BEdOsT0gEeishMoqItAVIg" name="Override"/>
-  </UMLLabProfile:Annotations>
-  <UMLLabProfile:LegacyStyledElement xmi:id="_BEfD4D0gEeishMoqItAVIg" base_Element="_BEd1wD0gEeishMoqItAVIg"/>
-  <UMLLabProfile:Annotations xmi:id="_BEfq8D0gEeishMoqItAVIg" base_Element="_BEd1wD0gEeishMoqItAVIg">
-    <annotations xmi:id="_BEgSAD0gEeishMoqItAVIg" name="Override"/>
-  </UMLLabProfile:Annotations>
-  <UMLLabProfile:Generics xmi:id="_BEqqED0gEeishMoqItAVIg" genericsValue="Boolean" base_Element="_BEo04T0gEeishMoqItAVIg"/>
-  <UMLLabProfile:Generics xmi:id="_BEuUcD0gEeishMoqItAVIg" genericsValue="Integer" base_Element="_BEsfQD0gEeishMoqItAVIg"/>
   <UMLLabProfile:LegacyStyledElement xmi:id="_BFfwgD0gEeishMoqItAVIg" base_Element="_BFfJcD0gEeishMoqItAVIg"/>
   <UMLLabProfile:Annotations xmi:id="_BFg-oD0gEeishMoqItAVIg" base_Element="_BFfJcD0gEeishMoqItAVIg">
     <annotations xmi:id="_BFg-oT0gEeishMoqItAVIg" name="Override"/>
@@ -726,21 +473,6 @@
   <UMLLabProfile:Reference xmi:id="_BJ024D0gEeishMoqItAVIg" base_Element="_BJzowD0gEeishMoqItAVIg"/>
   <UMLLabProfile:Reference xmi:id="_BJ3TID0gEeishMoqItAVIg" base_Element="_BJ2FAD0gEeishMoqItAVIg"/>
   <UMLLabProfile:Reference xmi:id="_BJ5vYD0gEeishMoqItAVIg" base_Element="_BJ4hQD0gEeishMoqItAVIg"/>
-  <UMLLabProfile:LegacyStyledElement xmi:id="_BKC5UD0gEeishMoqItAVIg" base_Element="_BKBrMD0gEeishMoqItAVIg"/>
-  <UMLLabProfile:LegacyStyledElement xmi:id="_BKEHcD0gEeishMoqItAVIg" base_Element="_BKDgYD0gEeishMoqItAVIg"/>
-  <UMLLabProfile:LegacyStyledElement xmi:id="_BKF8oD0gEeishMoqItAVIg" base_Element="_BKFVkD0gEeishMoqItAVIg"/>
-  <UMLLabProfile:LegacyStyledElement xmi:id="_BKGjsD0gEeishMoqItAVIg" base_Element="_BKF8oT0gEeishMoqItAVIg"/>
-  <UMLLabProfile:Generics xmi:id="_BKIY4D0gEeishMoqItAVIg" genericsValue="Boolean" base_Element="_BKHKwD0gEeishMoqItAVIg"/>
-  <UMLLabProfile:LegacyStyledElement xmi:id="_BKI_8D0gEeishMoqItAVIg" base_Element="_BKHKwD0gEeishMoqItAVIg"/>
-  <UMLLabProfile:Generics xmi:id="_BKK1ID0gEeishMoqItAVIg" genericsValue="Integer" base_Element="_BKJnAD0gEeishMoqItAVIg"/>
-  <UMLLabProfile:LegacyStyledElement xmi:id="_BKLcMD0gEeishMoqItAVIg" base_Element="_BKJnAD0gEeishMoqItAVIg"/>
-  <UMLLabProfile:LegacyStyledElement xmi:id="_BKNRYD0gEeishMoqItAVIg" base_Element="_BKMDQD0gEeishMoqItAVIg"/>
-  <UMLLabProfile:Reference xmi:id="_BLRBUD0gEeishMoqItAVIg" base_Element="_BLPzMD0gEeishMoqItAVIg"/>
-  <UMLLabProfile:Reference xmi:id="_BLSPcD0gEeishMoqItAVIg" base_Element="_BLRoYD0gEeishMoqItAVIg"/>
-  <UMLLabProfile:Reference xmi:id="_BLayUD0gEeishMoqItAVIg" base_Element="_BLS2gD0gEeishMoqItAVIg"/>
-  <UMLLabProfile:Reference xmi:id="_BLcAcD0gEeishMoqItAVIg" base_Element="_BLayUT0gEeishMoqItAVIg"/>
-  <UMLLabProfile:Reference xmi:id="_BLdOkD0gEeishMoqItAVIg" base_Element="_BLcAcT0gEeishMoqItAVIg"/>
-  <UMLLabProfile:Reference xmi:id="_BLecsD0gEeishMoqItAVIg" base_Element="_BLdOkT0gEeishMoqItAVIg"/>
   <UMLLabProfile:Reference xmi:id="_BLfq0D0gEeishMoqItAVIg" base_Element="_BLecsT0gEeishMoqItAVIg"/>
   <UMLLabProfile:Reference xmi:id="_BLg48D0gEeishMoqItAVIg" base_Element="_BLfq0T0gEeishMoqItAVIg"/>
   <UMLLabProfile:Reference xmi:id="_BLiHED0gEeishMoqItAVIg" base_Element="_BLg48T0gEeishMoqItAVIg"/>
@@ -757,4 +489,7 @@
   <UMLLabProfile:Reference xmi:id="_BLuUUD0gEeishMoqItAVIg" base_Element="_BLttQD0gEeishMoqItAVIg"/>
   <UMLLabProfile:Reference xmi:id="_BLvicD0gEeishMoqItAVIg" base_Element="_BLuUUT0gEeishMoqItAVIg"/>
   <UMLLabProfile:Reference xmi:id="_BLwwkD0gEeishMoqItAVIg" base_Element="_BLvicT0gEeishMoqItAVIg"/>
+  <UMLLabProfile:Reference xmi:id="_FYXdcD0sEeishMoqItAVIg" base_Element="_FYVoQD0sEeishMoqItAVIg"/>
+  <UMLLabProfile:Reference xmi:id="_FYZSoD0sEeishMoqItAVIg" base_Element="_FYYEgD0sEeishMoqItAVIg"/>
+  <UMLLabProfile:Reference xmi:id="_FYjqsD0sEeishMoqItAVIg" base_Element="_FYickD0sEeishMoqItAVIg"/>
 </xmi:XMI>
