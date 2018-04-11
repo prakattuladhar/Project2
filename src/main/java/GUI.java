@@ -20,6 +20,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.NumberFormat;
 
+@SuppressWarnings("restriction")
 public class GUI extends JFrame {
 
     private FridgeState fridgeState;
@@ -157,7 +158,7 @@ public class GUI extends JFrame {
         //observer for fridgeTemparature
         Observer<? super Integer> observerFridgeTemparature = new Observer<Integer>() {
             @Override
-            public void onSubscribe(Disposable disposable) {
+            public void onSubscribe(Disposable disposable){
 
             }
 
