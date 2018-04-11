@@ -6,13 +6,9 @@ GUI for refrigirator
 import State.FreezerState;
 import State.FridgeState;
 import State.RoomState;
-import Threads.FridgeCompressor;
-import com.sun.org.apache.xpath.internal.operations.Bool;
-import io.reactivex.Observable;
 import io.reactivex.Observer;
-import io.reactivex.functions.Action;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
+
 
 import javax.swing.*;
 import java.awt.*;
@@ -156,6 +152,7 @@ public class GUI extends JFrame {
 
         //observer for fridgeTemparature
         Observer<? super Integer> observerFridgeTemparature = new Observer<Integer>() {
+
             @Override
             public void onSubscribe(Disposable disposable) {
 
