@@ -1,8 +1,8 @@
-package State;
+package Context;
 
 import io.reactivex.subjects.BehaviorSubject;
 
-public abstract class RefrigiratorState {
+public abstract class RefrigiratorContext {
     protected int temparature;
     protected boolean light;
 

@@ -3,9 +3,8 @@
 GUI for refrigirator
  */
 
-import State.FreezerState;
-import State.FridgeState;
-import State.RoomState;
+import Context.FridgeContext;
+import Context.RoomContext;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
@@ -16,15 +15,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.NumberFormat;
 
+@SuppressWarnings("restriction")
 public class GUI extends JFrame {
 
-    private FridgeState fridgeState;
+    private FridgeContext fridgeContext;
     private JLabel fridgeLightStatus=new JLabel("off");
     private JLabel freezerLightStatus=new JLabel("off");
     private JLabel fridgeStatus=new JLabel("idle");
     private JLabel freezerStatus=new JLabel("idle");
-    private JLabel fridgeTempStatus=new JLabel(String.valueOf(RoomState.getInstance().getRoomTemp()));
-    private JLabel freezerTempStatus=new JLabel(String.valueOf(RoomState.getInstance().getRoomTemp()));
+    private JLabel fridgeTempStatus=new JLabel(String.valueOf(RoomContext.getInstance().getRoomTemp()));
+    private JLabel freezerTempStatus=new JLabel(String.valueOf(RoomContext.getInstance().getRoomTemp()));
 
     private JFormattedTextField roomTempInput=new JFormattedTextField(NumberFormat.getIntegerInstance());
     private JFormattedTextField fridgeTempInput=new JFormattedTextField(NumberFormat.getIntegerInstance());
@@ -38,9 +38,9 @@ public class GUI extends JFrame {
     private JButton openFreezer=new JButton("Open Freezer Door");
     private JButton closeFreezer=new JButton("Close Freezer Door");
 
-    public GUI(FridgeState fridgeState){
+    public GUI(FridgeContext fridgeContext){
         super("Refrigirator");
-        this.fridgeState=fridgeState;
+        this.fridgeContext = fridgeContext;
 
         JPanel statusArea=new JPanel(new GridLayout(3,2));
         JPanel buttonsAndShit=new JPanel(new GridLayout(2,2));
@@ -154,7 +154,7 @@ public class GUI extends JFrame {
         Observer<? super Integer> observerFridgeTemparature = new Observer<Integer>() {
 
             @Override
-            public void onSubscribe(Disposable disposable) {
+            public void onSubscribe(Disposable disposable){
 
             }
 
@@ -177,8 +177,8 @@ public class GUI extends JFrame {
         };
 
         //subscribing to observables/subject in this case
-        fridgeState.getSubjectLight().subscribe(observerFridgeLight);
-        fridgeState.getSubjectTemparature().subscribe(observerFridgeTemparature);
+        fridgeContext.getSubjectLight().subscribe(observerFridgeLight);
+        fridgeContext.getSubjectTemparature().subscribe(observerFridgeTemparature);
     }
 
 
@@ -206,13 +206,13 @@ public class GUI extends JFrame {
 
     //helper functions
     private void openFridgeDoor() {
-        fridgeState.setLight(true);
+        fridgeContext.setLight(true);
     }
     private void closeFridgeDoor(){
-        fridgeState.setLight(false);
+        fridgeContext.setLight(false);
     }
     private void setFridgeTemparature(){
-            fridgeState.getSubjectTemparature().onNext(Integer.valueOf(fridgeTempInput.getText()));
+            fridgeContext.getSubjectTemparature().onNext(Integer.valueOf(fridgeTempInput.getText()));
     }
 
 

@@ -1,17 +1,17 @@
-package State;
+package Context;
 
 import io.reactivex.subjects.BehaviorSubject;
 
-public class FreezerState extends RefrigiratorState{
-    private static FreezerState ourInstance = new FreezerState();
+public class FreezerContext extends RefrigiratorContext {
+    private static FreezerContext ourInstance = new FreezerContext();
 
-    public static FreezerState getInstance() {
+    public static FreezerContext getInstance() {
         return ourInstance;
     }
 
-    private FreezerState() {
+    private FreezerContext() {
         light=false;
-        temparature=RoomState.getInstance().getRoomTemp();
+        temparature= RoomContext.getInstance().getRoomTemp();
 
     }
 

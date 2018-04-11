@@ -1,15 +1,15 @@
-package State;
+package Context;
 
 import io.reactivex.subjects.BehaviorSubject;
 
-public class FridgeState extends RefrigiratorState{
-    private static FridgeState ourInstance = new FridgeState();
+public class FridgeContext extends RefrigiratorContext {
+    private static FridgeContext ourInstance = new FridgeContext();
 
-    public static FridgeState getInstance() {
+    public static FridgeContext getInstance() {
         return ourInstance;
     }
 
-    private FridgeState(){
+    private FridgeContext(){
         light=false;
         subjectLight=BehaviorSubject.create();
         subjectTemparature=BehaviorSubject.create();

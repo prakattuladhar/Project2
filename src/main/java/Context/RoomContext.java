@@ -1,15 +1,15 @@
-package State;
+package Context;
 
-public class RoomState {
-    private static RoomState ourInstance = new RoomState();
+public class RoomContext {
+    private static RoomContext ourInstance = new RoomContext();
 
 
     private int roomTemp;
-    public static RoomState getInstance() {
+    public static RoomContext getInstance() {
         return ourInstance;
     }
 
-    private RoomState() {
+    private RoomContext() {
         roomTemp=65;
     }
 
