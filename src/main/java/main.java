@@ -1,9 +1,9 @@
 
-import State.FridgeState;
+import Context.FridgeContext;
 
 public class main {
     public static void main(String[] args){
-        GUI gui=new GUI(FridgeState.getInstance());
+        GUI gui=new GUI(FridgeContext.getInstance());
 
     }
 }
