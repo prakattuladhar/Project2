@@ -1,11 +1,11 @@
 
 import java.io.IOException;
 
-import Context.FridgeContext;
+import context.RefridgeratorContext;
 
 public class main {
     public static void main(String[] args) throws IOException{
-        GUI gui=new GUI(FridgeContext.getInstance());
+        GUI gui = new GUI();
 
     }
 }
