@@ -1,10 +1,12 @@
-/*
-@aurthor:Prakat Tuladhar
-GUI for refrigirator
+/**
+ * 
+ * @author:Prakat Tuladhar
+ * @version 0.1
+ * 
+ * GUI for refrigirator
  */
 
-import Context.FridgeContext;
-import Context.RoomContext;
+import context.RefridgeratorContext;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
@@ -19,13 +21,13 @@ import java.text.NumberFormat;
 @SuppressWarnings("restriction")
 public class GUI extends JFrame {
 
-    private FridgeContext fridgeContext;
+    private RefridgeratorContext fridgeContext;
     private JLabel fridgeLightStatus=new JLabel("off");
     private JLabel freezerLightStatus=new JLabel("off");
     private JLabel fridgeStatus=new JLabel("idle");
     private JLabel freezerStatus=new JLabel("idle");
-    private JLabel fridgeTempStatus=new JLabel(String.valueOf(RoomContext.getInstance().getRoomTemp()));
-    private JLabel freezerTempStatus=new JLabel(String.valueOf(RoomContext.getInstance().getRoomTemp()));
+    private JLabel fridgeTempStatus=new JLabel("temp");
+    private JLabel freezerTempStatus=new JLabel("temp");
 
     private JFormattedTextField roomTempInput=new JFormattedTextField(NumberFormat.getIntegerInstance());
     private JFormattedTextField fridgeTempInput=new JFormattedTextField(NumberFormat.getIntegerInstance());
@@ -39,9 +41,9 @@ public class GUI extends JFrame {
     private JButton openFreezer=new JButton("Open Freezer Door");
     private JButton closeFreezer=new JButton("Close Freezer Door");
 
-    public GUI(FridgeContext fridgeContext) throws IOException{
+    public GUI() throws IOException{
         super("Refrigirator");
-        this.fridgeContext = fridgeContext;
+        this.fridgeContext = RefridgeratorContext.instance();
         Common.initialize();
 
         JPanel statusArea=new JPanel(new GridLayout(3,2));
@@ -180,7 +182,7 @@ public class GUI extends JFrame {
 
         //subscribing to observables/subject in this case
         fridgeContext.getSubjectLight().subscribe(observerFridgeLight);
-        fridgeContext.getSubjectTemparature().subscribe(observerFridgeTemparature);
+        fridgeContext.getSubjectTemperature().subscribe(observerFridgeTemparature);
     }
 
 
@@ -214,7 +216,7 @@ public class GUI extends JFrame {
         fridgeContext.setLight(false);
     }
     private void setFridgeTemparature(){
-            fridgeContext.getSubjectTemparature().onNext(Integer.valueOf(fridgeTempInput.getText()));
+            fridgeContext.getSubjectTemperature().onNext(Integer.valueOf(fridgeTempInput.getText()));
     }
 
 
