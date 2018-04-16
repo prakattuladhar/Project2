@@ -12,6 +12,5 @@ public abstract class AbstractDoorClosedState extends AbstractRefridgeratorState
 	public void run() {
 		// TODO Auto-generated method stub
 
-
 	}
 }

@@ -13,5 +13,4 @@ public abstract class AbstractDoorOpenState extends AbstractRefridgeratorState {
 		// TODO Auto-generated method stub
 
 	}
-
 }

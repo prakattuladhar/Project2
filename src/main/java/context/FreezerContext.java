@@ -19,6 +19,7 @@ public class FreezerContext extends AbstractRefridgeratorContext {
 		subjectLight = BehaviorSubject.create();
         subjectTemperature = BehaviorSubject.create();
 		
+        
 	}
 	/**
 	 * 

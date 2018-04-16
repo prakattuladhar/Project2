@@ -24,4 +24,5 @@ public class RefridgeratorDoorClosedState extends AbstractDoorClosedState {
 		}
 		return instance;
 	}
+	
 }

@@ -31,4 +31,5 @@ public class RefridgeratorContext extends AbstractRefridgeratorContext {
 		return instance;
 	}
 	
+	
 }

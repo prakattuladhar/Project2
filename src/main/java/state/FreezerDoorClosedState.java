@@ -24,4 +24,5 @@ public class FreezerDoorClosedState extends AbstractDoorClosedState {
 		}
 		return instance;
 	}
+	
 }

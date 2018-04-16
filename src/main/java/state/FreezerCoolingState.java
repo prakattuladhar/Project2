@@ -24,4 +24,5 @@ public class FreezerCoolingState extends AbstractCoolingState {
 		}
 		return instance;
 	}
+	
 }
