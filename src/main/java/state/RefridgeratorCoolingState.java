@@ -1,4 +1,4 @@
-package state;
+package State;
 
 /**
  * 
@@ -6,7 +6,7 @@ package state;
  * @version 0.1
  *
  */
-public class RefridgeratorCoolingState extends AbstractCoolingState {
+public class RefridgeratorCoolingState extends state.AbstractCoolingState {
 
 	private static RefridgeratorCoolingState instance;
 	/**

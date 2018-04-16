@@ -16,8 +16,8 @@ public class RefridgeratorContext extends AbstractRefridgeratorContext {
 	 */
 	private RefridgeratorContext() {
 		instance = this;
-		subjectLight = BehaviorSubject.create();
-        subjectTemperature = BehaviorSubject.create();
+		this.setLight(false);
+		setTemperature(RoomContext.getInstance().getRoomTemparature());
 		
 	}
 	/**

@@ -10,6 +10,7 @@ import context.AbstractRefridgeratorContext;
 public abstract class AbstractRefridgeratorState {
 	
 	protected AbstractRefridgeratorContext context;
+	protected int rateLoss;//in 30 secs or 2
 	
 	/**
 	 * Initialize and add subscriptions to observables

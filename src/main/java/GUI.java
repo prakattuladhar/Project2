@@ -6,6 +6,7 @@
  * GUI for refrigirator
  */
 
+import Threads.Clock;
 import context.RefridgeratorContext;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
@@ -122,6 +123,7 @@ public class GUI extends JFrame {
         addActionListeners();
         pack();
         setVisible(true);
+
     }
 
 
@@ -216,7 +218,7 @@ public class GUI extends JFrame {
         fridgeContext.setLight(false);
     }
     private void setFridgeTemparature(){
-            fridgeContext.getSubjectTemperature().onNext(Integer.valueOf(fridgeTempInput.getText()));
+            fridgeContext.setTemperature(Integer.valueOf(fridgeTempInput.getText()));
     }
 
 
