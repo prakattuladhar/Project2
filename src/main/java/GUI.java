@@ -41,7 +41,7 @@ public class GUI extends JFrame {
     private JButton closeFridge=new JButton("Close Fridge Door");
     private JButton openFreezer=new JButton("Open Freezer Door");
     private JButton closeFreezer=new JButton("Close Freezer Door");
-    private Clock clock;
+
 
     public GUI() throws IOException{
         super("Refrigirator");
@@ -124,7 +124,7 @@ public class GUI extends JFrame {
         addActionListeners();
         pack();
         setVisible(true);
-        clock=new Clock();
+
     }
 
 
