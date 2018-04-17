@@ -1,4 +1,4 @@
-package State;
+package state;
 
 import Threads.Clock;
 import context.RefridgeratorContext;

@@ -83,7 +83,7 @@ public class GUI extends JFrame {
          buttonsAndShit.add(openFreezer);
          buttonsAndShit.add(closeFreezer);
 
-         //init status area
+         //init status arear
         tempPanel=new JPanel(new FlowLayout());
         tempPanel.add(new JLabel("Fridge Light :"));
         tempPanel.add(fridgeLightStatus);
