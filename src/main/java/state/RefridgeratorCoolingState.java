@@ -6,7 +6,7 @@ package State;
  * @version 0.1
  *
  */
-public class RefridgeratorCoolingState extends state.AbstractCoolingState {
+public class RefridgeratorCoolingState extends AbstractCoolingState {
 
 	private static RefridgeratorCoolingState instance;
 	/**
@@ -23,6 +23,10 @@ public class RefridgeratorCoolingState extends state.AbstractCoolingState {
 			instance = new RefridgeratorCoolingState();
 		}
 		return instance;
+	}
+
+	public void initObervers(){
+
 	}
 	
 }

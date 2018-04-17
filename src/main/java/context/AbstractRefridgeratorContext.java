@@ -13,11 +13,11 @@ public abstract class AbstractRefridgeratorContext {
 	
 	protected AbstractRefridgeratorState currentState;
 	
-	protected int temperature;
-    protected boolean light;
 
-    protected BehaviorSubject<Boolean> subjectLight= BehaviorSubject.create();; //this is the observable
-    protected BehaviorSubject<Integer> subjectTemperature=BehaviorSubject.create();; //this is the observable
+
+    protected BehaviorSubject<Boolean> subjectLight= BehaviorSubject.create(); //this is the observable
+    protected BehaviorSubject<Integer> subjectTemperature=BehaviorSubject.create(); //this is the observable
+	protected BehaviorSubject<Integer> subjectDesiredTemperature=BehaviorSubject.create(); //this is the observable
     
     /**
 	 * Called from the states to change the current state
@@ -37,10 +37,9 @@ public abstract class AbstractRefridgeratorContext {
 	
 	/**
 	 * 
-	 * @param light
+	 * @param light:boolean
 	 */
 	public void setLight(boolean light) {
-		this.light = light;
 		subjectLight.onNext(light);
 	}
 	/**
@@ -52,10 +51,9 @@ public abstract class AbstractRefridgeratorContext {
     }
     /**
      * 
-     * @param temperature
+     * @param temperature:int
      */
     public void setTemperature(int temperature) {
-    	this.temperature = temperature;
     	subjectTemperature.onNext(temperature);
     };
     /**
@@ -65,6 +63,13 @@ public abstract class AbstractRefridgeratorContext {
     public BehaviorSubject<Integer> getSubjectTemperature() {
     	return subjectTemperature;
     };
-    
+
+    public void setSubjectDesiredTemperature(int temperature){
+    	subjectDesiredTemperature.onNext(temperature);
+	}
+
+	public BehaviorSubject<Integer> getDesiredTemparature(){
+    	return subjectDesiredTemperature;
+	}
     
 }

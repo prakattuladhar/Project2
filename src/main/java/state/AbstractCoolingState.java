@@ -1,6 +1,6 @@
-package state;
+package State;
 
-public abstract class AbstractCoolingState extends AbstractRefridgeratorState {
+public abstract class AbstractCoolingState extends state.AbstractRefridgeratorState {
 
 	@Override
 	public void run() {

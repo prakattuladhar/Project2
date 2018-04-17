@@ -34,17 +34,17 @@ public class Clock extends Object {
             clock.onNext(clock.getValue() + 1);
 
 
-            if(clock.getValue()%rateLoss==0){
-               try {
-                   if(fridgeContext.getSubjectTemperature().getValue()<RoomContext.getInstance().getRoomTemparature()) {
-                       System.out.println("Temparature raised");
-                       fridgeContext.setTemperature(fridgeContext.getSubjectTemperature().getValue() + 1);
-                       System.out.println(fridgeContext.getSubjectTemperature().getValue());
-                   }
-               }catch (Exception e){
-                   System.out.print(e.fillInStackTrace());
-               }
-            }
+//            if(clock.getValue()%rateLoss==0){
+//               try {
+//                   if(fridgeContext.getSubjectTemperature().getValue()<RoomContext.getInstance().getRoomTemparature()) {
+//                       System.out.println("Temparature raised");
+//                       fridgeContext.setTemperature(fridgeContext.getSubjectTemperature().getValue() + 1);
+//                       System.out.println(fridgeContext.getSubjectTemperature().getValue());
+//                   }
+//               }catch (Exception e){
+//                   System.out.print(e.fillInStackTrace());
+//               }
+//            }
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {

@@ -6,7 +6,7 @@ package State;
  * @version 0.1
  *
  */
-public class FreezerCoolingState extends state.AbstractCoolingState {
+public class FreezerCoolingState extends AbstractCoolingState {
 
 	private static FreezerCoolingState instance;
 	/**

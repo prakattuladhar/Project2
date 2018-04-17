@@ -1,4 +1,4 @@
-package state;
+package State;
 
 /**
  * 
@@ -6,7 +6,7 @@ package state;
  * @version 0.1
  *
  */
-public class FreezerDoorOpenState extends AbstractDoorOpenState {
+public class FreezerDoorOpenState extends state.AbstractDoorOpenState {
 
 	private static FreezerDoorOpenState instance;
 	/**
