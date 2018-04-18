@@ -10,11 +10,10 @@ import context.Common;
  */
 public abstract class AbstractRefridgeratorState {
 	protected AbstractRefridgeratorContext context;
-	protected int rate, diff;
-	public AbstractRefridgeratorState(AbstractRefridgeratorContext context, int rate, int diff) {
+	protected int rate;
+	public AbstractRefridgeratorState(AbstractRefridgeratorContext context, int rate) {
 		this.context=context;
 		this.rate=rate;
-		this.diff=diff;
 	}
 	protected int rateLoss;//in 30 secs or 2
 	
@@ -44,9 +43,7 @@ public abstract class AbstractRefridgeratorState {
 		if(context.getSubjectTemperature().getValue() > Common.getRoomTemp()) {
 			context.setTemperature(Common.getRoomTemp());
 		}
-		if(context.getSubjectTemperature().getValue()<context.getDesiredTemparature().getValue()) {
-			tempReached();
-		}
+		tempReached();
 	}
 	
 }
