@@ -2,25 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9a669aa-0f89-4e99-a8d9-08093d69cc76" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/context/FridgeContext.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/context/RefrigiratorContext.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Common.java" afterPath="$PROJECT_DIR$/src/main/java/Common.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI.java" afterPath="$PROJECT_DIR$/src/main/java/GUI.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/State/StateManager.java" afterPath="$PROJECT_DIR$/src/main/java/state/StateManager.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/context/AbstractRefridgeratorContext.java" afterPath="$PROJECT_DIR$/src/main/java/context/AbstractRefridgeratorContext.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/state/AbstractCoolingState.java" afterPath="$PROJECT_DIR$/src/main/java/state/AbstractCoolingState.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/state/AbstractRefridgeratorState.java" afterPath="$PROJECT_DIR$/src/main/java/state/AbstractRefridgeratorState.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/state/FreezerCoolingState.java" afterPath="$PROJECT_DIR$/src/main/java/state/FreezerCoolingState.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/state/FreezerDoorClosedState.java" afterPath="$PROJECT_DIR$/src/main/java/state/FreezerDoorClosedState.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/state/FreezerDoorOpenState.java" afterPath="$PROJECT_DIR$/src/main/java/state/FreezerDoorOpenState.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/state/RefridgeratorCoolingState.java" afterPath="$PROJECT_DIR$/src/main/java/state/RefridgeratorCoolingState.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/state/RefridgeratorDoorClosedState.java" afterPath="$PROJECT_DIR$/src/main/java/state/RefridgeratorDoorClosedState.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/state/RefridgeratorDoorOpenState.java" afterPath="$PROJECT_DIR$/src/main/java/state/RefridgeratorDoorOpenState.java" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI$1.class" afterPath="$PROJECT_DIR$/target/classes/GUI$1.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI$2.class" afterPath="$PROJECT_DIR$/target/classes/GUI$2.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI$3.class" afterPath="$PROJECT_DIR$/target/classes/GUI$3.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI$4.class" afterPath="$PROJECT_DIR$/target/classes/GUI$4.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI$5.class" afterPath="$PROJECT_DIR$/target/classes/GUI$5.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Threads/Clock.java" afterPath="$PROJECT_DIR$/src/main/java/Threads/Clock.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,7 +42,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AbstractCoolingState.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AbstractCoolingState.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/State/AbstractCoolingState.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
@@ -69,6 +51,16 @@
                 <element signature="e#236#237#0" expanded="true" />
                 <element signature="e#269#270#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractRefridgeratorState.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/State/AbstractRefridgeratorState.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="7" lean-forward="true" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -85,19 +77,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RoomContext.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/context/RoomContext.java">
+      <file leaf-file-name="Common.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Common.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="3" lean-forward="false" selection-start-line="7" selection-start-column="3" selection-end-line="9" selection-end-column="5" />
-              <folding>
-                <element signature="e#188#189#0" expanded="true" />
-                <element signature="e#222#223#0" expanded="true" />
-                <element signature="e#251#252#0" expanded="true" />
-                <element signature="e#285#286#0" expanded="true" />
-                <element signature="e#323#324#0" expanded="true" />
-                <element signature="e#361#362#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="30">
+              <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -125,11 +110,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Clock.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Clock.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Threads/Clock.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="11" />
+            <state relative-caret-position="270">
+              <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#385#386#0" expanded="true" />
@@ -148,16 +133,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
               <caret line="23" column="7" lean-forward="false" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FreezerDoorOpenState.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/State/FreezerDoorOpenState.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="24" lean-forward="false" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -213,13 +188,13 @@
         <option value="$PROJECT_DIR$/src/main/java/State/FreezerDoorClosedState.java" />
         <option value="$PROJECT_DIR$/src/main/java/State/FreezerDoorOpenState.java" />
         <option value="$PROJECT_DIR$/src/main/java/State/StateManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Threads/Clock.java" />
         <option value="$PROJECT_DIR$/src/main/java/context/AbstractRefridgeratorContext.java" />
         <option value="$PROJECT_DIR$/src/main/java/context/RefridgeratorContext.java" />
         <option value="$PROJECT_DIR$/src/main/java/GUI.java" />
         <option value="$PROJECT_DIR$/src/main/java/State/AbstractDoorClosedState.java" />
         <option value="$PROJECT_DIR$/src/main/java/State/AbstractDoorOpenState.java" />
         <option value="$PROJECT_DIR$/src/main/java/State/AbstractCoolingState.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Threads/Clock.java" />
       </list>
     </option>
   </component>
@@ -1700,22 +1675,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Common.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/State/AbstractRefridgeratorState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="7" lean-forward="true" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/context/FreezerContext.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1803,32 +1762,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/State/StateManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="44" column="38" lean-forward="false" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Threads/Clock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#385#386#0" expanded="true" />
-            <element signature="e#419#420#0" expanded="true" />
-            <element signature="e#599#600#0" expanded="true" />
-            <element signature="e#644#645#0" expanded="true" />
-            <element signature="e#757#758#0" expanded="true" />
-            <element signature="e#785#786#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/context/AbstractRefridgeratorContext.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="632">
@@ -1887,6 +1820,48 @@
           <folding>
             <element signature="e#236#237#0" expanded="true" />
             <element signature="e#269#270#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/State/AbstractRefridgeratorState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="7" lean-forward="true" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/State/StateManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="44" column="38" lean-forward="false" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Common.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Threads/Clock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#385#386#0" expanded="true" />
+            <element signature="e#419#420#0" expanded="true" />
+            <element signature="e#599#600#0" expanded="true" />
+            <element signature="e#644#645#0" expanded="true" />
+            <element signature="e#757#758#0" expanded="true" />
+            <element signature="e#785#786#0" expanded="true" />
           </folding>
         </state>
       </provider>
