@@ -3,6 +3,8 @@ package context;
 import io.reactivex.subjects.BehaviorSubject;
 import state.AbstractRefridgeratorState;
 
+import java.util.function.BooleanSupplier;
+
 /**
  * 
  * @author Colin Quinn
@@ -16,6 +18,7 @@ public abstract class AbstractRefridgeratorContext {
     protected BehaviorSubject<Boolean> subjectLight= BehaviorSubject.create(); //this is the observable
     protected BehaviorSubject<Integer> subjectTemperature=BehaviorSubject.create(); //this is the observable
 	protected BehaviorSubject<Integer> subjectDesiredTemperature=BehaviorSubject.create(); //this is the observable
+	protected BehaviorSubject<Boolean> subjectIsCooling=BehaviorSubject.create();
     
     /**
 	 * Called from the states to change the current state
@@ -51,6 +54,12 @@ public abstract class AbstractRefridgeratorContext {
      * 
      * @param temperature:int
      */
+    public void setIsCooling(Boolean b){
+    	subjectIsCooling.onNext(b);
+	}
+	public BehaviorSubject<Boolean> getIsCooling(){
+		return subjectIsCooling;
+	}
     public void setTemperature(int temperature) {
     	subjectTemperature.onNext(temperature);
     };

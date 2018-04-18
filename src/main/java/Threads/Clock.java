@@ -7,14 +7,16 @@ import io.reactivex.subjects.BehaviorSubject;
 import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 public class Clock extends Object {
-    private RefridgeratorContext fridgeContext=RefridgeratorContext.instance();
+    private static Clock ourInstance = new Clock();
     private BehaviorSubject<Integer> clock;
-    private int rateLoss;
 
-    public Clock() {
+    public static Clock getInstance() {
+        return ourInstance;
+    }
+
+    private Clock() {
         clock=BehaviorSubject.create();
         clock.onNext(0);
-        rateLoss=5;
         Runnable r = new Runnable() {
             @Override
             public void run() {
@@ -29,6 +31,7 @@ public class Clock extends Object {
         return clock;
     }
     public void updateClock() {
+
         while (true) {
             System.out.println(clock.getValue());
             clock.onNext(clock.getValue() + 1);

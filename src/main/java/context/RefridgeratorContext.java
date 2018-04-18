@@ -18,7 +18,7 @@ public class RefridgeratorContext extends AbstractRefridgeratorContext {
 		instance = this;
 		this.setLight(false);
 		setTemperature(RoomContext.getInstance().getRoomTemparature());
-		
+		this.setIsCooling(false);
 	}
 	/**
 	 * 

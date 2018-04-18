@@ -1,4 +1,6 @@
-package state;
+package State;
+
+import context.AbstractRefridgeratorContext;
 
 /**
  * 
@@ -6,7 +8,11 @@ package state;
  * @version 0.1
  *
  */
-public abstract class AbstractDoorOpenState extends AbstractRefridgeratorState {
+public abstract class AbstractDoorOpenState extends state.AbstractRefridgeratorState {
+
+	public AbstractDoorOpenState(AbstractRefridgeratorContext context, int rate, int diff) {
+		super(context, rate, diff);
+	}
 
 	@Override
 	public void run() {
