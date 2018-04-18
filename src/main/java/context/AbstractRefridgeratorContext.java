@@ -12,10 +12,7 @@ import state.AbstractRefridgeratorState;
 public abstract class AbstractRefridgeratorContext {
 	
 	protected AbstractRefridgeratorState currentState;
-	protected int currentTemp;
 	
-
-
     protected BehaviorSubject<Boolean> subjectLight= BehaviorSubject.create(); //this is the observable
     protected BehaviorSubject<Integer> subjectTemperature=BehaviorSubject.create(); //this is the observable
 	protected BehaviorSubject<Integer> subjectDesiredTemperature=BehaviorSubject.create(); //this is the observable
@@ -72,7 +69,4 @@ public abstract class AbstractRefridgeratorContext {
 	public BehaviorSubject<Integer> getDesiredTemparature(){
     	return subjectDesiredTemperature;
 	}
-    public int getCurrentTemp() {
-    	return currentTemp;
-    }
 }

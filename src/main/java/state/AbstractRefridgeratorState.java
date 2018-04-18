@@ -29,6 +29,9 @@ public abstract class AbstractRefridgeratorState {
 		tempChange();
 	}
 	private void tempChange() {
-		
+		context.setTemperature(context.getSubjectTemperature().getValue() + rate);
+		if(context.getSubjectTemperature().getValue() > Common.getRoomTemp()) {
+			context.setTemperature(Common.getRoomTemp);
+		}
 	}
 }
