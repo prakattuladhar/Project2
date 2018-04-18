@@ -1,18 +1,22 @@
 package state;
 
+import context.Common;
+import context.RefridgeratorContext;
+
 /**
  * 
  * @author Colin Quinn
  * @version 0.1
  *
  */
-public class RefridgeratorDoorOpenState extends state.AbstractDoorOpenState {
+public class RefridgeratorDoorOpenState extends AbstractRefridgeratorState {
 
 	private static RefridgeratorDoorOpenState instance;
 	/**
 	 * Supports Singleton patter
 	 */
-	private RefridgeratorDoorOpenState() {		
+	private RefridgeratorDoorOpenState() {	
+		super(RefridgeratorContext.instance(), Common.getFridgeRateLossDoorOpen());
 	}
 	/**
 	 * 
@@ -23,6 +27,20 @@ public class RefridgeratorDoorOpenState extends state.AbstractDoorOpenState {
 			instance = new RefridgeratorDoorOpenState();
 		}
 		return instance;
+	}
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void leave() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void tempReached() {
+		// Do Nothing!!!		
 	}
 	
 }

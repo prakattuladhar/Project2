@@ -1,18 +1,22 @@
 package state;
 
+import context.Common;
+import context.FreezerContext;
+
 /**
  * 
  * @author Colin Quinn
  * @version 0.1
  *
  */
-public class FreezerDoorClosedState extends state.AbstractDoorClosedState {
+public class FreezerDoorClosedState extends AbstractRefridgeratorState {
 
 	private static FreezerDoorClosedState instance;
 	/**
 	 * Supports Singleton pattern
 	 */
-	private FreezerDoorClosedState() {		
+	private FreezerDoorClosedState() {
+		super(FreezerContext.instance(), Common.getFreezerRateLossDoorClosed());
 	}
 	/**
 	 * 
@@ -23,6 +27,24 @@ public class FreezerDoorClosedState extends state.AbstractDoorClosedState {
 			instance = new FreezerDoorClosedState();
 		}
 		return instance;
+	}
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void leave() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void tempReached() {
+		if(context.getSubjectTemperature().getValue()> 
+				context.getDesiredTemparature().getValue() + Common.getFreezerCompressorStartDiff()) 
+		{
+			context.changeCurrentState(FreezerCoolingState.instance());
+		}
 	}
 	
 }

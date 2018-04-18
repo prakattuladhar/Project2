@@ -1,6 +1,7 @@
 package state;
 
 import context.AbstractRefridgeratorContext;
+import context.Common;
 
 /**
  * 
@@ -9,11 +10,10 @@ import context.AbstractRefridgeratorContext;
  */
 public abstract class AbstractRefridgeratorState {
 	protected AbstractRefridgeratorContext context;
-	protected int rate, diff;
-	public AbstractRefridgeratorState(AbstractRefridgeratorContext context, int rate, int diff) {
+	protected int rate;
+	public AbstractRefridgeratorState(AbstractRefridgeratorContext context, int rate) {
 		this.context=context;
 		this.rate=rate;
-		this.diff=diff;
 	}
 	protected int rateLoss;//in 30 secs or 2
 
@@ -29,10 +29,25 @@ public abstract class AbstractRefridgeratorState {
 	 * Remove subscriptions to observables
 	 */
 	public abstract void leave();
+	/**
+	 * What happens when it reaches desired Temperature
+	 */
+	public abstract void tempReached();
+	/**
+	 * What happens on each ClockTick Event
+	 */
 	public void clockTick() {
 		tempChange();
 	}
+	/**
+	 * Changing the temperatures
+	 */
 	private void tempChange() {
-		
+		context.setTemperature(context.getSubjectTemperature().getValue() + rate);
+		if(context.getSubjectTemperature().getValue() > Common.getRoomTemp()) {
+			context.setTemperature(Common.getRoomTemp());
+		}
+		tempReached();
 	}
+	
 }
