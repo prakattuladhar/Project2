@@ -1,6 +1,7 @@
 package state;
 
 import context.AbstractRefridgeratorContext;
+import context.Common;
 
 /**
  * 
@@ -31,7 +32,7 @@ public abstract class AbstractRefridgeratorState {
 	private void tempChange() {
 		context.setTemperature(context.getSubjectTemperature().getValue() + rate);
 		if(context.getSubjectTemperature().getValue() > Common.getRoomTemp()) {
-			context.setTemperature(Common.getRoomTemp);
+			context.setTemperature(Common.getRoomTemp());
 		}
 	}
 }
