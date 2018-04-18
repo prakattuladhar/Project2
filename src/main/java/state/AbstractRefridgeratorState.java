@@ -26,13 +26,27 @@ public abstract class AbstractRefridgeratorState {
 	 * Remove subscriptions to observables
 	 */
 	public abstract void leave();
+	/**
+	 * What happens when it reaches desired Temperature
+	 */
+	public abstract void tempReached();
+	/**
+	 * What happens on each ClockTick Event
+	 */
 	public void clockTick() {
 		tempChange();
 	}
+	/**
+	 * Changing the temperatures
+	 */
 	private void tempChange() {
 		context.setTemperature(context.getSubjectTemperature().getValue() + rate);
 		if(context.getSubjectTemperature().getValue() > Common.getRoomTemp()) {
 			context.setTemperature(Common.getRoomTemp());
 		}
+		if(context.getSubjectTemperature().getValue()<context.getDesiredTemparature().getValue()) {
+			tempReached();
+		}
 	}
+	
 }
