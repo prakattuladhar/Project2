@@ -14,7 +14,7 @@ public class Clock extends Object {
         return ourInstance;
     }
 
-    private Clock() {
+    git p Clock() {
         clock=BehaviorSubject.create();
         clock.onNext(0);
         Runnable r = new Runnable() {

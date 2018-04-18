@@ -5,6 +5,7 @@ import java.io.IOException;
 
 public final class Common {
 	private static int[] info = {0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+	private static int roomTemp = 70;
 	public static void initialize() throws IOException {
 		fileImport();
 	}
@@ -49,6 +50,12 @@ public final class Common {
 	}
 	public static int getFreezerCoolRate() {
 		return info[13];
+	}
+	public static int getRoomTemp() {
+		return roomTemp;
+	}
+	public static void setRoomTemp(int Temp) {
+		roomTemp = Temp;
 	}
 	private static void fileImport() throws IOException {
 		int input[] = new int[14];

@@ -14,6 +14,7 @@ import java.util.function.BooleanSupplier;
 public abstract class AbstractRefridgeratorContext {
 	
 	protected AbstractRefridgeratorState currentState;
+	protected int currentTemp;
 	
 
 
@@ -80,5 +81,7 @@ public abstract class AbstractRefridgeratorContext {
 	public BehaviorSubject<Integer> getDesiredTemparature(){
     	return subjectDesiredTemperature;
 	}
-    
+    public int getCurrentTemp() {
+    	return currentTemp;
+    }
 }
