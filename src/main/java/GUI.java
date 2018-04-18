@@ -183,9 +183,43 @@ public class GUI extends JFrame {
             }
         };
 
+        //observer for fridge status
+        Observer<? super Boolean> observerFridgeStatus = new Observer<Boolean>() {
+            @Override
+            public void onSubscribe(Disposable disposable) {
+
+            }
+
+            @Override
+            public void onNext(Boolean aBoolean) {
+                    if(aBoolean){
+                        fridgeStatus.setText("Cooling");
+                    }else {
+                        fridgeStatus.setText("Idle");
+                    }
+            }
+
+            @Override
+            public void onError(Throwable throwable) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        };
+        //------------------------------------------------------------
+        //obeserver for freezerLight
+
+        //observer for freezerTemparature
+
+        //observer for freezerStatus
+
         //subscribing to observables/subject in this case
         fridgeContext.getSubjectLight().subscribe(observerFridgeLight);
         fridgeContext.getSubjectTemperature().subscribe(observerFridgeTemparature);
+        fridgeContext.getIsCooling().subscribe(observerFridgeStatus);
     }
 
 

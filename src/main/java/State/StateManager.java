@@ -4,10 +4,11 @@ import Threads.Clock;
 import context.RefridgeratorContext;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
+import sun.misc.ConditionLock;
 
 public class StateManager {
 
-    private Clock clock;
+
     private String currentState_fridge;
     private String currentState_freezer;
     private int fridgeRateLoss;
@@ -21,7 +22,7 @@ public class StateManager {
     }
 
     private StateManager() {
-        clock=new Clock();
+
     }
 
     private void initObersers(){
@@ -45,6 +46,6 @@ public class StateManager {
 
             }
         };
-        clock.getClockEvent().subscribe(observerClock);
+        Clock.getInstance().getClockEvent().subscribe(observerClock);
     }
 }
