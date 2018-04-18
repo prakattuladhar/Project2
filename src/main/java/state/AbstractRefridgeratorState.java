@@ -16,7 +16,11 @@ public abstract class AbstractRefridgeratorState {
 		this.diff=diff;
 	}
 	protected int rateLoss;//in 30 secs or 2
-	
+
+    public AbstractRefridgeratorState() {
+
+    }
+
 	/**
 	 * Initialize and add subscriptions to observables
 	 */

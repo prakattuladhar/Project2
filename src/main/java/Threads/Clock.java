@@ -6,7 +6,7 @@ import context.RoomContext;
 import io.reactivex.subjects.BehaviorSubject;
 import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
-public class Clock extends Object {
+public class Clock implements Runnable{
     private static Clock ourInstance = new Clock();
     private BehaviorSubject<Integer> clock;
 
@@ -17,20 +17,20 @@ public class Clock extends Object {
     private Clock() {
         clock=BehaviorSubject.create();
         clock.onNext(0);
-        Runnable r = new Runnable() {
-            @Override
-            public void run() {
-                updateClock();
-            }
-        };
-        Thread t=new Thread(r);
-        t.start();
+//        Runnable r = new Runnable() {
+//            @Override
+//            public void run() {
+//                updateClock();
+//            }
+//        };
+//        Thread t=new Thread(r);
+//        t.start();
     }
 
     public BehaviorSubject getClockEvent(){
         return clock;
     }
-    public void updateClock() {
+    private void updateClock() {
 
         while (true) {
             System.out.println(clock.getValue());
@@ -54,5 +54,12 @@ public class Clock extends Object {
                 e.printStackTrace();
             }
         }
+    }
+
+    @Override
+    public void run() {
+        clock=BehaviorSubject.create();
+        clock.onNext(0);
+        updateClock();
     }
 }

@@ -1,4 +1,4 @@
-package state;
+package State;
 
 /**
  * 
@@ -6,13 +6,14 @@ package state;
  * @version 0.1
  *
  */
-public class FreezerDoorOpenState extends state.AbstractDoorOpenState {
+public class FreezerDoorOpenState extends AbstractDoorOpenState {
 
 	private static FreezerDoorOpenState instance;
 	/**
 	 * Supports Singleton pattern
 	 */
-	private FreezerDoorOpenState() {		
+	private FreezerDoorOpenState() {
+		super();
 	}
 	/**
 	 * 
@@ -24,5 +25,9 @@ public class FreezerDoorOpenState extends state.AbstractDoorOpenState {
 		}
 		return instance;
 	}
-	
+
+	@Override
+	public void leave() {
+
+	}
 }

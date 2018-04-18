@@ -14,6 +14,11 @@ public abstract class AbstractDoorOpenState extends state.AbstractRefridgeratorS
 		super(context, rate, diff);
 	}
 
+    public AbstractDoorOpenState() {
+		super();
+
+	}
+
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
