@@ -6,7 +6,7 @@
  * GUI for refrigirator
  */
 
-import context.Common;
+import context.*;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
@@ -21,7 +21,7 @@ import java.text.NumberFormat;
 @SuppressWarnings("restriction")
 public class GUI extends JFrame {
 
-    private RefridgeratorContext fridgeContext;
+    private FridgeContext fridgeContext;
     private JLabel fridgeLightStatus=new JLabel("off");
     private JLabel freezerLightStatus=new JLabel("off");
     private JLabel fridgeStatus=new JLabel("idle");
@@ -44,7 +44,7 @@ public class GUI extends JFrame {
 
     public GUI() throws IOException{
         super("Refrigirator");
-        this.fridgeContext = RefridgeratorContext.instance();
+        this.fridgeContext = FridgeContext.instance();
         Common.initialize();
 
         JPanel statusArea=new JPanel(new GridLayout(3,2));

@@ -15,10 +15,7 @@ public class FreezerContext extends AbstractRefridgeratorContext {
 	 * Supports Singleton pattern
 	 */
 	private FreezerContext() {
-		instance = this;
-
-		
-        
+		instance = this;    
 	}
 	/**
 	 * 

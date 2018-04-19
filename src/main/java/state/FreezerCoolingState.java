@@ -1,8 +1,7 @@
 package state;
 
-import context.AbstractRefridgeratorContext;
-import context.Common;
-import context.FreezerContext;
+import context.*;
+import observable.*;
 
 /**
  * 
@@ -10,7 +9,8 @@ import context.FreezerContext;
  * @version 0.1
  *
  */
-public class FreezerCoolingState extends AbstractRefridgeratorState{
+public class FreezerCoolingState extends AbstractRefridgeratorState
+	implements DoorOpenListener {
 
 	private static FreezerCoolingState instance;
 	/**
@@ -20,8 +20,9 @@ public class FreezerCoolingState extends AbstractRefridgeratorState{
 		super(FreezerContext.instance(), Common.getFreezerCoolRate() * -1);
 	}
 	/**
+	 * Gets only instance of this object
 	 * 
-	 * @return
+	 * @return only instance of FreezerCoolingState
 	 */
 	public static FreezerCoolingState instance() {
 		if (instance == null) {
@@ -31,13 +32,21 @@ public class FreezerCoolingState extends AbstractRefridgeratorState{
 	}
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
+		// Subscribe to Events
+		FreezerDoorOpenListenerList.instance().addListener(instance);
 		
+		// TODO: Change context variables
 	}
 	@Override
 	public void leave() {
-		// TODO Auto-generated method stub
+		// Unsubscribe from Events
+		FreezerDoorOpenListenerList.instance().removeListener(instance);
 		
+		// TODO: Change context variables
+	}
+	@Override
+	public void onDoorOpen(DoorOpenEvent event) {
+		context.changeCurrentState( FreezerDoorOpenState.instance() );
 	}
 	@Override
 	public void tempReached() {
@@ -48,5 +57,4 @@ public class FreezerCoolingState extends AbstractRefridgeratorState{
 			
 		}
 	}
-	
 }
