@@ -1,10 +1,6 @@
 package Threads;
 
-import context.FreezerContext;
-import context.RefridgeratorContext;
-import context.RoomContext;
 import io.reactivex.subjects.BehaviorSubject;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 public class Clock implements Runnable{
     private static Clock ourInstance = new Clock();

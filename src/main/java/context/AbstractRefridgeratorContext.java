@@ -32,7 +32,7 @@ public abstract class AbstractRefridgeratorContext {
 //		subjectLight = BehaviorSubject.create();
 //		subjectTemperature = BehaviorSubject.create();
 		setLight(false);
-		setTemperature(RoomContext.getInstance().getRoomTemparature());
+		setTemperature(Common.getRoomTemp());
 		nextState.run();
 	}
 	
@@ -52,7 +52,7 @@ public abstract class AbstractRefridgeratorContext {
     }
     /**
      * 
-     * @param temperature:int
+	 * @param:temperature:int
      */
     public void setIsCooling(Boolean b){
     	subjectIsCooling.onNext(b);

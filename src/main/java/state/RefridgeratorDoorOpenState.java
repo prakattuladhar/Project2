@@ -1,7 +1,6 @@
 package state;
 
 import context.Common;
-import context.RefridgeratorContext;
 
 /**
  * 

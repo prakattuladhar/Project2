@@ -1,10 +1,8 @@
 package state;
 
 import Threads.Clock;
-import context.RefridgeratorContext;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
-import sun.misc.ConditionLock;
 
 public class StateManager {
 

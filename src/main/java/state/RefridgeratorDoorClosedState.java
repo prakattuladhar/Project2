@@ -1,8 +1,6 @@
 package state;
 
 import context.Common;
-import context.FridgeContext;
-import context.RefridgeratorContext;
 
 
 /**
