@@ -32,6 +32,7 @@ public class RefridgeratorCoolingState extends AbstractRefridgeratorState
 	@Override
 	public void run() {
 		// Subscribe to Events
+		super.run();
 		FridgeDoorOpenListenerList.instance().addListener(instance);
 		
 		// TODO: Change context variables
@@ -39,6 +40,7 @@ public class RefridgeratorCoolingState extends AbstractRefridgeratorState
 	@Override
 	public void leave() {
 		// Unsubscribe from Events
+		super.leave();
 		FridgeDoorOpenListenerList.instance().removeListener(instance);
 		
 		// TODO: Change context variables

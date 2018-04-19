@@ -2,13 +2,14 @@ package state;
 
 import context.AbstractRefridgeratorContext;
 import context.Common;
+import threads.*;
 
 /**
  * 
  * @author Colin Quinn
  * @version 0.1
  */
-public abstract class AbstractRefridgeratorState {
+public abstract class AbstractRefridgeratorState implements ClockListener {
 	protected AbstractRefridgeratorContext context;
 	protected int rate;
 	public AbstractRefridgeratorState(AbstractRefridgeratorContext context, int rate) {
@@ -24,11 +25,15 @@ public abstract class AbstractRefridgeratorState {
 	/**
 	 * Initialize and add subscriptions to observables
 	 */
-	public abstract void run();
+	public void run() {
+		ClockListenerList.instance().addListener(this);
+	}
 	/**
 	 * Remove subscriptions to observables
 	 */
-	public abstract void leave();
+	public void leave() {
+		ClockListenerList.instance().removeListener(this);
+	}
 	/**
 	 * What happens when it reaches desired Temperature
 	 */
@@ -36,7 +41,7 @@ public abstract class AbstractRefridgeratorState {
 	/**
 	 * What happens on each ClockTick Event
 	 */
-	public void clockTick() {
+	public void onClockTick() {
 		tempChange();
 	}
 	/**

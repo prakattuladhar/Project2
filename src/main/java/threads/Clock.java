@@ -1,14 +1,22 @@
-package Threads;
+package threads;
 
+import java.util.Observable;
 import io.reactivex.subjects.BehaviorSubject;
 
-public class Clock implements Runnable{
-    private static Clock ourInstance = new Clock();
+public class Clock extends Observable implements Runnable{
+    private static Clock instance;
     private BehaviorSubject<Integer> clock;
+    
+    public enum Events {
+		CLOCK_TICKED_EVENT
+	}
 
-    public static Clock getInstance() {
-        return ourInstance;
-    }
+    public static Clock instance() {
+		if (instance == null) {
+			instance = new Clock();
+		}
+		return instance;
+	}
 
     private Clock() {
         clock=BehaviorSubject.create();
@@ -46,6 +54,8 @@ public class Clock implements Runnable{
 //            }
             try {
                 Thread.sleep(1000);
+                setChanged();
+				notifyObservers();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

@@ -33,6 +33,7 @@ public class FreezerDoorClosedState extends AbstractRefridgeratorState
 	@Override
 	public void run() {
 		// Subscribe to Events
+		super.run();
 		FreezerDoorOpenListenerList.instance().addListener(instance);
 		
 		// TODO: Change context variables
@@ -40,6 +41,7 @@ public class FreezerDoorClosedState extends AbstractRefridgeratorState
 	@Override
 	public void leave() {
 		// Unsubscribe from Events
+		super.leave();
 		FreezerDoorOpenListenerList.instance().removeListener(instance);
 		
 		// TODO: Change context variables
