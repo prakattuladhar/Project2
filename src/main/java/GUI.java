@@ -48,7 +48,7 @@ public class GUI extends JFrame {
 
     public GUI() throws IOException{
         super("Refrigirator");
-        this.fridgeContext = FridgeContext.getInstance();
+        this.fridgeContext = FridgeContext.instance();
         this.freezerContext=FreezerContext.instance();
         Common.initialize();
 
@@ -329,6 +329,12 @@ public class GUI extends JFrame {
                 closeFreezerDoor();
             }
         });
+        freezerTempButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setFreezerTemparature();
+            }
+        });
 
 
     }
@@ -341,7 +347,7 @@ public class GUI extends JFrame {
         fridgeContext.setLight(false);
     }
     private void setFridgeTemparature(){
-            fridgeContext.setSubjectDesiredTemperature(Integer.valueOf(fridgeTempInput.getText()));
+            fridgeContext.setTemperature(Integer.valueOf(fridgeTempInput.getText()));
     }
     //freezer helper functions
     private void openFreezerDoor(){
@@ -351,7 +357,7 @@ public class GUI extends JFrame {
             freezerContext.setLight(false);
     }
     private void setFreezerTemparature(){
-        freezerContext.setSubjectDesiredTemperature(Integer.parseInt(freezerTempInput.getText()));
+        freezerContext.setTemperature(Integer.parseInt(freezerTempInput.getText()));
     }
 
 

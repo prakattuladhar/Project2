@@ -1,6 +1,7 @@
 package state;
 
-import context.Common;
+import context.*;
+import observable.*;
 
 /**
  * 
@@ -8,14 +9,15 @@ import context.Common;
  * @version 0.1
  *
  */
-public class RefridgeratorDoorOpenState extends AbstractRefridgeratorState {
+public class RefridgeratorDoorOpenState extends AbstractRefridgeratorState
+	implements DoorCloseListener {
 
 	private static RefridgeratorDoorOpenState instance;
 	/**
 	 * Supports Singleton patter
 	 */
 	private RefridgeratorDoorOpenState() {	
-		super(RefridgeratorContext.instance(), Common.getFridgeRateLossDoorOpen());
+		super(FridgeContext.instance(), Common.getFridgeRateLossDoorOpen());
 	}
 	/**
 	 * 
@@ -29,13 +31,23 @@ public class RefridgeratorDoorOpenState extends AbstractRefridgeratorState {
 	}
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
+		// Subscribe to Events
+		super.run();
+		FridgeDoorCloseListenerList.instance().addListener(instance);
 		
+		// TODO: Change context variables
 	}
 	@Override
 	public void leave() {
-		// TODO Auto-generated method stub
+		// Unsubscribe from Events
+		super.leave();
+		FridgeDoorCloseListenerList.instance().removeListener(instance);
 		
+		// TODO: Change context variables
+	}
+	@Override
+	public void onDoorClose(DoorCloseEvent event) {
+		context.changeCurrentState( RefridgeratorDoorClosedState.instance() );
 	}
 	@Override
 	public void tempReached() {

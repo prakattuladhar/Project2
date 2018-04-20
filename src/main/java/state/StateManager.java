@@ -1,8 +1,8 @@
 package state;
 
-import Threads.Clock;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
+import threads.Clock;
 
 public class StateManager {
 
@@ -44,6 +44,6 @@ public class StateManager {
 
             }
         };
-        Clock.getInstance().getClockEvent().subscribe(observerClock);
+        Clock.instance().getClockEvent().subscribe(observerClock);
     }
 }

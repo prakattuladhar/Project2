@@ -1,12 +1,12 @@
 
 import java.io.IOException;
 
-import Threads.Clock;
+import threads.Clock;
 
 public class main {
     public static void main(String[] args) throws IOException{
         GUI gui = new GUI();
-        Clock.getInstance().run();
+        Clock.instance().run();
 
 
     }
