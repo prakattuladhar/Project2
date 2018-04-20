@@ -7,6 +7,8 @@
  */
 
 import context.Common;
+import context.FreezerContext;
+import context.FridgeContext;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
@@ -21,7 +23,9 @@ import java.text.NumberFormat;
 @SuppressWarnings("restriction")
 public class GUI extends JFrame {
 
-    private RefridgeratorContext fridgeContext;
+    private FridgeContext fridgeContext;
+    private FreezerContext freezerContext;
+
     private JLabel fridgeLightStatus=new JLabel("off");
     private JLabel freezerLightStatus=new JLabel("off");
     private JLabel fridgeStatus=new JLabel("idle");
@@ -44,7 +48,8 @@ public class GUI extends JFrame {
 
     public GUI() throws IOException{
         super("Refrigirator");
-        this.fridgeContext = RefridgeratorContext.instance();
+        this.fridgeContext = FridgeContext.getInstance();
+        this.freezerContext=FreezerContext.instance();
         Common.initialize();
 
         JPanel statusArea=new JPanel(new GridLayout(3,2));
@@ -127,7 +132,8 @@ public class GUI extends JFrame {
     }
 
 
-    //creates observers to do stuff
+    //creates observers to do stuff and fire up GUI
+    //changes in the variables in context will fire up the onNext function in these observer.
     private void initObservers() {
         //observer for fridgeLight status
         Observer<? super Boolean> observerFridgeLight = new Observer<Boolean>() {
@@ -138,7 +144,6 @@ public class GUI extends JFrame {
 
             @Override
             public void onNext(Boolean t) {
-                System.out.println("From observable"+t);
                 if(t)
                     fridgeLightStatus.setText("on");//fires the gui
                 else
@@ -155,7 +160,6 @@ public class GUI extends JFrame {
 
             }
         };
-
         //observer for fridgeTemparature
         Observer<? super Integer> observerFridgeTemparature = new Observer<Integer>() {
 
@@ -166,7 +170,7 @@ public class GUI extends JFrame {
 
             @Override
             public void onNext(Integer t) {
-                System.out.println("From observable temparature"+t);
+
                 fridgeTempStatus.setText(String.valueOf(t));//fires the GUI
 
             }
@@ -181,7 +185,6 @@ public class GUI extends JFrame {
 
             }
         };
-
         //observer for fridge status
         Observer<? super Boolean> observerFridgeStatus = new Observer<Boolean>() {
             @Override
@@ -208,17 +211,90 @@ public class GUI extends JFrame {
 
             }
         };
-        //------------------------------------------------------------
+        //---------------------------------------------------------------------------
         //obeserver for freezerLight
+        Observer<? super Boolean> observerFreezerLight = new Observer<Boolean>() {
+            @Override
+            public void onSubscribe(Disposable disposable) {
 
+            }
+
+            @Override
+            public void onNext(Boolean aBoolean) {
+                if(aBoolean)
+                    freezerLightStatus.setText("on");//fires the gui
+                else
+                    freezerLightStatus.setText("off");
+            }
+
+            @Override
+            public void onError(Throwable throwable) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        };
         //observer for freezerTemparature
+        Observer<? super Integer> observerFreezerTemparature = new Observer<Integer>() {
+            @Override
+            public void onSubscribe(Disposable disposable) {
 
+            }
+
+            @Override
+            public void onNext(Integer integer) {
+               freezerTempStatus.setText(String.valueOf(integer));
+            }
+
+            @Override
+            public void onError(Throwable throwable) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        };
         //observer for freezerStatus
+        Observer<? super Boolean> observerFreezerStatus = new Observer<Boolean>() {
+            @Override
+            public void onSubscribe(Disposable disposable) {
+
+            }
+
+            @Override
+            public void onNext(Boolean aBoolean) {
+                if(aBoolean){
+                   freezerStatus.setText("Cooling");
+                }else {
+                    freezerStatus.setText("Idle");
+                }
+            }
+
+            @Override
+            public void onError(Throwable throwable) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        };
 
         //subscribing to observables/subject in this case
         fridgeContext.getSubjectLight().subscribe(observerFridgeLight);
         fridgeContext.getSubjectTemperature().subscribe(observerFridgeTemparature);
         fridgeContext.getIsCooling().subscribe(observerFridgeStatus);
+
+        freezerContext.getSubjectLight().subscribe(observerFreezerLight);
+        freezerContext.getSubjectTemperature().subscribe(observerFreezerTemparature);
+        freezerContext.getIsCooling().subscribe(observerFreezerStatus);
+
     }
 
 
@@ -241,6 +317,19 @@ public class GUI extends JFrame {
                 setFridgeTemparature();
             }
         });
+        openFreezer.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openFreezerDoor();
+            }
+        });
+        closeFreezer.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                closeFreezerDoor();
+            }
+        });
+
 
     }
 
@@ -254,6 +343,18 @@ public class GUI extends JFrame {
     private void setFridgeTemparature(){
             fridgeContext.setSubjectDesiredTemperature(Integer.valueOf(fridgeTempInput.getText()));
     }
+    //freezer helper functions
+    private void openFreezerDoor(){
+            freezerContext.setLight(true);
+    }
+    private void closeFreezerDoor(){
+            freezerContext.setLight(false);
+    }
+    private void setFreezerTemparature(){
+        freezerContext.setSubjectDesiredTemperature(Integer.parseInt(freezerTempInput.getText()));
+    }
+
+
 
 
 }
