@@ -343,21 +343,39 @@ public class GUI extends JFrame {
     private void openFridgeDoor() {
         fridgeContext.setLight(true);
     }
+
     private void closeFridgeDoor(){
         fridgeContext.setLight(false);
     }
+
     private void setFridgeTemparature(){
+        if(Integer.valueOf(fridgeTempInput.getText())<Common.getFridgeLow()||Integer.valueOf(fridgeTempInput.getText())>Common.getFridgeHigh()){
+            JOptionPane.showMessageDialog(null, "Invalid Fridge temparature. It should be between"+Common.getFridgeLow()+" and "
+                    +Common.getFridgeHigh(), "Error",
+                    JOptionPane.ERROR_MESSAGE);
+        }else {
+            //todo for when desired fridge temp is set
             fridgeContext.setTemperature(Integer.valueOf(fridgeTempInput.getText()));
+        }
     }
     //freezer helper functions
     private void openFreezerDoor(){
             freezerContext.setLight(true);
     }
+
     private void closeFreezerDoor(){
             freezerContext.setLight(false);
     }
+
     private void setFreezerTemparature(){
-        freezerContext.setTemperature(Integer.parseInt(freezerTempInput.getText()));
+        if(Integer.valueOf(freezerTempInput.getText())<Common.getFreezerLow()||Integer.valueOf(freezerTempInput.getText())>Common.getFreezerHigh()){
+            JOptionPane.showMessageDialog(null, "Invalid Freezer temparature. It should be between"+Common.getFreezerLow()+" and "
+                            +Common.getFreezerHigh(), "Error",
+                    JOptionPane.ERROR_MESSAGE);
+        }else {
+            //todo for when desired freezer temp is set
+            freezerContext.setTemperature(Integer.valueOf(freezerTempInput.getText()));
+        }
     }
 
 
