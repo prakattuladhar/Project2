@@ -1,6 +1,6 @@
 package context;
 
-import io.reactivex.subjects.BehaviorSubject;
+import state.FreezerDoorClosedState;
 
 /**
  * 
@@ -15,7 +15,17 @@ public class FreezerContext extends AbstractRefridgeratorContext {
 	 * Supports Singleton pattern
 	 */
 	private FreezerContext() {
-		instance = this;    
+		instance = this;
+		initialize(
+			FreezerDoorClosedState.instance(),
+			Common.getFreezerHigh(),
+			Common.getFreezerHigh(),
+			Common.getFreezerLow(),
+			Common.getFreezerRateLossDoorClosed(),
+			Common.getFreezerRateLossDoorOpen(),
+			Common.getFreezerCoolRate(),
+			Common.getFreezerCompressorStartDiff()
+		);
 	}
 	/**
 	 * 

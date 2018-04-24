@@ -2,6 +2,7 @@ package state;
 
 import context.*;
 import observable.*;
+import threads.*;
 
 /**
  * 
@@ -9,15 +10,14 @@ import observable.*;
  * @version 0.1
  *
  */
-public class RefridgeratorCoolingState extends AbstractRefridgeratorState
-	implements DoorOpenListener {
+public class RefridgeratorCoolingState extends AbstractCoolingState
+	implements DoorOpenListener, ClockListener {
 
 	private static RefridgeratorCoolingState instance;
 	/**
 	 * Supports Singleton pattern
 	 */
 	private RefridgeratorCoolingState() {
-		super(FridgeContext.instance(), Common.getFridgeCoolRate()*-1);
 	}
 	/**
 	 * 
@@ -26,37 +26,50 @@ public class RefridgeratorCoolingState extends AbstractRefridgeratorState
 	public static RefridgeratorCoolingState instance() {
 		if (instance == null) {
 			instance = new RefridgeratorCoolingState();
+			instance.initialize( FridgeContext.instance() );
 		}
 		return instance;
 	}
+	
 	@Override
 	public void run() {
 		// Subscribe to Events
-		super.run();
+		ClockListenerList.instance().addListener(instance);
 		FridgeDoorOpenListenerList.instance().addListener(instance);
 		
-		// TODO: Change context variables
+		// Change context variables
+		context.setIsCooling(true);
+		
+		//DEBUG
+		System.out.println("Run Fridge Cooling");
 	}
+	
 	@Override
 	public void leave() {
 		// Unsubscribe from Events
-		super.leave();
+		ClockListenerList.instance().removeListener(instance);
 		FridgeDoorOpenListenerList.instance().removeListener(instance);
 		
-		// TODO: Change context variables
+		// Change context variables
+		context.setIsCooling(false);
+		
+		//DEBUG
+		System.out.println("Leave Fridge Cooling");
 	}
+	
 	@Override
 	public void onDoorOpen(DoorOpenEvent event) {
 		context.changeCurrentState( RefridgeratorDoorOpenState.instance() );
 	}
-	@Override
-	public void tempReached() {
-		if(context.getSubjectTemperature().getValue()<
-				context.getDesiredTemparature().getValue() - Common.getFridgeCompressorStartDiff()) {
-			
-			context.changeCurrentState(RefridgeratorDoorClosedState.instance());
-			
-		}		
+	
+	public void onClockTick() {
+		boolean changeState = changeTemperature();
+		
+		// DEBUG
+		System.out.println( "Fridge: " + String.valueOf( context.getSubjectTemperature().getValue() ) );
+		if (changeState) {
+			context.changeCurrentState( RefridgeratorDoorClosedState.instance() );
+		}
 	}
 	
 }

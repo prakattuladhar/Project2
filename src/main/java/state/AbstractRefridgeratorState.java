@@ -11,48 +11,31 @@ import threads.*;
  */
 public abstract class AbstractRefridgeratorState implements ClockListener {
 	protected AbstractRefridgeratorContext context;
-	protected int rate;
-	public AbstractRefridgeratorState(AbstractRefridgeratorContext context, int rate) {
-		this.context=context;
-		this.rate=rate;
+	protected int counter;
+	
+	/**
+	 * 
+	 * @param context
+	 * @param rate
+	 */
+	public void initialize(AbstractRefridgeratorContext context) {
+		this.context = context;
+		counter = 0;
 	}
-	protected int rateLoss;//in 30 secs or 2
-
-    public AbstractRefridgeratorState() {
-
-    }
 
 	/**
 	 * Initialize and add subscriptions to observables
 	 */
-	public void run() {
-		ClockListenerList.instance().addListener(this);
-	}
+	public abstract void run();
+	
 	/**
 	 * Remove subscriptions to observables
 	 */
-	public void leave() {
-		ClockListenerList.instance().removeListener(this);
-	}
-	/**
-	 * What happens when it reaches desired Temperature
-	 */
-	public abstract void tempReached();
+	public abstract void leave();
+	
 	/**
 	 * What happens on each ClockTick Event
 	 */
-	public void onClockTick() {
-		tempChange();
-	}
-	/**
-	 * Changing the temperatures
-	 */
-	private void tempChange() {
-		context.setTemperature(context.getSubjectTemperature().getValue() + rate);
-		if(context.getSubjectTemperature().getValue() > Common.getRoomTemp()) {
-			context.setTemperature(Common.getRoomTemp());
-		}
-		tempReached();
-	}
+	public abstract void onClockTick();
 	
 }

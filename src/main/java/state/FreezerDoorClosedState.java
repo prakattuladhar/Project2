@@ -2,6 +2,7 @@ package state;
 
 import context.*;
 import observable.*;
+import threads.*;
 
 /**
  * 
@@ -9,16 +10,17 @@ import observable.*;
  * @version 0.1
  *
  */
-public class FreezerDoorClosedState extends AbstractRefridgeratorState
-	implements DoorOpenListener {
+public class FreezerDoorClosedState extends AbstractDoorClosedState
+	implements DoorOpenListener, ClockListener {
 
 	private static FreezerDoorClosedState instance;
+	
 	/**
 	 * Supports Singleton pattern
 	 */
 	private FreezerDoorClosedState() {
-		super(FreezerContext.instance(), Common.getFreezerRateLossDoorClosed());
 	}
+	
 	/**
 	 * Gets only instance of this object
 	 * 
@@ -27,34 +29,40 @@ public class FreezerDoorClosedState extends AbstractRefridgeratorState
 	public static FreezerDoorClosedState instance() {
 		if (instance == null) {
 			instance = new FreezerDoorClosedState();
+			instance.initialize( FreezerContext.instance() );
 		}
 		return instance;
 	}
+	
 	@Override
 	public void run() {
 		// Subscribe to Events
-		super.run();
+		ClockListenerList.instance().addListener(instance);
 		FreezerDoorOpenListenerList.instance().addListener(instance);
 		
-		// TODO: Change context variables
+		//DEBUG
+		System.out.println("Run Freezer Closed");
 	}
+	
 	@Override
 	public void leave() {
 		// Unsubscribe from Events
-		super.leave();
+		ClockListenerList.instance().removeListener(instance);
 		FreezerDoorOpenListenerList.instance().removeListener(instance);
 		
-		// TODO: Change context variables
+		// DEBUG
+		System.out.println("Leave Freezer Closed");
 	}
+	
 	@Override
 	public void onDoorOpen(DoorOpenEvent event) {
 		context.changeCurrentState( FreezerDoorOpenState.instance() );
 	}
+	
 	@Override
-	public void tempReached() {
-		if(context.getSubjectTemperature().getValue()> 
-				context.getDesiredTemparature().getValue() + Common.getFreezerCompressorStartDiff()) 
-		{
+	public void onClockTick() {
+		boolean changeState = changeTemperature();
+		if (changeState) {
 			context.changeCurrentState( FreezerCoolingState.instance() );
 		}
 	}

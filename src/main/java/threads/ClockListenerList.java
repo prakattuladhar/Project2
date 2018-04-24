@@ -55,8 +55,9 @@ public class ClockListenerList implements Observer {
 	 */
 	@Override
 	public void update(Observable clock, Object object) {
-		for ( ClockListener listener : listenerList.getListeners(ClockListener.class) ) {
-			listener.onClockTick();
+		ClockListener[] listeners = listenerList.getListeners(ClockListener.class);
+		for (int i = 0; i < listeners.length; i++) {
+			listeners[i].onClockTick();
 		}	
 	}
 }

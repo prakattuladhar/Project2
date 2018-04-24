@@ -11,6 +11,7 @@ import context.FreezerContext;
 import context.FridgeContext;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
+import observable.*;
 
 
 import javax.swing.*;
@@ -26,47 +27,48 @@ public class GUI extends JFrame {
     private FridgeContext fridgeContext;
     private FreezerContext freezerContext;
 
-    private JLabel fridgeLightStatus=new JLabel("off");
-    private JLabel freezerLightStatus=new JLabel("off");
-    private JLabel fridgeStatus=new JLabel("idle");
-    private JLabel freezerStatus=new JLabel("idle");
-    private JLabel fridgeTempStatus=new JLabel("temp");
-    private JLabel freezerTempStatus=new JLabel("temp");
+    private JLabel fridgeLightStatus = new JLabel("off");
+    private JLabel freezerLightStatus = new JLabel("off");
+    private JLabel fridgeStatus = new JLabel("idle");
+    private JLabel freezerStatus = new JLabel("idle");
+    private JLabel fridgeTempStatus;
+    private JLabel freezerTempStatus;
 
-    private JFormattedTextField roomTempInput=new JFormattedTextField(NumberFormat.getIntegerInstance());
-    private JFormattedTextField fridgeTempInput=new JFormattedTextField(NumberFormat.getIntegerInstance());
-    private JFormattedTextField freezerTempInput=new JFormattedTextField(NumberFormat.getIntegerInstance());
+    private JFormattedTextField roomTempInput = new JFormattedTextField(NumberFormat.getIntegerInstance());
+    private JFormattedTextField fridgeTempInput = new JFormattedTextField(NumberFormat.getIntegerInstance());
+    private JFormattedTextField freezerTempInput = new JFormattedTextField(NumberFormat.getIntegerInstance());
 
-    private JButton roomTempButton=new JButton("Set Room Temp");
-    private JButton fridgeTempButton=new JButton("Set Fridge Temp");
-    private JButton freezerTempButton=new JButton("Set Freezer Temp");
-    private JButton openFridge=new JButton("Open Fridge Door");
-    private JButton closeFridge=new JButton("Close Fridge Door");
-    private JButton openFreezer=new JButton("Open Freezer Door");
-    private JButton closeFreezer=new JButton("Close Freezer Door");
+    private JButton roomTempButton = new JButton("Set Room Temp");
+    private JButton fridgeTempButton = new JButton("Set Fridge Temp");
+    private JButton freezerTempButton = new JButton("Set Freezer Temp");
+    private JButton openFridge = new JButton("Open Fridge Door");
+    private JButton closeFridge = new JButton("Close Fridge Door");
+    private JButton openFreezer = new JButton("Open Freezer Door");
+    private JButton closeFreezer = new JButton("Close Freezer Door");
 
 
     public GUI() throws IOException{
         super("Refrigirator");
-        this.fridgeContext = FridgeContext.instance();
-        this.freezerContext=FreezerContext.instance();
         Common.initialize();
+        this.fridgeContext = FridgeContext.instance();
+        this.freezerContext = FreezerContext.instance();
 
-        JPanel statusArea=new JPanel(new GridLayout(3,2));
-        JPanel buttonsAndShit=new JPanel(new GridLayout(2,2));
-        JPanel settingsArea=new JPanel(new GridLayout(3,1));
+        JPanel statusArea = new JPanel(new GridLayout(3,2));
+        JPanel buttonPanel = new JPanel(new GridLayout(2,2));
+        JPanel settingsArea = new JPanel(new GridLayout(3,1));
 
         JPanel tempPanel=new JPanel(new FlowLayout());
-        //init room temp apnel
-        tempPanel=new JPanel(new FlowLayout());
-        tempPanel.add(new JLabel("Room Temprature"));
+        //init room temp panel
+        tempPanel = new JPanel(new FlowLayout());
+        tempPanel.add(new JLabel("Room Temperature"));
         roomTempInput.setColumns(4);
+        roomTempInput.setValue( Common.getRoomTemp() );
         tempPanel.add(roomTempInput);
         tempPanel.add(roomTempButton);
         settingsArea.add(tempPanel);
 
         //init fridge temp panel
-        tempPanel=new JPanel(new FlowLayout());
+        tempPanel = new JPanel(new FlowLayout());
         tempPanel.add(new JLabel("Desired Fridge Temparature"));
         fridgeTempInput.setColumns(4);
         tempPanel.add(fridgeTempInput);
@@ -74,38 +76,40 @@ public class GUI extends JFrame {
         settingsArea.add(tempPanel);
 
         //init freezer temp panel
-        tempPanel=new JPanel(new FlowLayout());
+        tempPanel = new JPanel(new FlowLayout());
         tempPanel.add(new JLabel("Desired Freezer Temparature"));
         freezerTempInput.setColumns(4);
         tempPanel.add(freezerTempInput);
         tempPanel.add(freezerTempButton);
         settingsArea.add(tempPanel);
 
-        //init buttons and shit
-         buttonsAndShit.add(openFridge);
-         buttonsAndShit.add(closeFridge);
-         buttonsAndShit.add(openFreezer);
-         buttonsAndShit.add(closeFreezer);
+        //init buttons
+         buttonPanel.add(openFridge);
+         buttonPanel.add(closeFridge);
+         buttonPanel.add(openFreezer);
+         buttonPanel.add(closeFreezer);
 
-         //init status arear
-        tempPanel=new JPanel(new FlowLayout());
+         //init status area
+        tempPanel = new JPanel(new FlowLayout());
         tempPanel.add(new JLabel("Fridge Light :"));
         tempPanel.add(fridgeLightStatus);
         statusArea.add(tempPanel);
 
-        tempPanel=new JPanel(new FlowLayout());
+        tempPanel = new JPanel(new FlowLayout());
         tempPanel.add(new JLabel("Freezer Light:"));
         tempPanel.add(freezerLightStatus);
         statusArea.add(tempPanel);
 
-        tempPanel=new JPanel(new FlowLayout());
+        tempPanel = new JPanel(new FlowLayout());
         tempPanel.add(new JLabel("Fridge Temp: "));
+        fridgeTempStatus = new JLabel( String.valueOf( Common.getRoomTemp() ) );
         tempPanel.add(fridgeTempStatus);
         statusArea.add(tempPanel);
 
         //freezer grid
-        tempPanel=new JPanel(new FlowLayout());
+        tempPanel = new JPanel(new FlowLayout());
         tempPanel.add(new JLabel("Freezer Temp:"));
+        freezerTempStatus = new JLabel( String.valueOf( Common.getRoomTemp() ) );
         tempPanel.add(freezerTempStatus);
         statusArea.add(tempPanel);
 
@@ -122,7 +126,7 @@ public class GUI extends JFrame {
         //init main Frame
         getContentPane().setLayout(new GridLayout(3,1));
         getContentPane().add(settingsArea);
-        getContentPane().add(buttonsAndShit);
+        getContentPane().add(buttonPanel);
         getContentPane().add(statusArea);
         initObservers();
         addActionListeners();
@@ -212,7 +216,7 @@ public class GUI extends JFrame {
             }
         };
         //---------------------------------------------------------------------------
-        //obeserver for freezerLight
+        //observer for freezerLight
         Observer<? super Boolean> observerFreezerLight = new Observer<Boolean>() {
             @Override
             public void onSubscribe(Disposable disposable) {
@@ -302,31 +306,31 @@ public class GUI extends JFrame {
     private void addActionListeners() {
         openFridge.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                openFridgeDoor();
+                openFridgeDoor(e);
             }
         });
         closeFridge.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                closeFridgeDoor();
+                closeFridgeDoor(e);
             }
         });
         fridgeTempButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                setFridgeTemparature();
+            	setFridgeTemparature();
             }
         });
         openFreezer.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                openFreezerDoor();
+                openFreezerDoor(e);
             }
         });
         closeFreezer.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                closeFreezerDoor();
+                closeFreezerDoor(e);
             }
         });
         freezerTempButton.addActionListener(new ActionListener() {
@@ -340,12 +344,15 @@ public class GUI extends JFrame {
     }
 
     //helper functions
-    private void openFridgeDoor() {
+    private void openFridgeDoor(ActionEvent e) {
         fridgeContext.setLight(true);
+    	FridgeDoorOpenListenerList.instance().notifyListeners( new DoorOpenEvent(e) );
+
     }
 
-    private void closeFridgeDoor(){
+    private void closeFridgeDoor(ActionEvent e){
         fridgeContext.setLight(false);
+    	FridgeDoorCloseListenerList.instance().notifyListeners( new DoorCloseEvent(e) );
     }
 
     private void setFridgeTemparature(){
@@ -359,12 +366,16 @@ public class GUI extends JFrame {
         }
     }
     //freezer helper functions
-    private void openFreezerDoor(){
+    private void openFreezerDoor(ActionEvent e){
             freezerContext.setLight(true);
+        	FreezerDoorOpenListenerList.instance().notifyListeners( new DoorOpenEvent(e) );
+
     }
 
-    private void closeFreezerDoor(){
+    private void closeFreezerDoor(ActionEvent e){
             freezerContext.setLight(false);
+        	FreezerDoorCloseListenerList.instance().notifyListeners( new DoorCloseEvent(e) );
+
     }
 
     private void setFreezerTemparature(){

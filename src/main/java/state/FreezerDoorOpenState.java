@@ -2,6 +2,7 @@ package state;
 
 import context.*;
 import observable.*;
+import threads.*;
 
 /**
  * 
@@ -10,7 +11,7 @@ import observable.*;
  *
  */
 
-public class FreezerDoorOpenState extends AbstractRefridgeratorState
+public class FreezerDoorOpenState extends AbstractDoorOpenState
 	implements DoorCloseListener {
 
 	private static FreezerDoorOpenState instance;
@@ -18,8 +19,6 @@ public class FreezerDoorOpenState extends AbstractRefridgeratorState
 	 * Supports Singleton pattern
 	 */
 	private FreezerDoorOpenState() {
-
-		super(FreezerContext.instance(), Common.getFreezerRateLossDoorOpen());
 	}
 	/**
 	 * Gets only instance of this object
@@ -29,6 +28,7 @@ public class FreezerDoorOpenState extends AbstractRefridgeratorState
 	public static FreezerDoorOpenState instance() {
 		if (instance == null) {
 			instance = new FreezerDoorOpenState();
+			instance.initialize( FreezerContext.instance() );
 		}
 		return instance;
 	}
@@ -36,25 +36,23 @@ public class FreezerDoorOpenState extends AbstractRefridgeratorState
 	@Override
 	public void run() {
 		// Subscribe to Events
-		super.run();
+		ClockListenerList.instance().addListener(instance);
 		FreezerDoorCloseListenerList.instance().addListener(instance);
 		
-		// TODO: Change context variables
+		//DEBUG
+		System.out.println("Run Freezer Open");
 	}
 	@Override
 	public void leave() {
 		// Unsubscribe from Events
-		super.leave();
+		ClockListenerList.instance().removeListener(instance);
 		FreezerDoorCloseListenerList.instance().removeListener(instance);
 		
-		// TODO: Change context variables
+		//DEBUG
+		System.out.println("Leave Freezer Closed");
 	}
 	@Override
 	public void onDoorClose(DoorCloseEvent event) {
 		context.changeCurrentState( FreezerDoorClosedState.instance() );
-	}
-	@Override
-	public void tempReached() {
-		//Do Nothing!!!		
 	}
 }

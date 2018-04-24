@@ -31,8 +31,9 @@ public class DoorOpenListenerList {
 	 * @param event 
 	 */
 	public void notifyListeners(DoorOpenEvent event) {
-		for ( DoorOpenListener listener : listenerList.getListeners(DoorOpenListener.class) ) {
-			listener.onDoorOpen(event);
+		DoorOpenListener[] listeners = listenerList.getListeners(DoorOpenListener.class);
+		for (int i = 0; i < listeners.length; i++) {
+			listeners[i].onDoorOpen(event);
 		}	
 	}
 }

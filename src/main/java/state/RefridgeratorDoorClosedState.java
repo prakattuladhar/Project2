@@ -2,6 +2,7 @@ package state;
 
 import context.*;
 import observable.*;
+import threads.*;
 
 
 /**
@@ -10,15 +11,14 @@ import observable.*;
  * @version 0.1
  *
  */
-public class RefridgeratorDoorClosedState extends AbstractRefridgeratorState
-	implements DoorOpenListener {
+public class RefridgeratorDoorClosedState extends AbstractDoorClosedState
+	implements DoorOpenListener, ClockListener {
 
 	private static RefridgeratorDoorClosedState instance;
 	/**
 	 * Supports Singleton patter
 	 */
 	private RefridgeratorDoorClosedState() {	
-		super(FridgeContext.instance(), Common.getFridgeRateLossDoorClosed());
 	}
 	/**
 	 * 
@@ -27,35 +27,37 @@ public class RefridgeratorDoorClosedState extends AbstractRefridgeratorState
 	public static RefridgeratorDoorClosedState instance() {
 		if (instance == null) {
 			instance = new RefridgeratorDoorClosedState();
+			instance.initialize( FridgeContext.instance() );
 		}
 		return instance;
 	}
 	@Override
 	public void run() {
 		// Subscribe to Events
-		super.run();
+		ClockListenerList.instance().addListener(instance);
 		FridgeDoorOpenListenerList.instance().addListener(instance);
 		
-		// TODO: Change context variables
+		//DEBUG
+		System.out.println("Run Fridge Closed");
 	}
 	@Override
 	public void leave() {
 		// Unsubscribe from Events
-		super.leave();
+		ClockListenerList.instance().removeListener(instance);
 		FridgeDoorOpenListenerList.instance().removeListener(instance);
 		
-		// TODO: Change context variables
+		//DEBUG
+		System.out.println("Leave Fridge Closed");
 	}
 	@Override
 	public void onDoorOpen(DoorOpenEvent event) {
 		context.changeCurrentState( RefridgeratorDoorOpenState.instance() );
 	}
 	@Override
-	public void tempReached() {
-		if(context.getSubjectTemperature().getValue()> 
-			context.getDesiredTemparature().getValue() + Common.getFridgeCompressorStartDiff()) 
-		{
-			context.changeCurrentState(RefridgeratorCoolingState.instance());
+	public void onClockTick() {
+		boolean changeState = changeTemperature();
+		if (changeState) {
+			context.changeCurrentState( RefridgeratorCoolingState.instance() );
 		}
 	}
 	

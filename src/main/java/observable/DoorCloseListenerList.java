@@ -31,8 +31,9 @@ public abstract class DoorCloseListenerList {
 	 * @param event 
 	 */
 	public void notifyListeners(DoorCloseEvent event) {
-		for ( DoorCloseListener listener : listenerList.getListeners(DoorCloseListener.class) ) {
-			listener.onDoorClose(event);
+		DoorCloseListener[] listeners = listenerList.getListeners(DoorCloseListener.class);
+		for (int i = 0; i < listeners.length; i++) {
+			listeners[i].onDoorClose(event);
 		}	
 	}
 }

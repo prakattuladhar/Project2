@@ -2,6 +2,7 @@ package state;
 
 import context.*;
 import observable.*;
+import threads.*;
 
 /**
  * 
@@ -9,15 +10,14 @@ import observable.*;
  * @version 0.1
  *
  */
-public class FreezerCoolingState extends AbstractRefridgeratorState
-	implements DoorOpenListener {
+public class FreezerCoolingState extends AbstractCoolingState
+	implements DoorOpenListener, ClockListener {
 
 	private static FreezerCoolingState instance;
 	/**
 	 * Supports Singleton pattern
 	 */
 	private FreezerCoolingState() {
-		super(FreezerContext.instance(), Common.getFreezerCoolRate() * -1);
 	}
 	/**
 	 * Gets only instance of this object
@@ -27,36 +27,49 @@ public class FreezerCoolingState extends AbstractRefridgeratorState
 	public static FreezerCoolingState instance() {
 		if (instance == null) {
 			instance = new FreezerCoolingState();
+			instance.initialize( FreezerContext.instance() );
 		}
 		return instance;
 	}
 	@Override
 	public void run() {
 		// Subscribe to Events
-		super.run();
+		ClockListenerList.instance().addListener(instance);
 		FreezerDoorOpenListenerList.instance().addListener(instance);
 		
-		// TODO: Change context variables
+		// Change context variables
+		context.setIsCooling(true);
+		
+		//DEBUG
+		System.out.println("Run Freezer Cooling");
 	}
+	
 	@Override
 	public void leave() {
 		// Unsubscribe from Events
-		super.leave();
+		ClockListenerList.instance().removeListener(instance);
 		FreezerDoorOpenListenerList.instance().removeListener(instance);
 		
-		// TODO: Change context variables
+		// Change context variables
+		context.setIsCooling(false);
+		
+		// DEBUG
+		System.out.println("Leave Freezer Cooling");
 	}
+	
 	@Override
 	public void onDoorOpen(DoorOpenEvent event) {
 		context.changeCurrentState( FreezerDoorOpenState.instance() );
 	}
+	
 	@Override
-	public void tempReached() {
-		if(context.getSubjectTemperature().getValue()<
-				context.getDesiredTemparature().getValue() - Common.getFreezerCompressorStartDiff()) {
-			
-			context.changeCurrentState(FreezerDoorClosedState.instance());
-			
+	public void onClockTick() {
+		boolean changeState = changeTemperature();
+		
+		// DEBUG
+		System.out.println( "Freezer: " + String.valueOf( context.getSubjectTemperature().getValue() ) );
+		if (changeState) {
+			context.changeCurrentState( FreezerDoorClosedState.instance() );
 		}
 	}
 }
