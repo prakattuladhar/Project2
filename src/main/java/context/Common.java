@@ -3,10 +3,19 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-
+/**
+ * 
+ * 
+ * @author Reece Dvorak
+ * @version 1.0
+ * 
+ * This class reads in initial values from a config file
+ *
+ */
 public final class Common {
 	private static int[] info = {0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 	private static int roomTemp = 70;
+	
 	public static void initialize() throws IOException {
 		fileImport();
 	}

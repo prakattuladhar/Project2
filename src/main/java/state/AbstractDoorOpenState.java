@@ -7,7 +7,10 @@ import observable.*;
 /**
  * 
  * @author Colin Quinn
- * @version 0.1
+ * @version 1.0
+ * 
+ * This class represents a the state of a refridgeration unit with the door open
+ * and compressor off.  The unit will warm up until it reaches room temperature.
  *
  */
 public abstract class AbstractDoorOpenState extends AbstractRefridgeratorState
@@ -23,9 +26,18 @@ public abstract class AbstractDoorOpenState extends AbstractRefridgeratorState
 	 */
 	@Override
 	public void onClockTick() {
-		int currentTemp = context.getSubjectTemperature().getValue();
-		if ( currentTemp < Common.getRoomTemp() ) {
-			context.setTemperature( currentTemp + context.getDoorOpenLossRate() );
+		int lossRate = context.getDoorOpenLossRate();
+		
+		// Check amount of seconds
+		counter++;
+		if (counter % lossRate == 0) {
+			counter = 0;
+			int currentTemp = context.getSubjectTemperature().getValue();
+			// Change temperature if less than room temperature
+			if ( currentTemp < Common.getRoomTemp() ) {
+				currentTemp++;
+				context.setTemperature(currentTemp);
+			}
 		}
 	}
 }

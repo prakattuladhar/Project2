@@ -5,6 +5,9 @@ import javax.swing.event.EventListenerList;
 /**
  * 
  * @author Colin Quinn
+ * @version 1.0
+ * 
+ * This class maintains a list of listeners to the DoorCloseEvent
  *
  */
 public abstract class DoorCloseListenerList {

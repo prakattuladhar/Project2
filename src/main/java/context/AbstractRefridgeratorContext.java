@@ -8,7 +8,12 @@ import java.util.function.BooleanSupplier;
 /**
  * 
  * @author Colin Quinn
- * @version 0.1
+ * @version 1.0
+ * 
+ * This class holds the model for a refridgeration unit.  It can take on
+ * different states which are responsible for changing variables in the context.
+ * A GUI can subscribe to BehaviorSubject type variables in the context to be
+ * notified when they change.
  *
  */
 public abstract class AbstractRefridgeratorContext {
@@ -147,7 +152,7 @@ public abstract class AbstractRefridgeratorContext {
 	}
 	
 	/**
-	 * Get observable max temperature
+	 * Get max temperature
 	 * 
 	 * @return
 	 */
@@ -156,7 +161,7 @@ public abstract class AbstractRefridgeratorContext {
 	}
 	
 	/**
-	 * Get observable min temperature
+	 * Get min temperature
 	 * 
 	 * @return
 	 */
@@ -167,27 +172,27 @@ public abstract class AbstractRefridgeratorContext {
 	// RATES
 	
 	/**
+	 * Get rate of temperature loss when door closed
 	 * 
-	 * 
-	 * @return
+	 * @return rate of loss in seconds
 	 */
 	public int getDoorClosedLossRate() {
     	return subjectRateDoorClosed;
 	}
 	
 	/**
+	 * Get rate of temperature loss when door open
 	 * 
-	 * 
-	 * @return
+	 * @return rate of loss in seconds
 	 */
 	public int getDoorOpenLossRate() {
     	return subjectRateDoorOpen;
 	}
 	
 	/**
+	 * Get rate at which compressor cools
 	 * 
-	 * 
-	 * @return
+	 * @return rate of cooling in seconds
 	 */
 	public int getCompressorCoolingRate() {
     	return subjectCoolRate;
@@ -214,9 +219,10 @@ public abstract class AbstractRefridgeratorContext {
 	}
 	
 	/**
+	 * Get amount by which desired temperature must be exceeded to start
+	 * compressor
 	 * 
-	 * 
-	 * @return
+	 * @return differential in degrees
 	 */
 	public int getCompressorStartDifferential() {
 		return subjectStartDifferential;

@@ -5,14 +5,19 @@ import state.FreezerDoorClosedState;
 /**
  * 
  * @author Colin Quinn
- * @version 0.1
+ * @version 1.0
+ * 
+ * This class holds the model for a freezer.  It can take on
+ * different states which are responsible for changing variables in the context.
+ * A GUI can subscribe to BehaviorSubject type variables in the context to be
+ * notified when they change.
  *
  */
 public class FreezerContext extends AbstractRefridgeratorContext {
 
 	private static FreezerContext instance;
 	/**
-	 * Supports Singleton pattern
+	 * Supports Singleton pattern and sets initial values from config file
 	 */
 	private FreezerContext() {
 		instance = this;
@@ -28,8 +33,9 @@ public class FreezerContext extends AbstractRefridgeratorContext {
 		);
 	}
 	/**
+	 * Gets only instance of this object
 	 * 
-	 * @return
+	 * @return only instance of FreezerContext
 	 */
 	public static FreezerContext instance() {
 		if (instance == null) {

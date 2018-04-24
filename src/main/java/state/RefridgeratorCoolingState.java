@@ -7,7 +7,10 @@ import threads.*;
 /**
  * 
  * @author Colin Quinn
- * @version 0.1
+ * @version 1.0
+ * 
+ * This class represents a the state of a refrigerator with the door closed
+ * and compressor on.  The refrigerator will cool until the desired temperature is reached
  *
  */
 public class RefridgeratorCoolingState extends AbstractCoolingState
@@ -20,8 +23,9 @@ public class RefridgeratorCoolingState extends AbstractCoolingState
 	private RefridgeratorCoolingState() {
 	}
 	/**
+	 * Gets only instance of this object and passes super class the correct context
 	 * 
-	 * @return
+	 * @return only instance of RefridgeratorCoolingState
 	 */
 	public static RefridgeratorCoolingState instance() {
 		if (instance == null) {
@@ -40,8 +44,8 @@ public class RefridgeratorCoolingState extends AbstractCoolingState
 		// Change context variables
 		context.setIsCooling(true);
 		
-		//DEBUG
-		System.out.println("Run Fridge Cooling");
+		// DEBUG
+		// System.out.println("Run Fridge Cooling");
 	}
 	
 	@Override
@@ -53,8 +57,8 @@ public class RefridgeratorCoolingState extends AbstractCoolingState
 		// Change context variables
 		context.setIsCooling(false);
 		
-		//DEBUG
-		System.out.println("Leave Fridge Cooling");
+		// DEBUG
+		// System.out.println("Leave Fridge Cooling");
 	}
 	
 	@Override
@@ -62,14 +66,16 @@ public class RefridgeratorCoolingState extends AbstractCoolingState
 		context.changeCurrentState( RefridgeratorDoorOpenState.instance() );
 	}
 	
+	@Override
 	public void onClockTick() {
 		boolean changeState = changeTemperature();
 		
-		// DEBUG
-		System.out.println( "Fridge: " + String.valueOf( context.getSubjectTemperature().getValue() ) );
 		if (changeState) {
 			context.changeCurrentState( RefridgeratorDoorClosedState.instance() );
 		}
+		
+		// DEBUG
+		// System.out.println( "Fridge: " + String.valueOf( context.getSubjectTemperature().getValue() ) );
 	}
 	
 }

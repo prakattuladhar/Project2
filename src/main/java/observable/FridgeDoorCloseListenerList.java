@@ -3,6 +3,9 @@ package observable;
 /**
  * 
  * @author Colin Quinn
+ * @version 1.0
+ * 
+ * This class maintains a list of listeners to the DoorCloseEvent for the refrigerator
  *
  */
 public class FridgeDoorCloseListenerList extends DoorCloseListenerList {

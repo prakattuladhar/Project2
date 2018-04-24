@@ -9,6 +9,6 @@ public class main {
     public static void main(String[] args) throws IOException{
         GUI gui = new GUI();
         Clock.instance();
-        gui.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }

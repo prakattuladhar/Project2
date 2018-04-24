@@ -7,6 +7,9 @@ import java.util.Observer;
 /**
  * 
  * @author Colin Quinn
+ * @version 1.0
+ * 
+ * This class maintains a list of listeners to the ClockTickEvent
  *
  */
 public class ClockListenerList implements Observer {

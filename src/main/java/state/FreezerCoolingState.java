@@ -7,8 +7,10 @@ import threads.*;
 /**
  * 
  * @author Colin Quinn
- * @version 0.1
- *
+ * @version 01.0
+ * 
+ * This class represents a the state of a freezer with the door closed
+ * and compressor on.  The freezer will cool until the desired temperature is reached
  */
 public class FreezerCoolingState extends AbstractCoolingState
 	implements DoorOpenListener, ClockListener {
@@ -20,7 +22,7 @@ public class FreezerCoolingState extends AbstractCoolingState
 	private FreezerCoolingState() {
 	}
 	/**
-	 * Gets only instance of this object
+	 * Gets only instance of this object and passes super class the correct context
 	 * 
 	 * @return only instance of FreezerCoolingState
 	 */
@@ -31,6 +33,7 @@ public class FreezerCoolingState extends AbstractCoolingState
 		}
 		return instance;
 	}
+	
 	@Override
 	public void run() {
 		// Subscribe to Events
@@ -40,8 +43,8 @@ public class FreezerCoolingState extends AbstractCoolingState
 		// Change context variables
 		context.setIsCooling(true);
 		
-		//DEBUG
-		System.out.println("Run Freezer Cooling");
+		// DEBUG
+		// System.out.println("Run Freezer Cooling");
 	}
 	
 	@Override
@@ -66,10 +69,11 @@ public class FreezerCoolingState extends AbstractCoolingState
 	public void onClockTick() {
 		boolean changeState = changeTemperature();
 		
-		// DEBUG
-		System.out.println( "Freezer: " + String.valueOf( context.getSubjectTemperature().getValue() ) );
 		if (changeState) {
 			context.changeCurrentState( FreezerDoorClosedState.instance() );
 		}
+		
+		// DEBUG
+		// System.out.println( "Freezer: " + String.valueOf( context.getSubjectTemperature().getValue() ) );
 	}
 }

@@ -5,6 +5,9 @@ import java.util.EventObject;
 /**
  * 
  * @author Colin Quinn
+ * @version 1.0
+ * 
+ * This event is sent out this event each second
  *
  */
 public class ClockTickEvent extends EventObject {

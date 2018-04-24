@@ -1,22 +1,23 @@
 package state;
 
 import context.AbstractRefridgeratorContext;
-import context.Common;
 import threads.*;
 
 /**
  * 
  * @author Colin Quinn
- * @version 0.1
+ * @version 1.0
+ * 
+ * Represents the internal state of a refidgeration unit.
  */
 public abstract class AbstractRefridgeratorState implements ClockListener {
 	protected AbstractRefridgeratorContext context;
 	protected int counter;
 	
 	/**
+	 * Allows an instantiated subclass to be passed the right context
 	 * 
-	 * @param context
-	 * @param rate
+	 * @param context: the context the state will operate on
 	 */
 	public void initialize(AbstractRefridgeratorContext context) {
 		this.context = context;

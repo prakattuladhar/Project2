@@ -5,7 +5,9 @@ import java.util.EventObject;
 /**
  * 
  * @author Colin Quinn
- * @version 0.1
+ * @version 1.0
+ * 
+ * Event for door closing
  *
  */
 public class DoorCloseEvent extends EventObject {

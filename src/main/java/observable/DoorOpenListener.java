@@ -4,7 +4,10 @@ import java.util.EventListener;
 /**
  * 
  * @author Colin Quinn
- * @version 0.1
+ * @version 1.0
+ * 
+ * Implementing classes can register with DoorOpenListenerList
+ * to receive DoorOpenEvents
  *
  */
 public interface DoorOpenListener extends EventListener {

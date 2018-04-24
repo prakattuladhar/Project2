@@ -1,5 +1,13 @@
 package observable;
 
+/**
+ * 
+ * @author Colin Quinn
+ * @version 1.0
+ * 
+ * This class maintains a list of listeners to the DoorOpenEvent for the refrigerator
+ *
+ */
 public class FridgeDoorOpenListenerList extends DoorOpenListenerList {
 	private static FridgeDoorOpenListenerList instance;
 	/**

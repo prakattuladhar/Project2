@@ -7,7 +7,10 @@ import threads.*;
 /**
  * 
  * @author Colin Quinn
- * @version 0.1
+ * @version 1.0
+ * 
+ * This class represents a the state of a freezer with the door closed
+ * and compressor off.  The freezer will warm until the desired temperature is exceeded
  *
  */
 public class FreezerDoorClosedState extends AbstractDoorClosedState
@@ -22,7 +25,7 @@ public class FreezerDoorClosedState extends AbstractDoorClosedState
 	}
 	
 	/**
-	 * Gets only instance of this object
+	 * Gets only instance of this object and passes super class the correct context
 	 * 
 	 * @return only instance of FreezerDoorClosedState
 	 */
@@ -40,8 +43,8 @@ public class FreezerDoorClosedState extends AbstractDoorClosedState
 		ClockListenerList.instance().addListener(instance);
 		FreezerDoorOpenListenerList.instance().addListener(instance);
 		
-		//DEBUG
-		System.out.println("Run Freezer Closed");
+		// DEBUG
+		// System.out.println("Run Freezer Closed");
 	}
 	
 	@Override
@@ -51,7 +54,7 @@ public class FreezerDoorClosedState extends AbstractDoorClosedState
 		FreezerDoorOpenListenerList.instance().removeListener(instance);
 		
 		// DEBUG
-		System.out.println("Leave Freezer Closed");
+		// System.out.println("Leave Freezer Closed");
 	}
 	
 	@Override
