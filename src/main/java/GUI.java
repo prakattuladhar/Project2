@@ -71,6 +71,7 @@ public class GUI extends JFrame {
         tempPanel = new JPanel(new FlowLayout());
         tempPanel.add(new JLabel("Desired Fridge Temparature"));
         fridgeTempInput.setColumns(4);
+        fridgeTempInput.setText( String.valueOf( Common.getFridgeHigh() ) );
         tempPanel.add(fridgeTempInput);
         tempPanel.add(fridgeTempButton);
         settingsArea.add(tempPanel);
@@ -79,6 +80,7 @@ public class GUI extends JFrame {
         tempPanel = new JPanel(new FlowLayout());
         tempPanel.add(new JLabel("Desired Freezer Temparature"));
         freezerTempInput.setColumns(4);
+        freezerTempInput.setText( String.valueOf( Common.getFreezerHigh() ) );
         tempPanel.add(freezerTempInput);
         tempPanel.add(freezerTempButton);
         settingsArea.add(tempPanel);
@@ -356,13 +358,16 @@ public class GUI extends JFrame {
     }
 
     private void setFridgeTemparature(){
-        if(Integer.valueOf(fridgeTempInput.getText())<Common.getFridgeLow()||Integer.valueOf(fridgeTempInput.getText())>Common.getFridgeHigh()){
+    	int newTemperature = Integer.valueOf( fridgeTempInput.getText() );
+        if( newTemperature < Common.getFridgeLow() || newTemperature > Common.getFridgeHigh() ) {
             JOptionPane.showMessageDialog(null, "Invalid Fridge temparature. It should be between"+Common.getFridgeLow()+" and "
                     +Common.getFridgeHigh(), "Error",
                     JOptionPane.ERROR_MESSAGE);
-        }else {
+        } else {
             //todo for when desired fridge temp is set
-            fridgeContext.setTemperature(Integer.valueOf(fridgeTempInput.getText()));
+            fridgeContext.setSubjectDesiredTemperature(newTemperature);
+            
+            // 
         }
     }
     //freezer helper functions
@@ -379,13 +384,14 @@ public class GUI extends JFrame {
     }
 
     private void setFreezerTemparature(){
-        if(Integer.valueOf(freezerTempInput.getText())<Common.getFreezerLow()||Integer.valueOf(freezerTempInput.getText())>Common.getFreezerHigh()){
+    	int newTemperature = Integer.valueOf(freezerTempInput.getText());
+        if( newTemperature < Common.getFreezerLow() || newTemperature > Common.getFreezerHigh() ){
             JOptionPane.showMessageDialog(null, "Invalid Freezer temparature. It should be between"+Common.getFreezerLow()+" and "
                             +Common.getFreezerHigh(), "Error",
                     JOptionPane.ERROR_MESSAGE);
         }else {
             //todo for when desired freezer temp is set
-            freezerContext.setTemperature(Integer.valueOf(freezerTempInput.getText()));
+            freezerContext.setSubjectDesiredTemperature(newTemperature);
         }
     }
 
